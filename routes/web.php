@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'MainController@index');
-Route::get('/shou-biznes', 'MainController@shou')
+Route::get('/shou-biznes', 'MainController@shou');
