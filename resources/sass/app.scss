@@ -38,10 +38,11 @@ body{
 
 .logo-area__first{
   padding-right: 10px;
-  border-right: 1px solid #fff;
+  
 }
 
 .logo-area__second{
+  border-laft: 1px solid #fff;
   width: 100%;
   padding-left: 10px;
   color: rgb(255, 255, 255); font-weight: bold;
@@ -67,6 +68,16 @@ body{
 
 @include media-breakpoint-down(lg) {
   .display-mobile{
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .delim{
+    display: none;
+  }
+
+  .logo-area__second{
     display: none;
   }
 }

@@ -13733,10 +13733,10 @@ body {
 
 .logo-area__first {
   padding-right: 10px;
-  border-right: 1px solid #fff;
 }
 
 .logo-area__second {
+  border-laft: 1px solid #fff;
   width: 100%;
   padding-left: 10px;
   color: white;
@@ -13764,6 +13764,16 @@ body {
 
 @media (max-width: 1199.98px) {
   .display-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .delim {
+    display: none;
+  }
+
+  .logo-area__second {
     display: none;
   }
 }

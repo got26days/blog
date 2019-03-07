@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar__bluecolor">
-
+  <div class="container">
         <div class="logo-area">
           <div class="logo-area__first">
               <img src="/images/logo.png" alt="logo">
@@ -46,4 +46,5 @@
           </ul>
 
         </div>
-      </nav>
+  </div>
+</nav>
