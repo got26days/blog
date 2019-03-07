@@ -10,4 +10,9 @@ class MainController extends Controller
     {
         return view('pages.index');
     }
+
+    public function shou()
+    {
+        return view('pages.index');
+    }
 }
