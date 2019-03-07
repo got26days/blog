@@ -27,7 +27,7 @@
                </div>    
            </section>
            <section>
-               <div class="row padder-main-row">
+               <div class="row padder-main-row overboot">
                    <div class="col-sm-12 col-md-4 col-lg-4">
                         <div class="over-card-new">
                             <a href="/article/full/2660?utm_source=defolt1&amp;utm_content=defolt1&amp;utm_medium=defolt1&amp;utm_term=defolt1&amp;utm_campaign=7519955655c80a34f42056&amp;sid1=[TEASER_ID]&amp;sid2=32894&amp;sid3=&amp;sid4=C&amp;sid5=" class="utm_links" target="_blank">

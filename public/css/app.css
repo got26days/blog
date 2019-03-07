@@ -13923,3 +13923,8 @@ body {
   background: #252525;
 }
 
+.overboot .col-sm-12 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
