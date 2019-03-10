@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'MainController@index');
-Route::get('/shou-biznes', 'MainController@shou');
+Route::get('/solo', 'MainController@shou');
+Route::get('/article', 'MainController@article');

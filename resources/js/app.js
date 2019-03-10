@@ -31,11 +31,20 @@ Vue.use(BackToTop)
  */
 
  import lazyload  from './directives/lazyload';
+ import StickySidebar from 'sticky-sidebar';
 
 const app = new Vue({
     el: '#app',
     components: { BackToTop },
     directives: {
         lazyload
-      }
+      },
+    created(){
+      var sidebar = new StickySidebar('#sidebar', {
+        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+        topSpacing: 20,
+        bottomSpacing: 20
+    });
+    }
 });

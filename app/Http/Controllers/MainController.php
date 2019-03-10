@@ -13,6 +13,11 @@ class MainController extends Controller
 
     public function shou()
     {
-        return view('pages.index');
+        return view('pages.solo');
+    }
+
+    public function article()
+    {
+        return view('pages.article');
     }
 }

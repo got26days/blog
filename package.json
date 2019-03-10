@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
+        "sticky-sidebar": "^3.3.1",
         "vue-backtotop": "^1.6.1"
     }
 }
