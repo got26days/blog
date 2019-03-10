@@ -14219,7 +14219,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .solo-page .article-sb2 {
     display: none;
   }
