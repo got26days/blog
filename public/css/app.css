@@ -14175,7 +14175,12 @@ body {
   background-color: #f1f6ff;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
-  height: 100%;
+}
+
+@media (min-width: 992px) {
+  .lefar-card {
+    height: 100%;
+  }
 }
 
 .lefar-card img {
@@ -14198,12 +14203,14 @@ body {
   background-color: #e2e2e2;
 }
 
-.solo-page .newsupx {
-  height: 100%;
-}
+@media (min-width: 992px) {
+  .solo-page .newsupx {
+    height: 100%;
+  }
 
-.solo-page .newsupx .col-sm-12 {
-  height: 100%;
+  .solo-page .newsupx .col-sm-12 {
+    height: 100%;
+  }
 }
 
 .solo-page .col-sm-12 {
@@ -14324,10 +14331,15 @@ body {
 }
 
 .sidebar {
-  position: -webkit-sticky;
-  position: sticky;
   bottom: 1rem;
   align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+  }
 }
 
 .yllow-area {

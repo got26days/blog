@@ -445,7 +445,10 @@ body{
   background-color: #f1f6ff;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
-  height: 100%;
+  
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+  }
   img{
     width: 100%;
   }
@@ -465,12 +468,16 @@ body{
   background-color: #e2e2e2;
 }
 .solo-page{
-  .newsupx{
-    height: 100%;
-    .col-sm-12{
+    
+  @include media-breakpoint-up(lg) {
+    .newsupx{
       height: 100%;
+      .col-sm-12{
+        height: 100%;
+      }
     }
   }
+
   .col-sm-12{
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -581,8 +588,11 @@ body{
 }
 
 .sidebar{
-  position: -webkit-sticky;
-  position: sticky;
+  @include media-breakpoint-up(md) {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
   bottom: 1rem;
   align-self: flex-end;
 }
