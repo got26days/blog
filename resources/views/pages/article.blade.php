@@ -8,19 +8,21 @@
 
         <div class="col-sm-12 col-md-6 col-lg-5 contnet">
             <div class="news-solo target">
-                <div class="prenews">
-                        <img src="//week-news24.ru/uploads/03-2019/ffe1f87e8ded654afacdf461e1f8573d.jpeg" alt="" class="lk_fix_img" width="626" height="417" style="max-width:100%; height: auto;">
-                    <div class="titletoppreviewmain">
-                        Выгуливая песика мужчина услышал детский крик, увидев
-                        <div class="descrippreview">
-                            <p>Говорят, что иногда необходимо оказаться в нужное время в нужном месте для того, чтобы
-                                твоя жизнь кардинально изменилась. Но вот случается, когда от этого самого места и
-                                времени зависит чья-то жизнь. Именно о такой ситуации мы сегодня и хотим рассказать.
-                            </p>
+                <a href="/" class="prenewsaa">
+                    <div class="prenews">
+                            <img src="//week-news24.ru/uploads/03-2019/ffe1f87e8ded654afacdf461e1f8573d.jpeg" alt=""  height="315" >
+                        <div class="titletoppreviewmain">
+                            Выгуливая песика мужчина услышал детский крик, увидев
+                            <div class="descrippreview">
+                                <p>Говорят, что иногда необходимо оказаться в нужное время в нужном месте для того, чтобы
+                                    твоя жизнь кардинально изменилась. Но вот случается, когда от этого самого места и
+                                    времени зависит чья-то жизнь. Именно о такой ситуации мы сегодня и хотим рассказать.
+                                </p>
+                            </div>
+                            <a class="btn btn-primary" href="#" role="button" style="max-width: 190px;">Читать полностью</a>
                         </div>
-                        <a class="btn btn-primary" href="#" role="button" style="max-width: 190px;">Читать полностью</a>
                     </div>
-                </div>
+                </a>
                 <div class="news-solo__teaser">
 
                 </div>

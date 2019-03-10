@@ -14363,6 +14363,16 @@ body {
   background-color: #fff;
 }
 
+.prenewsaa {
+  text-decoration: none;
+  color: #fff;
+}
+
+.prenewsaa:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .prenews {
   position: relative;
 }
@@ -14391,7 +14401,7 @@ body {
   position: relative;
 }
 
-.prenews .prenews:after {
+.prenews:after {
   content: "";
   position: absolute;
   top: 0;
