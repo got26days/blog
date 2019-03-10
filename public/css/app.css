@@ -14213,6 +14213,18 @@ body {
   }
 }
 
+@media (max-width: 991.98px) {
+  .solo-page .article-sb {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .solo-page .article-sb2 {
+    display: none;
+  }
+}
+
 .solo-page .col-sm-12 {
   padding-left: 0px !important;
   padding-right: 0px !important;

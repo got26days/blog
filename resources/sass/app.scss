@@ -477,6 +477,18 @@ body{
       }
     }
   }
+  @include media-breakpoint-down(md) {
+    .article-sb{
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .article-sb2{
+      display: none;
+    }
+  }
+
 
   .col-sm-12{
     padding-left: 0px !important;

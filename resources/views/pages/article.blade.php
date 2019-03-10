@@ -57,10 +57,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-7 sidebar">
-
+        <div class="col-sm-12 col-md-6 col-lg-7 sidebar ">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-8">
+                <div class="col-sm-12 col-md-12 col-lg-8 ">
                     <div class="width-card">
                         <img src="//week-news24.ru/uploads/03-2019/3eba6596a6243e4fb0ae8c42d4938c74.jpeg">
                         <div class=wc-content>
@@ -107,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="col-sm-12 col-md-12 col-lg-4  article-sb">
 
                     <div class="lk-revelation">
                         <a href="/">
@@ -132,6 +131,29 @@
 
         </div> --}}
     </div>
+<div class="row article-sb2">
+        <div class="col-sm-12 col-md-6 col-lg-6 ">
+                <div class="lk-revelation">
+                    <a href="/">
+                        <img src="//week-news24.ru/uploads/02-2019/089b231ea0ce03605d8085cf40a7fa73.jpeg">
+                        <div class="lk-revelation__title">Чтобы помидоры росли как на дрожжах, нужно всего лишь</div>
+                        <a class="btn btn-primary" href="#" role="button">Подробнее</a>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6  ">
+                    <div class="lk-revelation">
+                        <a href="/">
+                            <img src="//week-news24.ru/uploads/02-2019/089b231ea0ce03605d8085cf40a7fa73.jpeg">
+                            <div class="lk-revelation__title">Чтобы помидоры росли как на дрожжах, нужно всего лишь</div>
+                            <a class="btn btn-primary" href="#" role="button">Подробнее</a>
+                        </a>
+                    </div>
+                </div>
+</div>
+
+
+
     <div class=" new-srow ">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-5">
