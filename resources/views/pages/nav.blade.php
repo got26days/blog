@@ -21,27 +21,27 @@
         <div class="collapse navbar-collapse new-flex-m" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto new-flex-m">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Шоу бизнес <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Шоу бизнес <span class="sr-only">(current)</span></a>
             </li>
             <li class="delim"> | </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Политика</a>
+              <a class="nav-link" href="/politika">Политика</a>
             </li>
             <li class="delim"> | </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Новости</a>
+              <a class="nav-link" href="/novosti">Новости</a>
             </li>
             <li class="delim"> | </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Оборона</a>
+              <a class="nav-link" href="/oborona">Оборона</a>
             </li>
             <li class="delim"> | </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Здоровье </a>
+              <a class="nav-link" href="/zdorovie">Здоровье </a>
             </li>
             <li class="delim"> | </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Кухня</a>
+              <a class="nav-link" href="/kuhniy">Кухня</a>
             </li>
           </ul>
 

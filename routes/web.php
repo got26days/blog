@@ -12,5 +12,15 @@
 */
 
 Route::get('/', 'MainController@index');
-Route::get('/solo', 'MainController@shou');
+Route::get('/politika', 'MainController@politika');
+Route::get('/novosti', 'MainController@novosti');
+Route::get('/oborona', 'MainController@oborona');
+Route::get('/zdorovie', 'MainController@zdorovie');
+Route::get('/kuhniy', 'MainController@kuhniy');
+
+Route::get('/post{id}', 'MainController@shou');
 Route::get('/article', 'MainController@article');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

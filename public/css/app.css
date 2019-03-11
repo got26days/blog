@@ -13835,6 +13835,10 @@ body {
   width: 100%;
 }
 
+.top-images img {
+  width: 100%;
+}
+
 .over-card-new {
   transition: 0.3s;
   padding: 12px 12px 12px 12px;

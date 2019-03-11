@@ -21,6 +21,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('loaditem', require('./components/Loaditem.vue').default);
+
+Vue.component('overload', require('./components/Overload.vue').default);
 
 import BackToTop from 'vue-backtotop'
 Vue.use(BackToTop)
@@ -40,11 +43,11 @@ const app = new Vue({
         lazyload
       },
     created(){
-      var sidebar = new StickySidebar('#sidebar', {
-        containerSelector: '#main-content',
-        innerWrapperSelector: '.sidebar__inner',
-        topSpacing: 20,
-        bottomSpacing: 20
-    });
+    //   var sidebar = new StickySidebar('#sidebar', {
+    //     containerSelector: '#main-content',
+    //     innerWrapperSelector: '.sidebar__inner',
+    //     topSpacing: 20,
+    //     bottomSpacing: 20
+    // });
     }
 });
