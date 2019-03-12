@@ -16,10 +16,10 @@
 </head>
 <body>
     
-    <div id="app">
+    
 
         @include('pages.nav')
-
+        <div id="app">
             @yield('content')
             <back-to-top bottom="50px" right="50px">
                     <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
