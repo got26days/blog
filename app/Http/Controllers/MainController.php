@@ -210,5 +210,6 @@ class MainController extends Controller
     public function article()
     {
         return view('pages.article');
+        
     }
 }
