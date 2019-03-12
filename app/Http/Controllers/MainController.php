@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use TCG\Voyager\Facades\Voyager;
 
 class MainController extends Controller
 {
@@ -17,6 +18,11 @@ class MainController extends Controller
         } else {
             $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)->where('position', '=', $option)->limit(12)->get();
         }
+
+        foreach($mainnews as $post){
+            $post->image = $post->thumbnail('small', 'image');
+        }
+
         
 
         return  response()->json($mainnews);
@@ -27,6 +33,10 @@ class MainController extends Controller
 
         $posts =  Item::where('loader', '=', true)->orderBy(DB::raw('RAND()'))->limit(11)->get();
 
+        foreach($posts as $post){
+            $post->image = $post->thumbnail('small', 'image');
+        }
+
         return  response()->json($posts);
     }
 
@@ -36,6 +46,10 @@ class MainController extends Controller
         for($i = 0; $i <= 5; $i++){
 
             ${'pos' . $i} = Item::latest()->where('position', '=', $i)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
 
         }
 
@@ -54,6 +68,10 @@ class MainController extends Controller
             ->orderBy(DB::raw('RAND()'))
             ->limit(2)
             ->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
         }
         $option = 1;
 
@@ -74,6 +92,10 @@ class MainController extends Controller
             ->orderBy(DB::raw('RAND()'))
             ->limit(2)
             ->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
         }
         $option = 2;
 
@@ -95,6 +117,10 @@ class MainController extends Controller
             ->orderBy(DB::raw('RAND()'))
             ->limit(2)
             ->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
         }
         $option = 3;
 
@@ -115,6 +141,10 @@ class MainController extends Controller
             ->orderBy(DB::raw('RAND()'))
             ->limit(2)
             ->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
         }
         $option = 4;
 
@@ -135,6 +165,10 @@ class MainController extends Controller
             ->orderBy(DB::raw('RAND()'))
             ->limit(2)
             ->get();
+
+            foreach(${'pos' . $i} as $post){
+                $post->image = $post->thumbnail('small', 'image');
+            }
         }
         $option = 5;
 
