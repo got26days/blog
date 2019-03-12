@@ -3,12 +3,12 @@
 
         <div class="col-sm-12 col-md-4 col-lg-4" v-for="post in posts">
             <div class="over-card-new">
-                <a :href="`/post/${post.id}`" class="utm_links" target="_blank">
+                <a :href="`/post${post.id}`" class="utm_links" target="_blank">
                     <div class="teaser_image">
-                        <img  class="lazyload-done" :data-src="post.image" v-lazyload>
+                        <img  class="lazyload-done" :data-src="`/storage/${post.image}`" v-lazyload>
                     </div>
-                    <div class="lk_text-yellow-area">{{  post.id }}{{  post.title }}</div>
-                    <a class="btn btn-success" role="button" :href="`/post/${post.id}`">Подробнее</a>
+                    <div class="lk_text-yellow-area">{{  post.title }}</div>
+                    <a class="btn btn-success" role="button" :href="`/post${post.id}`">Подробнее</a>
                 </a>
             </div>
         </div>
@@ -18,6 +18,7 @@
 
 <script>
      import lazyload  from '../directives/lazyload';
+     
 
     export default {
         props: {
@@ -35,7 +36,7 @@
         methods: {
             getInitialPosts () {
         
-                axios.get(`/api/posts${this.option}/last0`)
+                axios.get(`/api/posts${this.option}/last${this.postLastCount}`)
                     .then(response => {
                         this.posts = response.data;
                     });

@@ -11,9 +11,9 @@
 
         @foreach($pos0 as $pos)
         <div class="ra__card">
-            <a href="/{{ $pos->slug }}" target="_blank">
+            <a href="/post{{ $pos->id }}" target="_blank">
                 <div class="img-wrap">
-                    <img src="{{ $pos->image }}" width="100px">
+                    <img src="/storage/{{ $pos->image }}" width="100px">
                 </div>
                 <div class="ra_cardtext">{{ $pos->title }}</div>
             </a>
@@ -31,9 +31,9 @@
         <div class="ra__body">
             @foreach($pos1 as $pos)
             <div class="ra__card">
-                <a href="/{{ $pos->slug }}" target="_blank">
+                <a href="/post{{ $pos->id }}" target="_blank">
                     <div class="img-wrap">
-                        <img src="{{ $pos->image }}" width="100px">
+                        <img src="/storage/{{ $pos->image }}" width="100px">
                     </div>
                     <div class="ra_cardtext">{{ $pos->title }}</div>
                 </a>
@@ -51,9 +51,9 @@
     <div class="ra__body">
         @foreach($pos2 as $pos)
         <div class="ra__card">
-            <a href="/{{ $pos->slug }}" target="_blank">
+            <a href="/post{{ $pos->id }}" target="_blank">
                 <div class="img-wrap">
-                    <img src="{{ $pos->image }}" width="100px">
+                    <img src="/storage/{{ $pos->image }}" width="100px">
                 </div>
                 <div class="ra_cardtext">{{ $pos->title }}</div>
             </a>
@@ -71,9 +71,9 @@
     <div class="ra__body">
         @foreach($pos3 as $pos)
         <div class="ra__card">
-            <a href="/{{ $pos->slug }}" target="_blank">
+            <a href="/post{{ $pos->id }}" target="_blank">
                 <div class="img-wrap">
-                    <img src="{{ $pos->image }}" width="100px">
+                    <img src="/storage/{{ $pos->image }}" width="100px">
                 </div>
                 <div class="ra_cardtext">{{ $pos->title }}</div>
             </a>
@@ -91,9 +91,9 @@
     <div class="ra__body">
         @foreach($pos4 as $pos)
         <div class="ra__card">
-            <a href="/{{ $pos->slug }}" target="_blank">
+            <a href="/post{{ $pos->id }}" target="_blank">
                 <div class="img-wrap">
-                    <img src="{{ $pos->image }}" width="100px">
+                    <img src="/storage/{{ $pos->image }}" width="100px">
                 </div>
                 <div class="ra_cardtext">{{ $pos->title }}</div>
             </a>
@@ -110,9 +110,9 @@
     <div class="ra__body">
             @foreach($pos5 as $pos)
             <div class="ra__card">
-                <a href="/{{ $pos->slug }}" target="_blank">
+                <a href="/post{{ $pos->id }}" target="_blank">
                     <div class="img-wrap">
-                        <img src="{{ $pos->image }}" width="100px">
+                        <img src="/storage/{{ $pos->image }}" width="100px">
                     </div>
                     <div class="ra_cardtext">{{ $pos->title }}</div>
                 </a>

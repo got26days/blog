@@ -22,12 +22,20 @@ class MainController extends Controller
         return  response()->json($mainnews);
     }
 
+    public function getposts()
+    {
+
+        $posts =  Item::where('loader', '=', true)->orderBy(DB::raw('RAND()'))->limit(11)->get();
+
+        return  response()->json($posts);
+    }
+
     public function index()
     {
 
         for($i = 0; $i <= 5; $i++){
 
-            ${'pos' . $i} = Item::latest()->where('position', '=', $i)->orderBy(DB::raw('RAND()'))->limit(2)->get();
+            ${'pos' . $i} = Item::latest()->where('position', '=', $i)->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
         }
 

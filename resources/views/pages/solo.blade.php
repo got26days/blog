@@ -8,7 +8,7 @@
 
         <div class="col-sm-12 col-md-6 col-lg-5 contnet">
             <div class="news-solo target">
-                <img src="{{ $solo['image'] }} ">
+                <img src="/storage/{{ $solo['image'] }}">
                 <div class="news-solo__teaser">
                     <h3>
                         {{ $solo->title }}
@@ -19,10 +19,12 @@
                         @isset($teaser1)
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <img src="{{ $teaser1['image'] }}">
+                                <a href="/post{{ $teaser1['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="/storage/{{ $teaser1['image'] }}">
                                 <div>
                                     {{ $teaser1['title'] }}
                                 </div>
+                            </a>
                             </div>
                         </div>
                         @endisset
@@ -33,13 +35,15 @@
                         </div>
                     </div>
                     <div class="teaser">
-                        @isset($teaser1)
+                        @isset($teaser2)
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <img src="{{ $teaser1['image'] }}">
+                            <a href="/post{{ $teaser2['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="/storage/{{ $teaser2['image'] }}">
                                 <div>
-                                    {{ $teaser1['title'] }}
+                                    {{ $teaser2['title'] }}
                                 </div>
+                            </a>
                             </div>
                         </div>
                         @endisset
@@ -50,14 +54,18 @@
                         </div>
                     </div>
                     <div class="teaser">
+                        @isset($teaser3)
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <img src="{{ $teaser1['image'] }}" alt="image">
+                            <a href="/post{{ $teaser3['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="/storage/{{ $teaser3['image'] }}" alt="image">
                                 <div>
-                                    {{ $teaser1['title'] }}
+                                    {{ $teaser3['title'] }}
                                 </div>
+                            </a>
                             </div>
                         </div>
+                        @endisset
                         <div class="container">
                             <p>
                                 {!! $solo->body3 !!}
@@ -99,10 +107,10 @@
                         @foreach($area2 as $link)
                         <div class="more-read__solo">
                             <div class="container">
-                                <img src="{{ $link->image }}">
+                                <img src="/storage/{{ $link->image }}">
                                 <div class="more-read__solo-area">
-                                    <a href="/post/{{ $link->id }}">{{ $link->title }}</a>
-                                    <a class="btn btn-primary" href="/post/{{ $link->id }}" role="button">Подробнее</a>
+                                    <a href="/post{{ $link->id }}">{{ $link->title }}</a>
+                                    <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -117,15 +125,15 @@
                 @if (count($area3) > 0)
                 @foreach($area3 as $link)
                 <div class="col-sm-6 col-md-6 col-lg-4">
-                    <a href="/post/{{ $link->id }}">
+                    <a href="/post{{ $link->id }}">
                         <div class="lefar-card">
-                            <img src="{{ $link->image }}" style="min-height: 155px;">
+                            <img src="/storage/{{ $link->image }}" style="min-height: 155px;">
 
                             <p>
                                 {{ $link->title }}
                             </p>
 
-                            <a href="/post/{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                            <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -137,12 +145,12 @@
                     @if (count($area4) > 0)
                     @foreach($area4 as $link)
                     <div class="width-card">
-                        <img src="{{ $link->image }}">
+                        <img src="/storage/{{ $link->image }}">
                         <div class=wc-content>
-                            <a href="/post/{{ $link->id }}">
+                            <a href="/post{{ $link->id }}">
                                 {{ $link->title }}
                             </a>
-                            <a class="btn btn-primary" href="/post/{{ $link->id }}" role="button">Подробнее</a>
+                            <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
                         </div>
                     </div>
                     @endforeach
@@ -155,12 +163,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     @foreach($area5 as $link)
                     <div class="lk-revelation">
-                        <a href="/post/{{ $link->id }}">
-                            <img src="{{ $link->image }}">
+                        <a href="/post{{ $link->id }}">
+                            <img src="/storage/{{ $link->image }}">
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
-                            <a class="btn btn-primary" href="/post/{{ $link->id }}" role="button">Подробнее</a>
+                            <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
                         </a>
                     </div>
                     @endforeach
@@ -178,15 +186,15 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a href="/post/{{ $link->id }}">
+                        <a href="/post{{ $link->id }}">
                             <div class="lefar-card">
-                                <img src="{{ $link->image }}">
+                                <img src="/storage/{{ $link->image }}">
 
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="/post/{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -197,15 +205,15 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                        <a href="/post/{{ $link->id }}">
+                        <a href="/post{{ $link->id }}">
                             <div class="lefar-card">
-                                <img src="{{ $link->image }}">
+                                <img src="/storage/{{ $link->image }}">
 
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="/post/{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -224,8 +232,8 @@
                         @if (count($area7) > 0)
                             @foreach($area7 as $link)
                             <div class="yllow-card">
-                                <a href="/post/{{ $link->id }}">
-                                    <img src="{{ $link->image }}">
+                                <a href="/post{{ $link->id }}">
+                                    <img src="/storage/{{ $link->image }}">
                                 </a>
                                 <a href="/">
                                     {{ $link->title }}
@@ -244,15 +252,15 @@
                     @if (count($area8) > 0)
                         @foreach($area8 as $link)
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a href="/post/{{ $link->id }}">
+                                <a href="/post{{ $link->id }}">
                                     <div class="lefar-card">
-                                        <img src="{{ $link->image }}">
+                                        <img src="/storage/{{ $link->image }}">
 
                                         <p>
                                             {{ $link->title }}
                                         </p>
 
-                                        <a href="/post/{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                        <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
                                     </div>
                                 </a>
                             </div>

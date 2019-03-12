@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/posts{option}/last{last}', 'MainController@getdata');
+
+
+Route::get('/getposts', 'MainController@getposts');
+

@@ -14367,6 +14367,7 @@ body {
 .yllow-area .yllow-card {
   padding: 10px 10px 10px 10px;
   min-height: 106px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14389,6 +14390,10 @@ body {
 
 .new-srow__back .lefar-card {
   background-color: #fff;
+}
+
+.new-srow__back a {
+  text-decoration: none;
 }
 
 .prenewsaa {
