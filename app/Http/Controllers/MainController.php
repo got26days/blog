@@ -209,6 +209,7 @@ class MainController extends Controller
 
     public function article()
     {
+        // sd
         return view('pages.article');
     }
 }
