@@ -284,8 +284,8 @@ class MainController extends Controller
         $mainnews = Item::latest()
         ->where('area9', '=', 1)
         ->where('position', '=', 5)
-        ->where('area10', '=', 1)
-        ->limit(3)
+        // ->where('area10', '=', 1)
+        ->limit(2)
         ->get();
 
         foreach($mainnews as $post){
