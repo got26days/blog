@@ -78,7 +78,7 @@ class MainController extends Controller
         for($i = 0; $i <= 5; $i++){
 
             ${'pos' . $i} = Item::latest()->where('position', '=', $i)
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
             foreach(${'pos' . $i} as $post){
@@ -91,7 +91,7 @@ class MainController extends Controller
         $position = 0;
 
         $mainnews = Item::latest()->where('position', '=', 0)
-        ->where('area9', '=', 1)
+        // ->where('area9', '=', 1)
         ->limit(2)->get();
 
         foreach($mainnews as $post){
@@ -106,7 +106,7 @@ class MainController extends Controller
         for($i = 0; $i <= 5; $i++){
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->orderBy(DB::raw('RAND()'))
             ->limit(3)
             ->get();
@@ -136,7 +136,7 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->limit(3)
             ->get();
 
@@ -166,7 +166,7 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->limit(3)
             ->get();
 
@@ -195,7 +195,7 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->limit(3)
             ->get();
 
@@ -208,7 +208,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         ->where('area9', '=', 1)
-        ->where('position', '=', 4)
+        // ->where('position', '=', 4)
         ->limit(2)
         ->get();
 
@@ -224,7 +224,7 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->where('area10', '=', 1)
+            // ->where('area10', '=', 1)
             ->limit(3)
             ->get();
 
