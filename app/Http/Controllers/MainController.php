@@ -99,7 +99,7 @@ class MainController extends Controller
         // ->where('position', '=', 0)
         // ->where('area9', '=', 1)
         ->limit(2)->get();
-
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
@@ -134,6 +134,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
@@ -166,7 +167,7 @@ class MainController extends Controller
         // ->where('position', '=', 2)
         ->limit(2)
         ->get();
-
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
@@ -200,7 +201,7 @@ class MainController extends Controller
         // ->where('position', '=', 3)
         ->limit(2)
         ->get();
-
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
@@ -233,7 +234,7 @@ class MainController extends Controller
         // ->where('position', '=', 4)
         ->limit(2)
         ->get();
-
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
@@ -267,7 +268,7 @@ class MainController extends Controller
         // ->where('area10', '=', 1)
         ->limit(2)
         ->get();
-
+        $lastop = 0;
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
 
