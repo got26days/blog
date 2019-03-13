@@ -11,16 +11,28 @@ use TCG\Voyager\Facades\Voyager;
 class MainController extends Controller
 {
 
-    public function getdata($option, $last)
+    public function getdata($position, $last)
     {
         if($last == 0){
-            $mainnews = Item::orderBy('id', 'DESC')->where('position', '=', $option)->limit(12)->get();
+            $mainnews = Item::orderBy('id', 'DESC')->where('position', '=', $position)
+            ->where('area9', '=', 0)
+            ->where('area10', '=', 0)
+            ->limit(12)->get();
         } else {
-            $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)->where('position', '=', $option)->limit(12)->get();
+            $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)
+            ->where('area9', '=', 0)
+            ->where('area10', '=', 0)
+            ->where('position', '=', $position)->limit(12)->get();
         }
 
         foreach($mainnews as $post){
-            $post->image = $post->thumbnail('small', 'image');
+            $post->image = $post->thumbnail('cropped', 'image');
+
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
         }
 
         
@@ -28,14 +40,22 @@ class MainController extends Controller
         return  response()->json($mainnews);
     }
 
-    public function getposts()
+    public function getposts($ops)
     {
 
-        $posts =  Item::where('loader', '=', true)->orderBy(DB::raw('RAND()'))->limit(11)->get();
+        $posts =  Item::where('loader', '=', true)->orderBy(DB::raw('RAND()'))->where('position', '=', $ops)->limit(11)->get();
 
         foreach($posts as $post){
-            $post->image = $post->thumbnail('small', 'image');
+            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
         }
+
+        
 
         return  response()->json($posts);
     }
@@ -45,19 +65,37 @@ class MainController extends Controller
 
         for($i = 0; $i <= 5; $i++){
 
-            ${'pos' . $i} = Item::latest()->where('position', '=', $i)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+            ${'pos' . $i} = Item::latest()->where('position', '=', $i)
+            ->where('area10', '=', 1)
+            ->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
 
         }
 
-        $option = 0;
+        $position = 0;
 
-        $mainnews = Item::latest()->where('position', '=', 0)->limit(2)->get();
+        $mainnews = Item::latest()->where('position', '=', 0)
+        ->where('area9', '=', 1)
+        ->limit(2)->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
-        return view('pages.index', compact('pos0', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        return view('pages.index', compact('pos0', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     public function politika()
@@ -65,23 +103,39 @@ class MainController extends Controller
         for($i = 0; $i <= 5; $i++){
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
+            ->where('area10', '=', 1)
             ->orderBy(DB::raw('RAND()'))
-            ->limit(2)
+            ->limit(3)
             ->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
         }
-        $option = 1;
+        $position = 1;
 
         $mainnews = Item::latest()
+        ->where('area9', '=', 1)
         ->where('position', '=', 1)
         ->limit(2)
         ->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     public function novosti()
@@ -90,22 +144,38 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->limit(2)
+            ->where('area10', '=', 1)
+            ->limit(3)
             ->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
         }
-        $option = 2;
+        $position = 2;
 
         $mainnews = Item::latest()
+        ->where('area9', '=', 1)
         ->where('position', '=', 2)
         ->limit(2)
         ->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     
@@ -115,22 +185,38 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->limit(2)
+            ->where('area10', '=', 1)
+            ->limit(3)
             ->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
         }
-        $option = 3;
+        $position = 3;
 
         $mainnews = Item::latest()
+        ->where('area9', '=', 1)
         ->where('position', '=', 3)
         ->limit(2)
         ->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     public function zdorovie()
@@ -139,22 +225,38 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->limit(2)
+            ->where('area10', '=', 1)
+            ->limit(3)
             ->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
         }
-        $option = 4;
+        $position = 4;
 
         $mainnews = Item::latest()
+        ->where('area9', '=', 1)
         ->where('position', '=', 4)
         ->limit(2)
         ->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     public function kuhniy()
@@ -163,22 +265,39 @@ class MainController extends Controller
             ${'pos' . $i} = Item::latest()
             ->where('position', '=', $i)
             ->orderBy(DB::raw('RAND()'))
-            ->limit(2)
+            ->where('area10', '=', 1)
+            ->limit(3)
             ->get();
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
+
+                if($post->link != 0) {
+                    $post->link = "/prod" . $post->link;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             }
         }
-        $option = 5;
+        $position = 5;
 
         $mainnews = Item::latest()
+        ->where('area9', '=', 1)
         ->where('position', '=', 5)
-        ->limit(2)
+        ->where('area10', '=', 1)
+        ->limit(3)
         ->get();
+
+        foreach($mainnews as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'option'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
     }
 
     public function shou($id)
@@ -189,22 +308,119 @@ class MainController extends Controller
             abort(404);
         }
 
-        $teaser1 = Item::where('id', '=', $solo->teaser1)->first();
-        $teaser2 = Item::where('id', '=', $solo->teaser2)->first();
-        $teaser3 = Item::where('id', '=', $solo->teaser3)->first();
+        if($solo->position){
+            $ops = $solo['position'];
+        } else {
+            $ops = 0;
+        }
 
-        $area2 = Item::where('area2', '=', true)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area3 = Item::where('area3', '=', true)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area4 = Item::where('area4', '=', true)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        $area5 = Item::where('area5', '=', true)->orderBy(DB::raw('RAND()'))->limit(2)->get();
-        $area6 = Item::where('area6', '=', true)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        $area7 = Item::where('area7', '=', true)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area8 = Item::where('area8', '=', true)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        if($solo->showt1){
+            $teaser1 = Item::where('id', '=', $solo->teaser1)->where('position', '=', $ops)->first();
+
+            if($teaser1){
+                if($teaser1->link != 0) {
+                    $teaser1->link = "/prod" . $post->link;
+                } else {
+                    $teaser1->link = '/post' . $post->id;
+                }
+            }
+
+
+        }
+        if($solo->showt2){
+            $teaser2 = Item::where('id', '=', $solo->teaser2)->where('position', '=', $ops)->first();
+
+            if($teaser2){
+                if($teaser2->link != 0) {
+                    $teaser2->link = "/prod" . $post->link;
+                } else {
+                    $teaser2->link = '/post' . $post->id;
+                }
+            }
+        }
+        if($solo->showt3){
+            $teaser3 = Item::where('id', '=', $solo->teaser3)->where('position', '=', $ops)->first();
+
+            if($teaser3){
+                if($teaser3->link != 0) {
+                    $teaser3->link = "/prod" . $post->link;
+                } else {
+                    $teaser3->link = '/post' . $post->id;
+                }
+            }
+        }
+
+
+        $area2 = Item::where('area2', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        $area3 = Item::where('area3', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        $area4 = Item::where('area4', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
+        $area5 = Item::where('area5', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(2)->get();
+        $area6 = Item::where('area6', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
+        $area7 = Item::where('area7', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        $area8 = Item::where('area8', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+
+        foreach($area2 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+        foreach($area3 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+        foreach($area4 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+        foreach($area5 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+        foreach($area6 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+        foreach($area7 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+        foreach($area8 as $post){
+            if($post->link != 0) {
+                $post->link = "/prod" . $post->link;
+            } else {
+                $post->link = '/post' . $post->id;
+            }
+        }
+
+
+        
 
 
         return view('pages.solo', compact('solo', 
         'teaser1', 'teaser2', 'teaser3', 
-        'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4'));
+        'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4', 'ops'));
     }
 
     public function article()

@@ -1970,7 +1970,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    posts: Array
+    posts: Array,
+    ops: Number
   },
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -1999,6 +2000,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    ops: Number
+  },
   data: function data() {
     return {
       posts: [],
@@ -2023,7 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
         var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
         if (bottomOfWindow) {
-          axios.get("/api/getposts").then(function (response) {
+          axios.get("/api/getposts".concat(_this2.ops)).then(function (response) {
             if (response.data.length > 0) {
               _this2.posts.push(response.data);
             }
@@ -38758,7 +38762,7 @@ var render = function() {
             "a",
             {
               staticClass: "utm_links",
-              attrs: { href: "/post" + post.id, target: "_blank" }
+              attrs: { href: "" + post.link, target: "_blank" }
             },
             [
               _c("div", { staticClass: "teaser_image" }, [
@@ -38777,7 +38781,7 @@ var render = function() {
                 "a",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { role: "button", href: "/post" + post.id }
+                  attrs: { role: "button", href: "" + post.link }
                 },
                 [_vm._v("Подробнее")]
               )
@@ -38819,9 +38823,9 @@ var render = function() {
           { staticClass: "row newsupx" },
           _vm._l(_vm.posts.slice(0, 2), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
-              _c("a", { attrs: { href: "/post" + post.id } }, [
+              _c("a", { attrs: { href: "" + post.link } }, [
                 _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "/storage/" + post.image } }),
+                  _c("img", { attrs: { src: "" + post.image } }),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -38835,7 +38839,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "btn btn-primary",
-                      attrs: { href: "`/post${post.id}`", role: "button" }
+                      attrs: { href: "`${post.link}`", role: "button" }
                     },
                     [_vm._v("Подробнее")]
                   )
@@ -38853,9 +38857,9 @@ var render = function() {
           { staticClass: "row newsupx" },
           _vm._l(_vm.posts.slice(2, 5), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-4" }, [
-              _c("a", { attrs: { href: "/post" + post.id } }, [
+              _c("a", { attrs: { href: "" + post.link } }, [
                 _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "/storage/" + post.image } }),
+                  _c("img", { attrs: { src: "" + post.image } }),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -38869,7 +38873,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "btn btn-primary",
-                      attrs: { href: "/post" + post.id, role: "button" }
+                      attrs: { href: "" + post.link, role: "button" }
                     },
                     [_vm._v("Подробнее")]
                   )
@@ -38890,11 +38894,11 @@ var render = function() {
             { staticClass: "row" },
             _vm._l(_vm.posts.slice(5, 8), function(post) {
               return _c("div", { staticClass: "yllow-card" }, [
-                _c("a", { attrs: { href: "/post" + post.id } }, [
-                  _c("img", { attrs: { src: "/storage/" + post.image } })
+                _c("a", { attrs: { href: "" + post.link } }, [
+                  _c("img", { attrs: { src: "" + post.image } })
                 ]),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "/post" + post.id } }, [
+                _c("a", { attrs: { href: "" + post.link } }, [
                   _vm._v(
                     "\n                            " +
                       _vm._s(post.title) +
@@ -38914,9 +38918,9 @@ var render = function() {
           { staticClass: "row newsupx" },
           _vm._l(_vm.posts.slice(8, 11), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-4" }, [
-              _c("a", { attrs: { href: "/post" + post.id } }, [
+              _c("a", { attrs: { href: "" + post.link } }, [
                 _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "/storage/" + post.image } }),
+                  _c("img", { attrs: { src: "" + post.image } }),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -38930,7 +38934,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "btn btn-primary",
-                      attrs: { href: "/post" + post.id, role: "button" }
+                      attrs: { href: "" + post.link, role: "button" }
                     },
                     [_vm._v("Подробнее")]
                   )

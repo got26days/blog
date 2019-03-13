@@ -25,10 +25,18 @@ class CreateItemsTable extends Migration
             
             $table->text('body1')->nullable();
             $table->text('teaser1')->nullable();
+
+            $table->string('showt1')->nullable();
+
             $table->text('body2')->nullable();
             $table->text('teaser2')->nullable();
+
+            $table->string('showt2')->nullable();
+
             $table->text('body3')->nullable();
             $table->text('teaser3')->nullable();
+
+            $table->string('showt3')->nullable();
 
             $table->string('area2')->nullable();
             $table->string('area3')->nullable();

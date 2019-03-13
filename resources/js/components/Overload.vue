@@ -11,6 +11,9 @@
 
 
     export default {
+        props: {
+            ops: Number,
+        },
         data() {
             return {
                 posts: [],
@@ -35,7 +38,7 @@
                         .offsetHeight;
 
                     if (bottomOfWindow) {
-                        axios.get(`/api/getposts`)
+                        axios.get(`/api/getposts${this.ops}`)
                             .then(response => {
                                 if (response.data.length > 0) {
                                     this.posts.push(response.data);

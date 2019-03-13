@@ -8,7 +8,7 @@
 
         <div class="col-sm-12 col-md-6 col-lg-5 contnet">
             <div class="news-solo target">
-                <img src="/storage/{{ $solo['image'] }}">
+                <img src="{{Voyager::image($solo->thumbnail('medium','image'))}}">
                 <div class="news-solo__teaser">
                     <h3>
                         {{ $solo->title }}
@@ -20,7 +20,7 @@
                         <div class="teaser-title">
                             <div class="container title-area">
                                 <a href="/post{{ $teaser1['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="/storage/{{ $teaser1['image'] }}">
+                                <img src="{{Voyager::image($teaser1->thumbnail('cropped','image'))}}">
                                 <div>
                                     {{ $teaser1['title'] }}
                                 </div>
@@ -39,7 +39,7 @@
                         <div class="teaser-title">
                             <div class="container title-area">
                             <a href="/post{{ $teaser2['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="/storage/{{ $teaser2['image'] }}">
+                                <img src="{{Voyager::image($teaser2->thumbnail('cropped','image'))}}">
                                 <div>
                                     {{ $teaser2['title'] }}
                                 </div>
@@ -58,7 +58,7 @@
                         <div class="teaser-title">
                             <div class="container title-area">
                             <a href="/post{{ $teaser3['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="/storage/{{ $teaser3['image'] }}" alt="image">
+                                <img src="{{Voyager::image($teaser3->thumbnail('cropped','image'))}}" alt="image">
                                 <div>
                                     {{ $teaser3['title'] }}
                                 </div>
@@ -107,10 +107,10 @@
                         @foreach($area2 as $link)
                         <div class="more-read__solo">
                             <div class="container">
-                                <img src="/storage/{{ $link->image }}">
+                                <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
                                 <div class="more-read__solo-area">
-                                    <a href="/post{{ $link->id }}">{{ $link->title }}</a>
-                                    <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
+                                    <a href="{{ $link['link'] }}">{{ $link->title }}</a>
+                                    <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -125,15 +125,15 @@
                 @if (count($area3) > 0)
                 @foreach($area3 as $link)
                 <div class="col-sm-6 col-md-6 col-lg-4">
-                    <a href="/post{{ $link->id }}">
+                    <a href="{{ $link['link'] }}">
                         <div class="lefar-card">
-                            <img src="/storage/{{ $link->image }}" style="min-height: 155px;">
+                            <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="min-height: 155px;">
 
                             <p>
                                 {{ $link->title }}
                             </p>
 
-                            <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -145,12 +145,12 @@
                     @if (count($area4) > 0)
                     @foreach($area4 as $link)
                     <div class="width-card">
-                        <img src="/storage/{{ $link->image }}">
+                        <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
                         <div class=wc-content>
-                            <a href="/post{{ $link->id }}">
+                            <a href="{{ $link['link'] }}">
                                 {{ $link->title }}
                             </a>
-                            <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
+                            <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </div>
                     </div>
                     @endforeach
@@ -163,12 +163,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     @foreach($area5 as $link)
                     <div class="lk-revelation">
-                        <a href="/post{{ $link->id }}">
-                            <img src="/storage/{{ $link->image }}">
+                        <a href="{{ $link['link'] }}">
+                            <img src="{{Voyager::image($link->thumbnail('new','image'))}}">
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
-                            <a class="btn btn-primary" href="/post{{ $link->id }}" role="button">Подробнее</a>
+                            <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </a>
                     </div>
                     @endforeach
@@ -186,7 +186,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a href="/post{{ $link->id }}">
+                        <a href="{{ $link['link'] }}">
                             <div class="lefar-card">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -194,7 +194,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -205,15 +205,15 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                        <a href="/post{{ $link->id }}">
+                        <a href="{{ $link['link'] }}">
                             <div class="lefar-card">
-                                <img src="/storage/{{ $link->image }}">
+                                <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
 
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -232,7 +232,7 @@
                         @if (count($area7) > 0)
                             @foreach($area7 as $link)
                             <div class="yllow-card">
-                                <a href="/post{{ $link->id }}">
+                                <a href="{{ $link['link'] }}">
                                     <img src="/storage/{{ $link->image }}">
                                 </a>
                                 <a href="/">
@@ -252,7 +252,7 @@
                     @if (count($area8) > 0)
                         @foreach($area8 as $link)
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a href="/post{{ $link->id }}">
+                                <a href="{{ $link['link'] }}">
                                     <div class="lefar-card">
                                         <img src="/storage/{{ $link->image }}">
 
@@ -260,7 +260,7 @@
                                             {{ $link->title }}
                                         </p>
 
-                                        <a href="/post{{ $link->id }}" role="button" class="btn btn-primary">Подробнее</a>
+                                        <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
                                     </div>
                                 </a>
                             </div>
@@ -269,7 +269,7 @@
                 </div>
             </div>
         </div>
-        <overload></overload>
+        <overload :ops="{{ $ops }}"></overload>
 
     </div>
 
