@@ -19,8 +19,10 @@ class MainController extends Controller
             // ->where('area9', '=', 0)
             // ->where('area10', '=', 0)
             ->limit(14)->get();
+            if($mainnews){
+                array_shift($mainnews);
             array_shift($mainnews);
-            array_shift($mainnews);
+            }
 
         } else {
             $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)
