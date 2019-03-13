@@ -16,13 +16,13 @@ class MainController extends Controller
     {
         if($last == 0){
             $mainnews = Item::orderBy('id', 'DESC')->where('position', '=', $position)
-            ->where('area9', '=', 0)
-            ->where('area10', '=', 0)
+            // ->where('area9', '=', 0)
+            // ->where('area10', '=', 0)
             ->limit(12)->get();
         } else {
             $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)
-            ->where('area9', '=', 0)
-            ->where('area10', '=', 0)
+            // ->where('area9', '=', 0)
+            // ->where('area10', '=', 0)
             ->where('position', '=', $position)->limit(12)->get();
         }
 
