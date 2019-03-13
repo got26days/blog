@@ -7,6 +7,7 @@ use App\Item;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Facades\Voyager;
+use App\Link;
 
 class MainController extends Controller
 {
@@ -29,7 +30,14 @@ class MainController extends Controller
             $post->image = $post->thumbnail('cropped', 'image');
 
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
+
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -49,7 +57,12 @@ class MainController extends Controller
             $post->image = Voyager::image($post->thumbnail('cropped','image'));
 
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -73,7 +86,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -88,8 +106,9 @@ class MainController extends Controller
         ->limit(2)->get();
 
         foreach($mainnews as $post){
-            if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+            $link = Link::where('option', '=', $post->link)->latest()->first();
+            if($link){
+                $post->link = '/' . $link->slug;
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -112,7 +131,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -128,7 +152,12 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -152,7 +181,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -168,7 +202,12 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -193,7 +232,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -209,7 +253,12 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -233,7 +282,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -249,7 +303,12 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -273,7 +332,12 @@ class MainController extends Controller
                 $post->image = $post->thumbnail('small', 'image');
 
                 if($post->link != 0) {
-                    $post->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $post->link = '/' . $link->slug;
+                    } else {
+                        $post->link = '/post' . $post->id;
+                    }
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -290,7 +354,12 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -319,7 +388,12 @@ class MainController extends Controller
 
             if($teaser1){
                 if($teaser1->link != 0) {
-                    $teaser1->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $teaser1->link = '/' . $link->slug;
+                    } else {
+                        $teaser1->link = '/post' . $teaser1->id;
+                    }
                 } else {
                     $teaser1->link = '/post' . $post->id;
                 }
@@ -332,7 +406,12 @@ class MainController extends Controller
 
             if($teaser2){
                 if($teaser2->link != 0) {
-                    $teaser2->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $teaser2->link = '/' . $link->slug;
+                    } else {
+                        $teaser2->link = '/post' . $teaser2->id;
+                    }
                 } else {
                     $teaser2->link = '/post' . $post->id;
                 }
@@ -343,7 +422,12 @@ class MainController extends Controller
 
             if($teaser3){
                 if($teaser3->link != 0) {
-                    $teaser3->link = "/prod" . $post->link;
+                    $link = Link::where('option', '=', $post->link)->latest()->first();
+                    if($link){
+                        $teaser3->link = '/' . $link->slug;
+                    } else {
+                        $teaser3->link = '/post' . $teaser3->id;
+                    }
                 } else {
                     $teaser3->link = '/post' . $post->id;
                 }
@@ -361,14 +445,24 @@ class MainController extends Controller
 
         foreach($area2 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
         }
         foreach($area3 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -376,7 +470,12 @@ class MainController extends Controller
 
         foreach($area4 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -384,7 +483,12 @@ class MainController extends Controller
 
         foreach($area5 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -392,7 +496,12 @@ class MainController extends Controller
 
         foreach($area6 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -400,7 +509,12 @@ class MainController extends Controller
 
         foreach($area7 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -408,7 +522,12 @@ class MainController extends Controller
 
         foreach($area8 as $post){
             if($post->link != 0) {
-                $post->link = "/prod" . $post->link;
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+                    $post->link = '/' . $link->slug;
+                } else {
+                    $post->link = '/post' . $post->id;
+                }
             } else {
                 $post->link = '/post' . $post->id;
             }

@@ -10,12 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/prod1', 'DomainController@prod1');
-Route::get('/prod2', 'DomainController@prod2');
-Route::get('/prod3', 'DomainController@prod3');
-Route::get('/prod4', 'DomainController@prod4');
-Route::get('/prod5', 'DomainController@prod5');
-Route::get('/prod6', 'DomainController@prod6');
+
+// Route::get('/prod2', 'DomainController@prod2');
+// Route::get('/prod3', 'DomainController@prod3');
+// Route::get('/prod4', 'DomainController@prod4');
+// Route::get('/prod5', 'DomainController@prod5');
+// Route::get('/prod6', 'DomainController@prod6');
 
 
 Route::get('/', 'MainController@index');
@@ -32,4 +32,5 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('/{slug}', 'DomainController@prod1');
 
