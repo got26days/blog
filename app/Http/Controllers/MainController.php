@@ -142,7 +142,7 @@ class MainController extends Controller
         }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     public function novosti()
@@ -175,7 +175,7 @@ class MainController extends Controller
         }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     
@@ -209,7 +209,7 @@ class MainController extends Controller
         }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     public function zdorovie()
@@ -242,7 +242,7 @@ class MainController extends Controller
         }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     public function kuhniy()
@@ -276,7 +276,7 @@ class MainController extends Controller
         }
         
         return view('pages.index', compact('pos0', 
-        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     public function shou($id)
