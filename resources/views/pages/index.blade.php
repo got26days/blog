@@ -22,7 +22,7 @@
                </div>    
            </section>
            <section>
-            <loaditem :option="{{ $position }}"></loaditem>
+           <loaditem :option="{{ $position }}" :lastOp="{{ $lastop }}"></loaditem>
            </section>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-3 display-mobile"> 

@@ -18,10 +18,10 @@ class MainController extends Controller
             $mainnews = Item::orderBy('id', 'DESC')->where('position', '=', $position)
             // ->where('area9', '=', 0)
             // ->where('area10', '=', 0)
-            ->limit(14)->get();
+            ->limit(12)->get();
           
-                unset($mainnews[0]);
-                unset($mainnews[1]);
+                // unset($mainnews[0]);
+                // unset($mainnews[1]);
            
 
         } else {
@@ -102,9 +102,13 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
         }
+
         
-        return view('pages.index', compact('pos0', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
+        
+        return view('pages.index', compact('pos0', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
     public function politika()

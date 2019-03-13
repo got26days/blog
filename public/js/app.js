@@ -1823,7 +1823,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       posts: [],
-      lastPost: ''
+      lastPost: '',
+      lastOp: ''
     };
   },
   directives: {
@@ -1833,7 +1834,7 @@ __webpack_require__.r(__webpack_exports__);
     getInitialPosts: function getInitialPosts() {
       var _this = this;
 
-      axios.get("/api/posts".concat(this.option, "/last0")).then(function (response) {
+      axios.get("/api/posts".concat(this.option, "/last").concat(this.lastOp)).then(function (response) {
         _this.posts = response.data;
       });
     },

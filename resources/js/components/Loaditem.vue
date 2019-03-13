@@ -28,6 +28,7 @@
             return {
                 posts: [],
                 lastPost: '',
+                lastOp: '',
             }
         },
         directives: {
@@ -36,7 +37,7 @@
         methods: {
             getInitialPosts () {
         
-                axios.get(`/api/posts${this.option}/last0`)
+                axios.get(`/api/posts${this.option}/last${this.lastOp}`)
                     .then(response => {
                         this.posts = response.data;
                     });
