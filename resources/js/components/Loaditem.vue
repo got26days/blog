@@ -36,7 +36,7 @@
         methods: {
             getInitialPosts () {
         
-                axios.get(`/api/posts${this.option}/last${this.postLastCount}`)
+                axios.get(`/api/posts${this.option}/last0`)
                     .then(response => {
                         this.posts = response.data;
                     });

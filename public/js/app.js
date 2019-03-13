@@ -1833,7 +1833,7 @@ __webpack_require__.r(__webpack_exports__);
     getInitialPosts: function getInitialPosts() {
       var _this = this;
 
-      axios.get("/api/posts".concat(this.option, "/last").concat(this.postLastCount)).then(function (response) {
+      axios.get("/api/posts".concat(this.option, "/last0")).then(function (response) {
         _this.posts = response.data;
       });
     },
