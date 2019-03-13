@@ -33,7 +33,7 @@ class MainController extends Controller
 
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -59,7 +59,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -88,7 +88,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -108,7 +108,7 @@ class MainController extends Controller
         foreach($mainnews as $post){
             $link = Link::where('option', '=', $post->link)->latest()->first();
             if($link){
-                $post->link = '/' . $link->slug;
+                $post->link = '/' .  $link->slug .  $link['utm'];
             } else {
                 $post->link = '/post' . $post->id;
             }
@@ -133,7 +133,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -154,7 +154,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -183,7 +183,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -204,7 +204,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -234,7 +234,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -255,7 +255,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -284,7 +284,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -305,7 +305,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -334,7 +334,7 @@ class MainController extends Controller
                 if($post->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $post->link = '/' . $link->slug;
+                        $post->link = '/' . $link->slug .  $link['utm'];
                     } else {
                         $post->link = '/post' . $post->id;
                     }
@@ -356,7 +356,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -390,7 +390,7 @@ class MainController extends Controller
                 if($teaser1->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $teaser1->link = '/' . $link->slug;
+                        $teaser1->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $teaser1->link = '/post' . $teaser1->id;
                     }
@@ -408,7 +408,7 @@ class MainController extends Controller
                 if($teaser2->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $teaser2->link = '/' . $link->slug;
+                        $teaser2->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $teaser2->link = '/post' . $teaser2->id;
                     }
@@ -424,7 +424,7 @@ class MainController extends Controller
                 if($teaser3->link != 0) {
                     $link = Link::where('option', '=', $post->link)->latest()->first();
                     if($link){
-                        $teaser3->link = '/' . $link->slug;
+                        $teaser3->link = '/' .  $link->slug .  $link['utm'];
                     } else {
                         $teaser3->link = '/post' . $teaser3->id;
                     }
@@ -447,7 +447,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -459,7 +459,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -472,7 +472,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -485,7 +485,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -498,7 +498,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -511,7 +511,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }
@@ -524,7 +524,7 @@ class MainController extends Controller
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' . $link->slug;
+                    $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id;
                 }

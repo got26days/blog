@@ -19,6 +19,8 @@ class CreateLinksTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('option');
+            
+            $table->string('utm')->nullable();
 
             $table->timestamps();
         });
