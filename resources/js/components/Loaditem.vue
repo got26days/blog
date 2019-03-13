@@ -23,12 +23,13 @@
     export default {
         props: {
             option: Number,
+            lastop: Number,
         },
         data () {
             return {
                 posts: [],
                 lastPost: '',
-                lastop: '',
+                
             }
         },
         directives: {
