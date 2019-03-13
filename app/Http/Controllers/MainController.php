@@ -96,7 +96,7 @@ class MainController extends Controller
         $position = 0;
 
         $mainnews = Item::latest()
-        // ->where('position', '=', 0)
+        ->where('position', '=', 0)
         // ->where('area9', '=', 1)
         ->limit(2)->get();
         $lastop = 0;
@@ -130,7 +130,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         // ->where('area9', '=', 1)
-        // ->where('position', '=', 1)
+        ->where('position', '=', 1)
         ->limit(2)
         ->get();
 
@@ -164,7 +164,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         // ->where('area9', '=', 1)
-        // ->where('position', '=', 2)
+        ->where('position', '=', 2)
         ->limit(2)
         ->get();
         $lastop = 0;
@@ -198,7 +198,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         // ->where('area9', '=', 1)
-        // ->where('position', '=', 3)
+        ->where('position', '=', 3)
         ->limit(2)
         ->get();
         $lastop = 0;
@@ -231,7 +231,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         // ->where('area9', '=', 1)
-        // ->where('position', '=', 4)
+        ->where('position', '=', 4)
         ->limit(2)
         ->get();
         $lastop = 0;
@@ -264,7 +264,7 @@ class MainController extends Controller
 
         $mainnews = Item::latest()
         // ->where('area9', '=', 1)
-        // ->where('position', '=', 5)
+        ->where('position', '=', 5)
         // ->where('area10', '=', 1)
         ->limit(2)
         ->get();
