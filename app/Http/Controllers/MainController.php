@@ -134,7 +134,11 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        $mainnews = $this->getLinks($mainnews);
+        foreach($mainnews as $post){
+            $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
+        }
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -163,7 +167,11 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        $mainnews = $this->getLinks($mainnews);
+        foreach($mainnews as $post){
+            $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
+        }
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -193,7 +201,11 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        $mainnews = $this->getLinks($mainnews);
+        foreach($mainnews as $post){
+            $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
+        }
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -222,7 +234,11 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        $mainnews = $this->getLinks($mainnews);
+        foreach($mainnews as $post){
+            $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
+        }
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -252,7 +268,11 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        $mainnews = $this->getLinks($mainnews);
+        foreach($mainnews as $post){
+            $post->link = '/post' . $post->id;
+
+            $lastop =  $post->id;
+        }
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
