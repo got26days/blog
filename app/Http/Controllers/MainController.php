@@ -28,19 +28,7 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
-
-            if($post->link != 0) {
-
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-
-            } else {
-                $post->link = '/post' . $post->id;
-            }
+            $post->link = '/post' . $post->id;
         }
 
         
@@ -73,6 +61,17 @@ class MainController extends Controller
         return  response()->json($posts);
     }
 
+    public function getLinks($array)
+    {
+
+        foreach($array as $post){
+            $post->link = '/post' . $post->id;
+        }
+
+        return $array;
+
+    }
+
     public function index()
     {
 
@@ -84,17 +83,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
 
         }
@@ -106,12 +95,7 @@ class MainController extends Controller
         ->limit(2)->get();
 
         foreach($mainnews as $post){
-            $link = Link::where('option', '=', $post->link)->latest()->first();
-            if($link){
-                $post->link = '/' .  $link->slug .  $link['utm'];
-            } else {
-                $post->link = '/post' . $post->id;
-            }
+            $post->link = '/post' . $post->id;
         }
         
         return view('pages.index', compact('pos0', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -129,17 +113,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
         }
         $position = 1;
@@ -150,18 +124,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        foreach($mainnews as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $mainnews = $this->getLinks($mainnews);
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -179,17 +142,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
         }
         $position = 2;
@@ -200,18 +153,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        foreach($mainnews as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $mainnews = $this->getLinks($mainnews);
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -230,17 +172,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
         }
         $position = 3;
@@ -251,18 +183,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        foreach($mainnews as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $mainnews = $this->getLinks($mainnews);
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -280,17 +201,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
         }
         $position = 4;
@@ -301,18 +212,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        foreach($mainnews as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $mainnews = $this->getLinks($mainnews);
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -330,17 +230,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-
-                if($post->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $post->link = '/' . $link->slug .  $link['utm'];
-                    } else {
-                        $post->link = '/post' . $post->id;
-                    }
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
+                $post->link = '/post' . $post->id;
             }
         }
         $position = 5;
@@ -352,18 +242,7 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        foreach($mainnews as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $mainnews = $this->getLinks($mainnews);
         
         return view('pages.index', compact('pos0', 
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position'));
@@ -435,27 +314,9 @@ class MainController extends Controller
         }
 
 
-        $area2 = Item::where('area2', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area3 = Item::where('area3', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area4 = Item::where('area4', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        $area5 = Item::where('area5', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(2)->get();
-        $area6 = Item::where('area6', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        $area7 = Item::where('area7', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        $area8 = Item::where('area8', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        $massarea = Item::where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->get();
 
-        foreach($area2 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
-        foreach($area3 as $post){
+        foreach($massarea  as $post){
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
@@ -468,70 +329,110 @@ class MainController extends Controller
             }
         }
 
-        foreach($area4 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+        $area2 = $massarea->slice(0,3);
+        $area3 = $massarea->slice(3,3);
+        $area4 = $massarea->slice(6,5);
+        $area5 = $massarea->slice(11,2);
+        $area6 = $massarea->slice(13,5);
+        $area7 = $massarea->slice(18,3);
+        $area8 = $massarea->slice(21,3);
+        // $area2 = Item::where('area2', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        // $area3 = Item::where('area3', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        // $area4 = Item::where('area4', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
+        // $area5 = Item::where('area5', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(2)->get();
+        // $area6 = Item::where('area6', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
+        // $area7 = Item::where('area7', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        // $area8 = Item::where('area8', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
-        foreach($area5 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+                // foreach($area2 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
+                // foreach($area3 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
 
-        foreach($area6 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+                // foreach($area4 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
 
-        foreach($area7 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+                // foreach($area5 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
 
-        foreach($area8 as $post){
-            if($post->link != 0) {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id;
-                }
-            } else {
-                $post->link = '/post' . $post->id;
-            }
-        }
+                // foreach($area6 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
+
+                // foreach($area7 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
+
+                // foreach($area8 as $post){
+                //     if($post->link != 0) {
+                //         $link = Link::where('option', '=', $post->link)->latest()->first();
+                //         if($link){
+                //             $post->link = '/' .  $link->slug .  $link['utm'];
+                //         } else {
+                //             $post->link = '/post' . $post->id;
+                //         }
+                //     } else {
+                //         $post->link = '/post' . $post->id;
+                //     }
+                // }
 
 
         
