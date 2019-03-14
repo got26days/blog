@@ -16,7 +16,7 @@ class MainController extends Controller
     {
         $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)
             ->where('area2', '=', 1)
-            // ->where('position', '=', $position)
+            ->where('position', '=', $position)
             ->limit(12)->get();
 
         foreach($mainnews as $post){
