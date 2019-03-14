@@ -31,9 +31,9 @@
                         @endisset
                         @isset($solo->body1)
                         <div class="container">
-                            <p>
+                       
                                 {!! $solo->body1 !!}
-                            </p>
+                          
                         </div>
                         @endisset
                     </div>
@@ -52,9 +52,9 @@
                         @endisset
                         @isset($solo->body2)
                         <div class="container">
-                            <p>
+                       
                                 {!! $solo->body2 !!}
-                            </p>
+                           
                         </div>
                         @endisset
                     </div>
@@ -73,9 +73,9 @@
                         @endisset
                         @isset($solo->body3)
                         <div class="container">
-                            <p>
+                           
                                 {!! $solo->body3 !!}
-                            </p>
+                            
                         </div>
                         @endisset
                     </div>
