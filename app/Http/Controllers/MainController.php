@@ -30,7 +30,6 @@ class MainController extends Controller
     {
 
         $posts =  Item::where('area2', '=', 0)
-        ->where('area2', '=', 0)
         ->orderBy(DB::raw('RAND()'))->where('position', '=', $ops)->limit(11)->get();
 
         foreach($posts as $post){
@@ -219,7 +218,9 @@ class MainController extends Controller
             $ops = 0;
         }
 
-        $massarea = Item::where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->get();
+        $massarea = Item::where('position', '=', $ops)
+        ->where('area2', '=', 0)
+        ->orderBy(DB::raw('RAND()'))->get();
 
         foreach($massarea  as $post){
             if($post->link != 0) {
