@@ -29,11 +29,13 @@
                             </div>
                         </div>
                         @endisset
+                        @isset($solo->body1)
                         <div class="container">
                             <p>
                                 {!! $solo->body1 !!}
                             </p>
                         </div>
+                        @endisset
                     </div>
                     <div class="teaser">
                         @isset($area9[25])
@@ -48,11 +50,13 @@
                             </div>
                         </div>
                         @endisset
+                        @isset($solo->body2)
                         <div class="container">
                             <p>
                                 {!! $solo->body2 !!}
                             </p>
                         </div>
+                        @endisset
                     </div>
                     <div class="teaser">
                         @isset($area9[26])
@@ -67,11 +71,13 @@
                             </div>
                         </div>
                         @endisset
+                        @isset($solo->body3)
                         <div class="container">
                             <p>
                                 {!! $solo->body3 !!}
                             </p>
                         </div>
+                        @endisset
                     </div>
                     <div class="social-area container">
                         <div class="social-link">
