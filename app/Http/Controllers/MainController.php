@@ -31,7 +31,9 @@ class MainController extends Controller
     {
 
         $posts =  Item::where('area2', '=', 0)
-        ->orderBy(DB::raw('RAND()'))->where('position', '=', $ops)->limit(11)->get();
+        ->orderBy(DB::raw('RAND()'))
+        // ->where('position', '=', $ops)
+        ->limit(11)->get();
 
         foreach($posts as $post){
             $post->image = Voyager::image($post->thumbnail('cropped','image'));
