@@ -16,13 +16,14 @@
                 </div>
                 <div class="teasers">
                     <div class="teaser">
-                        @isset($teaser1)
+               
+                        @isset($area9[24])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="/post{{ $teaser1['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($teaser1->thumbnail('cropped','image'))}}">
+                                <a href="/post{{ $area9[24]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="{{Voyager::image($area9[24]->thumbnail('cropped','image'))}}">
                                 <div>
-                                    {{ $teaser1['title'] }}
+                                    {{ $area9[24]['title'] }}
                                 </div>
                             </a>
                             </div>
@@ -35,13 +36,13 @@
                         </div>
                     </div>
                     <div class="teaser">
-                        @isset($teaser2)
+                        @isset($area9[25])
                         <div class="teaser-title">
                             <div class="container title-area">
-                            <a href="/post{{ $teaser2['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($teaser2->thumbnail('cropped','image'))}}">
+                            <a href="/post{{ $area9[25]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="{{Voyager::image($area9[25]->thumbnail('cropped','image'))}}">
                                 <div>
-                                    {{ $teaser2['title'] }}
+                                    {{ $area9[25]['title'] }}
                                 </div>
                             </a>
                             </div>
@@ -54,13 +55,13 @@
                         </div>
                     </div>
                     <div class="teaser">
-                        @isset($teaser3)
+                        @isset($area9[26])
                         <div class="teaser-title">
                             <div class="container title-area">
-                            <a href="/post{{ $teaser3['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($teaser3->thumbnail('cropped','image'))}}" alt="image">
+                            <a href="/post{{ $area9[26]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <img src="{{Voyager::image($area9[26]->thumbnail('cropped','image'))}}" alt="image">
                                 <div>
-                                    {{ $teaser3['title'] }}
+                                    {{ $area9[26]['title'] }}
                                 </div>
                             </a>
                             </div>

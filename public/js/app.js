@@ -38775,7 +38775,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "lk_text-yellow-area" }, [
-                _vm._v(_vm._s(post.title))
+                _vm._v(_vm._s(post.id) + " " + _vm._s(post.title))
               ]),
               _vm._v(" "),
               _c(
