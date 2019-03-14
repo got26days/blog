@@ -14,7 +14,7 @@
                                 <img src="{{Voyager::image($mainnew->thumbnail('new', 'image'))}}" alt="images">
                             </a>
                              <a href="/post{{  $mainnew->id }}" class="utm_links click_link utm_loaded" target="_blank">
-                                 <div class="teaser_text"> {{  $mainnew->id }} {{  $mainnew->title }}</div>
+                                 <div class="teaser_text">{{  $mainnew->title }}</div>
                              </a>
                          </div>
                     </div>   
