@@ -16,7 +16,8 @@ class MainController extends Controller
     {
         $mainnews = Item::orderBy('id', 'DESC')->where('id', '<', $last)
             ->where('area2', '=', 1)
-            ->where('position', '=', $position)->limit(12)->get();
+            // ->where('position', '=', $position)
+            ->limit(12)->get();
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
@@ -218,8 +219,9 @@ class MainController extends Controller
             $ops = 0;
         }
 
-        $massarea = Item::where('position', '=', $ops)
-        ->where('area2', '=', 0)
+        $massarea = Item::where('area2', '=', 0)
+        // where('position', '=', $ops)
+        // ->where('area2', '=', 0)
         ->orderBy(DB::raw('RAND()'))->get();
 
         foreach($massarea  as $post){
