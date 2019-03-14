@@ -279,6 +279,23 @@ class MainController extends Controller
         'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'mainnews', 'position', 'lastop'));
     }
 
+    public function teaserlink($teaser)
+    {
+        if($teaser->link != 0) {
+            $link = Link::where('option', '=', $teaser->link)->latest()->first();
+            if($link){
+                $teaser->link = '/' .  $link->slug .  $link['utm'];
+            } else {
+                $teaser->link = '/post' . $teaser->id;
+            }
+        } else {
+            $teaser->link = '/post' . $teaser->id;
+        }
+
+        return $teaser;
+
+    }
+
     public function shou($id)
     {
         $solo = Item::find($id);
@@ -297,16 +314,7 @@ class MainController extends Controller
             $teaser1 = Item::where('id', '=', $solo->teaser1)->where('position', '=', $ops)->first();
 
             if($teaser1){
-                if($teaser1->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $teaser1->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $teaser1->link = '/post' . $teaser1->id;
-                    }
-                } else {
-                    $teaser1->link = '/post' . $post->id;
-                }
+                $teaser1 = $this->teaserlink($teaser1);
             }
 
 
@@ -315,32 +323,14 @@ class MainController extends Controller
             $teaser2 = Item::where('id', '=', $solo->teaser2)->where('position', '=', $ops)->first();
 
             if($teaser2){
-                if($teaser2->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $teaser2->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $teaser2->link = '/post' . $teaser2->id;
-                    }
-                } else {
-                    $teaser2->link = '/post' . $post->id;
-                }
+                $teaser2 = $this->teaserlink($teaser2);
             }
         }
         if($solo->showt3){
             $teaser3 = Item::where('id', '=', $solo->teaser3)->where('position', '=', $ops)->first();
 
             if($teaser3){
-                if($teaser3->link != 0) {
-                    $link = Link::where('option', '=', $post->link)->latest()->first();
-                    if($link){
-                        $teaser3->link = '/' .  $link->slug .  $link['utm'];
-                    } else {
-                        $teaser3->link = '/post' . $teaser3->id;
-                    }
-                } else {
-                    $teaser3->link = '/post' . $post->id;
-                }
+                $teaser3 = $this->teaserlink($teaser3);
             }
         }
 
@@ -367,106 +357,7 @@ class MainController extends Controller
         $area6 = $massarea->slice(13,5);
         $area7 = $massarea->slice(18,3);
         $area8 = $massarea->slice(21,3);
-        // $area2 = Item::where('area2', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        // $area3 = Item::where('area3', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        // $area4 = Item::where('area4', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        // $area5 = Item::where('area5', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(2)->get();
-        // $area6 = Item::where('area6', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(5)->get();
-        // $area7 = Item::where('area7', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
-        // $area8 = Item::where('area8', '=', true)->where('position', '=', $ops)->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
-                // foreach($area2 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-                // foreach($area3 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-                // foreach($area4 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-                // foreach($area5 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-                // foreach($area6 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-                // foreach($area7 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-                // foreach($area8 as $post){
-                //     if($post->link != 0) {
-                //         $link = Link::where('option', '=', $post->link)->latest()->first();
-                //         if($link){
-                //             $post->link = '/' .  $link->slug .  $link['utm'];
-                //         } else {
-                //             $post->link = '/post' . $post->id;
-                //         }
-                //     } else {
-                //         $post->link = '/post' . $post->id;
-                //     }
-                // }
-
-
-        
 
 
         return view('pages.solo', compact('solo', 
