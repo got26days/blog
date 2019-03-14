@@ -159,7 +159,7 @@ class MainController extends Controller
     public function zdorovie()
     {
         $lastop = 0;
-        $position = 3;
+        $position = 4;
 
         $pos = $this->getRight();
         $mainnews = $this->getMainNews($position);
@@ -175,7 +175,7 @@ class MainController extends Controller
     public function kuhniy()
     {
         $lastop = 0;
-        $position = 4;
+        $position = 5;
 
         $pos = $this->getRight();
         $mainnews = $this->getMainNews($position);
