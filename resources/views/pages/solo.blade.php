@@ -20,7 +20,7 @@
                         @isset($area9[24])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="/post{{ $area9[24]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <a href="{{ $area9[24]['link'] }}" class="title-area" style="text-decoration: none;">
                                     <img src="{{Voyager::image($area9[24]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[24]['title'] }}
@@ -41,7 +41,7 @@
                         @isset($area9[25])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="/post{{ $area9[25]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <a href="{{ $area9[25]['link'] }}" class="title-area" style="text-decoration: none;">
                                     <img src="{{Voyager::image($area9[25]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[25]['title'] }}
@@ -62,7 +62,7 @@
                         @isset($area9[26])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="/post{{ $area9[26]['id'] }}" class="title-area" style="text-decoration: none;">
+                                <a href="{{ $area9[26]['link'] }}" class="title-area" style="text-decoration: none;">
                                     <img src="{{Voyager::image($area9[26]->thumbnail('cropped','image'))}}" alt="image">
                                     <div>
                                         {{ $area9[26]['title'] }}
