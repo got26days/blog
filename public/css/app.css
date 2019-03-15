@@ -14162,9 +14162,7 @@ body {
 }
 
 .more-read .more-read__solo-area .btn {
-  background-color: #ff7918 !important;
   color: #fff;
-  border: 1px solid #ff7918 !important;
   max-width: 104px;
   margin-top: 10px;
 }
@@ -14240,15 +14238,9 @@ body {
 }
 
 .solo-page .btn {
-  background-color: #ff7918 !important;
   color: #fff;
-  border: 1px solid #ff7918 !important;
   max-width: 104px;
   margin-top: 5px;
-}
-
-.solo-page .btn:hover {
-  background-color: #bd5408 !important;
 }
 
 .solo-page .btn-to-top {

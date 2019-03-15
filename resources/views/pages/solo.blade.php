@@ -16,24 +16,24 @@
                 </div>
                 <div class="teasers">
                     <div class="teaser">
-               
+
                         @isset($area9[24])
                         <div class="teaser-title">
                             <div class="container title-area">
                                 <a href="/post{{ $area9[24]['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($area9[24]->thumbnail('cropped','image'))}}">
-                                <div>
-                                    {{ $area9[24]['title'] }}
-                                </div>
-                            </a>
+                                    <img src="{{Voyager::image($area9[24]->thumbnail('cropped','image'))}}">
+                                    <div>
+                                        {{ $area9[24]['title'] }}
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         @endisset
                         @isset($solo->body1)
                         <div class="container">
-                       
-                                {!! $solo->body1 !!}
-                          
+
+                            {!! $solo->body1 !!}
+
                         </div>
                         @endisset
                     </div>
@@ -41,20 +41,20 @@
                         @isset($area9[25])
                         <div class="teaser-title">
                             <div class="container title-area">
-                            <a href="/post{{ $area9[25]['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($area9[25]->thumbnail('cropped','image'))}}">
-                                <div>
-                                    {{ $area9[25]['title'] }}
-                                </div>
-                            </a>
+                                <a href="/post{{ $area9[25]['id'] }}" class="title-area" style="text-decoration: none;">
+                                    <img src="{{Voyager::image($area9[25]->thumbnail('cropped','image'))}}">
+                                    <div>
+                                        {{ $area9[25]['title'] }}
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         @endisset
                         @isset($solo->body2)
                         <div class="container">
-                       
-                                {!! $solo->body2 !!}
-                           
+
+                            {!! $solo->body2 !!}
+
                         </div>
                         @endisset
                     </div>
@@ -62,20 +62,20 @@
                         @isset($area9[26])
                         <div class="teaser-title">
                             <div class="container title-area">
-                            <a href="/post{{ $area9[26]['id'] }}" class="title-area" style="text-decoration: none;">
-                                <img src="{{Voyager::image($area9[26]->thumbnail('cropped','image'))}}" alt="image">
-                                <div>
-                                    {{ $area9[26]['title'] }}
-                                </div>
-                            </a>
+                                <a href="/post{{ $area9[26]['id'] }}" class="title-area" style="text-decoration: none;">
+                                    <img src="{{Voyager::image($area9[26]->thumbnail('cropped','image'))}}" alt="image">
+                                    <div>
+                                        {{ $area9[26]['title'] }}
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         @endisset
                         @isset($solo->body3)
                         <div class="container">
-                           
-                                {!! $solo->body3 !!}
-                            
+
+                            {!! $solo->body3 !!}
+
                         </div>
                         @endisset
                     </div>
@@ -114,10 +114,12 @@
                         @foreach($area2 as $link)
                         <div class="more-read__solo">
                             <div class="container">
-                                <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
+                                <a href="{{ $link['link'] }}">
+                                    <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
+                                </a>
                                 <div class="more-read__solo-area">
                                     <a href="{{ $link['link'] }}">{{ $link->title }}</a>
-                                    <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                                    <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +142,7 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -152,12 +154,14 @@
                     @if (count($area4) > 0)
                     @foreach($area4 as $link)
                     <div class="width-card">
-                        <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
+                        <a href="{{ $link['link'] }}">
+                            <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
+                        </a>
                         <div class=wc-content>
                             <a href="{{ $link['link'] }}">
                                 {{ $link->title }}
                             </a>
-                            <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </div>
                     </div>
                     @endforeach
@@ -175,7 +179,7 @@
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
-                            <a class="btn btn-primary" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </a>
                     </div>
                     @endforeach
@@ -201,7 +205,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -220,7 +224,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -237,18 +241,18 @@
                     <div class="row">
 
                         @if (count($area7) > 0)
-                            @foreach($area7 as $link)
-                            <div class="yllow-card">
-                                <a href="{{ $link['link'] }}">
-                                    <img src="/storage/{{ $link->image }}">
-                                </a>
-                                <a href="/">
-                                    {{ $link->title }}
-                                </a>
-                            </div>
-                            @endforeach
+                        @foreach($area7 as $link)
+                        <div class="yllow-card">
+                            <a href="{{ $link['link'] }}">
+                                <img src="/storage/{{ $link->image }}">
+                            </a>
+                            <a href="/">
+                                {{ $link->title }}
+                            </a>
+                        </div>
+                        @endforeach
                         @endif
- 
+
 
 
                     </div>
@@ -257,21 +261,22 @@
             <div class="col-sm-12 col-md-12 col-lg-7">
                 <div class="row newsupx">
                     @if (count($area8) > 0)
-                        @foreach($area8 as $link)
-                            <div class="col-sm-12 col-md-6 col-lg-4">
+                    @foreach($area8 as $link)
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="{{ $link['link'] }}">
+                            <div class="lefar-card">
                                 <a href="{{ $link['link'] }}">
-                                    <div class="lefar-card">
-                                        <img src="/storage/{{ $link->image }}">
-
-                                        <p>
-                                            {{ $link->title }}
-                                        </p>
-
-                                        <a href="{{ $link['link'] }}" role="button" class="btn btn-primary">Подробнее</a>
-                                    </div>
+                                    <img src="/storage/{{ $link->image }}">
                                 </a>
+                                <p>
+                                    {{ $link->title }}
+                                </p>
+
+                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
                             </div>
-                        @endforeach
+                        </a>
+                    </div>
+                    @endforeach
                     @endif
                 </div>
             </div>
