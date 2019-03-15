@@ -215,7 +215,7 @@ class MainController extends Controller
         $lastop = 0;
         $position = 1;
 
-        $pos = $this->getRight();
+        $pos = $this->getRight($newstring);
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
@@ -235,7 +235,7 @@ class MainController extends Controller
         $lastop = 0;
         $position = 2;
 
-        $pos = $this->getRight();
+        $pos = $this->getRight($newstring);
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
@@ -256,7 +256,7 @@ class MainController extends Controller
         $lastop = 0;
         $position = 3;
 
-        $pos = $this->getRight();
+        $pos = $this->getRight($newstring);
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
@@ -276,7 +276,7 @@ class MainController extends Controller
         $lastop = 0;
         $position = 4;
 
-        $pos = $this->getRight();
+        $pos = $this->getRight($newstring);
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
