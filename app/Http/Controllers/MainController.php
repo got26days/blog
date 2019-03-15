@@ -333,9 +333,9 @@ class MainController extends Controller
                     // $checkers = $this->checkUtm();
                     // $newstring = $this->getUtmFor($checkers);
 
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid3=' . $post->id;
+                    $post->link = '/' .  $link->slug  . $newstring;
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid3=' . $post->id;
+                    $post->link = '/post' . $post->id . $newstring;
                 }
             } else {
                 $post->link = '/post' . $post->id . $newstring . 'gid3=' . $post->id;
