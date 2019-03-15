@@ -35,7 +35,7 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
         }
 
         return  response()->json($mainnews);
@@ -168,7 +168,7 @@ class MainController extends Controller
             if(Session::get("utm_data.{$utm}")){
                 $arrayUtm["{$utm}"] = Session::get("utm_data.{$utm}");
             } else {
-                $arrayUtm["{$utm}"] = "default";
+                $arrayUtm["{$utm}"] = null;
             }
         }
         return $arrayUtm;
@@ -179,7 +179,7 @@ class MainController extends Controller
 
         $string = '?';
         foreach($checkers as $key => $utm){
-            if($utm === "default") {
+            if($utm === null) {
 
             } else {
                 $string = $string . $key . '=' . $utm . '&';
@@ -205,7 +205,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -226,7 +226,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -246,7 +246,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -267,7 +267,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -287,7 +287,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -327,7 +327,7 @@ class MainController extends Controller
                 $link = Link::where('option', '=', $post->link)->latest()->first();
 
                 if($link){
-                    session(["utm_data.gid3" => $link->id]);
+                    session(["utm_data.gid3" => $link['option']]);
                     $checkers = $this->checkUtm();
                     $newstring = $this->getUtmFor($checkers);
 
