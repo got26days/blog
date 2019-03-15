@@ -248,10 +248,29 @@ class MainController extends Controller
         $area8 = $massarea->slice(21,3);
         $area9 = $massarea->slice(24,3);
 
+        $area8 = $this->slic($area8);
+        $area7 = $this->slic($area7);
+        $area6 = $this->slic($area6);
+        $area5 = $this->slic($area5);
+        
+
+        
+
 
         return view('pages.solo', compact('solo', 
         'teaser1', 'teaser2', 'teaser3', 
         'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4', 'area9', 'ops'));
+    }
+
+    public function slic($array)
+    {
+        foreach($array as $post)
+        {
+            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+        }
+
+        return $array;
+
     }
 
     public function article()
