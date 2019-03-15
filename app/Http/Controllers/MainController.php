@@ -292,6 +292,12 @@ class MainController extends Controller
     public function shou($id, Request $request)
     {
 
+        if(Session::get("utm_data.gid2")){
+            session(["utm_data.gid3" => $id]);
+        } else {
+            session(["utm_data.gid2" => $id]);
+        }
+        
 
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
@@ -317,11 +323,6 @@ class MainController extends Controller
         
 
         foreach($massarea  as $post){
-
-            session(["utm_data.gid3" => $post->id]);
-            $checkers = $this->checkUtm();
-            $newstring = $this->getUtmFor($checkers);
-
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
