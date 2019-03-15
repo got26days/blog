@@ -292,6 +292,11 @@ class MainController extends Controller
     public function shou($id, Request $request)
     {
 
+        if((Session::get("utm_data.gid2")) and (Session::get("utm_data.gid3"))){
+            session()->forget("utm_data.gid2");
+            session()->forget("utm_data.gid3");
+        }
+
         if(!Session::get("utm_data.gid2")){
             session(["utm_data.gid2" => $id]);
         } else {
