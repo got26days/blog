@@ -85,7 +85,7 @@ class MainController extends Controller
 
         }
 
-        return array($pos0, $pos1, $gid2, $pos3, $pos4);
+        return array($pos0, $pos1, $pos2, $pos3, $pos4);
     }
 
     public function change()
