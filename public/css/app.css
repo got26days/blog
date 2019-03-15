@@ -13805,17 +13805,15 @@ body {
 }
 
 .teaser_text {
-  background-color: #f76800;
+  background-color: #254d8c;
   position: relative;
   bottom: 0;
   padding: 14px;
-  left: 5%;
   font-size: 1.2em;
-  right: 10%;
   margin-top: -40px;
   z-index: 999;
   min-height: 84px;
-  width: 90%;
+  width: 100%;
   color: #fff;
   box-shadow: 0 0 13px #00000059;
   font-weight: 600;
