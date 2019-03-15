@@ -35,7 +35,7 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
         }
 
         return  response()->json($mainnews);
@@ -80,12 +80,12 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-                $post->link = '/post' . $post->id . $newstring  . 'pos2=' . $post->id;
+                $post->link = '/post' . $post->id . $newstring  . 'gid2=' . $post->id;
             }
 
         }
 
-        return array($pos0, $pos1, $pos2, $pos3, $pos4);
+        return array($pos0, $pos1, $gid2, $pos3, $pos4);
     }
 
     public function change()
@@ -205,7 +205,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -226,7 +226,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -246,7 +246,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -267,7 +267,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
             $lastop =  $post->id;
         }
         
@@ -287,7 +287,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring . 'pos2=' . $post->id;
+            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $post->id;
             $lastop =  $post->id;
         }
         
