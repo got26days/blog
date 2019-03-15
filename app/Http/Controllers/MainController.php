@@ -292,16 +292,16 @@ class MainController extends Controller
     public function shou($id, Request $request)
     {
 
-        if((Session::get("utm_data.gid2")) and (Session::get("utm_data.gid3"))){
-            session()->forget("utm_data.gid2");
-            session()->forget("utm_data.gid3");
-        }
+        // if((Session::get("utm_data.gid2")) and (Session::get("utm_data.gid3"))){
+        //     session()->forget("utm_data.gid2");
+        //     session()->forget("utm_data.gid3");
+        // }
 
-        if(!Session::get("utm_data.gid2")){
-            session(["utm_data.gid2" => $id]);
-        } else {
-            session(["utm_data.gid3" => $id]);
-        }
+        // if(!Session::get("utm_data.gid2")){
+        //     session(["utm_data.gid2" => $id]);
+        // } else {
+        //     session(["utm_data.gid3" => $id]);
+        // }
 
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
@@ -324,21 +324,24 @@ class MainController extends Controller
         // ->where('area2', '=', 0)
         ->orderBy(DB::raw('RAND()'))->get();
 
+        
+
         foreach($massarea  as $post){
+
+            session(["utm_data.gid3" => $post->id]);
+            $checkers = $this->checkUtm();
+            $newstring = $this->getUtmFor($checkers);
+
+
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
-
                 if($link){
-                    // session(["utm_data.gid3" => $link['option']]);
-                    // $checkers = $this->checkUtm();
-                    // $newstring = $this->getUtmFor($checkers);
-
                     $post->link = '/' .  $link->slug  . $newstring;
                 } else {
                     $post->link = '/post' . $post->id . $newstring;
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid3=' . $post->id;
+                $post->link = '/post' . $post->id . $newstring;
             }
         }
 
