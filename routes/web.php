@@ -18,6 +18,8 @@
 // Route::get('/prod6', 'DomainController@prod6');
 
 
+Route::get('/change', 'MainController@change');
+
 Route::get('/', 'MainController@index')->name('manepage');
 Route::get('/politika', 'MainController@politika')->name('politika');;
 Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');;
