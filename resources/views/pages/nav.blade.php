@@ -24,23 +24,23 @@
       
         <div class="collapse navbar-collapse new-flex-m" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto new-flex-m">
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::is('manepage') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('manepage') }}">Финансы <span class="sr-only">(current)</span></a>
             </li>
             <li class="delim"> | </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('politika') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('politika') }}">Политика</a>
             </li>
             <li class="delim"> | </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('shou-biznes') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('shou-biznes') }}">Шоу бизнес</a>
             </li>
             <li class="delim"> | </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('zdorove') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('zdorove') }}">Здоровье</a>
             </li>
             <li class="delim"> | </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('astrologiya') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('astrologiya') }}">Астрология</a>
             </li>
           </ul>
