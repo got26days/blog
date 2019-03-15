@@ -325,8 +325,13 @@ class MainController extends Controller
         foreach($massarea  as $post){
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
+
                 if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
+                    session(["utm_data.gid3" => $link->id]);
+                    $checkers = $this->checkUtm();
+                    $newstring = $this->getUtmFor($checkers);
+
+                    $post->link = '/' .  $link->slug  . $newstring;
                 } else {
                     $post->link = '/post' . $post->id . $newstring;
                 }
