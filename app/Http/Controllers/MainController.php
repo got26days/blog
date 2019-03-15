@@ -59,10 +59,10 @@ class MainController extends Controller
                 if($link){
                     $post->link = '/' .  $link->slug .  $link['utm'];
                 } else {
-                    $post->link = '/post' . $post->id . $newstring;
+                    $post->link = '/post' . $post->id . $newstring . 'pos3=' . $post->id;
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring;
+                $post->link = '/post' . $post->id . $newstring  . 'pos3=' . $post->id;
             }
         }
 
@@ -80,7 +80,7 @@ class MainController extends Controller
 
             foreach(${'pos' . $i} as $post){
                 $post->image = $post->thumbnail('small', 'image');
-                $post->link = '/post' . $post->id . $newstring;
+                $post->link = '/post' . $post->id . $newstring  . 'pos2=' . $post->id;
             }
 
         }
@@ -327,16 +327,16 @@ class MainController extends Controller
                 $link = Link::where('option', '=', $post->link)->latest()->first();
 
                 if($link){
-                    session(["utm_data.gid3" => $link['option']]);
-                    $checkers = $this->checkUtm();
-                    $newstring = $this->getUtmFor($checkers);
+                    // session(["utm_data.gid3" => $link['option']]);
+                    // $checkers = $this->checkUtm();
+                    // $newstring = $this->getUtmFor($checkers);
 
-                    $post->link = '/' .  $link->slug  . $newstring;
+                    $post->link = '/' .  $link->slug  . $newstring . 'pos3=' . $post->id;
                 } else {
-                    $post->link = '/post' . $post->id . $newstring;
+                    $post->link = '/post' . $post->id . $newstring . 'pos3=' . $post->id;
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring;
+                $post->link = '/post' . $post->id . $newstring . 'pos3=' . $post->id;
             }
         }
 
