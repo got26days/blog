@@ -13,6 +13,8 @@
 //   background-color: #fff;
 //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 // }
+
+$maingeen: #eaffef;
 body{
   background-color: #fff;
 }
@@ -113,7 +115,7 @@ body{
 }
 
 .teaser_text{
-  background-color: #254d8c;
+  background-color: #5f89cc;
   position: relative;
   bottom: 0;
   padding: 14px;
@@ -268,7 +270,7 @@ body{
   }
 
   .teaser-title{
-    background-color: #fff3e6 !important;
+    background-color: $maingeen;
     transition: all .2s ease-in-out;
     cursor: pointer;
     img{
@@ -406,7 +408,7 @@ body{
   }
   .more-read__solo{
     margin-top: 6px;
-    background-color: #f1f6ff;
+    background-color: $maingeen;
     transition: background-color 0.2s ease-in-out;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -445,7 +447,7 @@ body{
 .lefar-card{
   border-right: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
-  background-color: #f1f6ff;
+  background-color: $maingeen;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
   
@@ -558,7 +560,7 @@ body{
 
 .lk-revelation{
   padding: 20px 30px 10px 30px;
-  background-color: #fff3e6;
+  background-color: $maingeen;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -614,7 +616,7 @@ body{
 
 .yllow-area{
   border-bottom: 1px solid #ebebeb;
-  background-color: #fff3e6 !important;
+  background-color: $maingeen;
   padding: 10px 0px 10px 0px;
   
   .yllow-card{

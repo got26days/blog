@@ -13,7 +13,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a href="`${post.link}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -32,7 +32,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="`${post.link}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a :href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -72,7 +72,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="`${post.link}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a :href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>

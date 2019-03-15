@@ -38839,7 +38839,7 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-success",
                       attrs: { href: "`${post.link}`", role: "button" }
                     },
                     [_vm._v("Подробнее")]
@@ -38873,7 +38873,7 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-success",
                       attrs: { href: "" + post.link, role: "button" }
                     },
                     [_vm._v("Подробнее")]
@@ -38934,7 +38934,7 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-success",
                       attrs: { href: "" + post.link, role: "button" }
                     },
                     [_vm._v("Подробнее")]
