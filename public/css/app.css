@@ -13712,6 +13712,24 @@ body {
   background-color: #fff;
 }
 
+.logo-area__first a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-area__first span {
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.logo-area__first .logotime {
+  padding-left: 5px;
+  font-weight: 600;
+}
+
 .navbar__bluecolor {
   background: #254d8c;
 }
@@ -13876,12 +13894,12 @@ body {
 }
 
 .over-card-new:hover {
-  background-color: #e2e2e2 !important;
+  background-color: #c9f7cfcc;
 }
 
 .right-area {
   width: 100%;
-  background-color: #e2e2e2;
+  background-color: #eaf9eccc;
 }
 
 .right-area a {
@@ -13918,7 +13936,7 @@ body {
 }
 
 .ra__card:hover {
-  background-color: #e2e2e2;
+  background-color: #c9f7cfcc;
 }
 
 .btn-to-top {
@@ -13987,7 +14005,7 @@ body {
 
 .news-solo .teaser-title:hover {
   background-color: #fff3e6 !important;
-  background: #e2e2e2 !important;
+  background: #c9f7cfcc;
 }
 
 .news-solo .teaser p {
@@ -14143,7 +14161,7 @@ body {
 }
 
 .more-read .more-read__solo:hover {
-  background-color: #e2e2e2;
+  background-color: #c9f7cfcc;
 }
 
 .more-read .more-read__solo-area {
@@ -14200,7 +14218,7 @@ body {
 }
 
 .lefar-card:hover {
-  background-color: #e2e2e2;
+  background-color: #c9f7cfcc;
 }
 
 @media (min-width: 992px) {
@@ -14279,7 +14297,7 @@ body {
 }
 
 .width-card:hover {
-  background-color: #e2e2e2;
+  background-color: #c9f7cfcc;
 }
 
 .lk-revelation {
@@ -14371,7 +14389,7 @@ body {
 
 .yllow-area .yllow-card:hover {
   transition: all 0.2s ease-in-out;
-  background: #e2e2e2 !important;
+  background: #c9f7cfcc;
 }
 
 .new-srow__back .lefar-card {

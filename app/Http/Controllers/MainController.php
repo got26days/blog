@@ -79,7 +79,7 @@ class MainController extends Controller
 
         }
 
-        return array($pos0, $pos1, $pos2, $pos3, $pos4, $pos5);
+        return array($pos0, $pos1, $pos2, $pos3, $pos4);
     }
 
     public function getMainNews($position)
@@ -125,7 +125,7 @@ class MainController extends Controller
         return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop'));
     }
 
-    public function novosti()
+    public function shoubiznes()
     {
         $lastop = 0;
         $position = 2;
@@ -142,7 +142,7 @@ class MainController extends Controller
     }
 
     
-    public function oborona()
+    public function zdorove()
     {
         $lastop = 0;
         $position = 3;
@@ -158,7 +158,7 @@ class MainController extends Controller
         return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop'));
     }
 
-    public function zdorovie()
+    public function astrologiya()
     {
         $lastop = 0;
         $position = 4;
@@ -174,21 +174,6 @@ class MainController extends Controller
         return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop'));
     }
 
-    public function kuhniy()
-    {
-        $lastop = 0;
-        $position = 5;
-
-        $pos = $this->getRight();
-        $mainnews = $this->getMainNews($position);
-
-        foreach($mainnews as $post){
-            $post->link = '/post' . $post->id;
-            $lastop =  $post->id;
-        }
-        
-        return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop'));
-    }
 
     public function teaserlink($teaser)
     {

@@ -18,12 +18,12 @@
 // Route::get('/prod6', 'DomainController@prod6');
 
 
-Route::get('/', 'MainController@index');
-Route::get('/politika', 'MainController@politika');
-Route::get('/novosti', 'MainController@novosti');
-Route::get('/oborona', 'MainController@oborona');
-Route::get('/zdorovie', 'MainController@zdorovie');
-Route::get('/kuhniy', 'MainController@kuhniy');
+Route::get('/', 'MainController@index')->name('manepage');
+Route::get('/politika', 'MainController@politika')->name('politika');;
+Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');;
+Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');;
+Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');;
+// Route::get('/kuhniy', 'MainController@kuhniy');
 
 Route::get('/post{id}', 'MainController@shou');
 Route::get('/article', 'MainController@article');
