@@ -92,14 +92,12 @@ class MainController extends Controller
     {
         Session::flush();
         session(['utm' => false]);
-
     }
 
 
 
     public function getMainNews($position)
     {
-
         $mainnews = Item::where('position', '=', $position)->orderBy('id', 'DESC')
         ->where('area2', '=', 1)
         ->limit(2)->get();
@@ -187,6 +185,8 @@ class MainController extends Controller
 
     public function index(Request $request)
     {
+        $this->forget();
+
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
@@ -207,6 +207,7 @@ class MainController extends Controller
 
     public function politika(Request $request)
     {
+        $this->forget();
 
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
@@ -228,6 +229,8 @@ class MainController extends Controller
 
     public function shoubiznes(Request $request)
     {
+        $this->forget();
+
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
@@ -249,6 +252,8 @@ class MainController extends Controller
     
     public function zdorove(Request $request)
     {
+        $this->forget();
+
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
@@ -269,6 +274,8 @@ class MainController extends Controller
 
     public function astrologiya(Request $request)
     {
+        $this->forget();
+
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
@@ -288,15 +295,21 @@ class MainController extends Controller
     }
 
 
+    public function forget()
+    {
+        session()->forget('utm_data.gid2');
+        session()->forget('utm_data.gid3');
+    }
 
     public function shou($id, Request $request)
     {
 
-        if(Session::get("utm_data.gid2")){
-            session(["utm_data.gid3" => $id]);
-        } else {
-            session(["utm_data.gid2" => $id]);
-        }
+        if($request['gid3'] and $request['gid2']){
+            $this->forget();
+        } 
+
+        session(["utm_data.gid2" => $id]);
+
         
 
         $free = $this->setUtm($request);
@@ -323,6 +336,10 @@ class MainController extends Controller
         
 
         foreach($massarea  as $post){
+
+            session(["utm_data.gid3" => $post['id']]);
+            $checkers = $this->checkUtm();
+            $newstring = $this->getUtmFor($checkers);
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
