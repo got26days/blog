@@ -18,7 +18,7 @@
 // Route::get('/prod6', 'DomainController@prod6');
 
 
-// Route::get('/change', 'MainController@change');
+Route::get('/change', 'MainController@change');
 
 Route::get('/', 'MainController@index')->name('manepage');
 Route::get('/politika', 'MainController@politika')->name('politika');;
@@ -27,7 +27,7 @@ Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');;
 Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');;
 // Route::get('/kuhniy', 'MainController@kuhniy');
 
-Route::get('/post{id}', 'MainController@shou');
+Route::get('/post{id}', 'MainController@shou')->name('post');
 Route::get('/article', 'MainController@article');
 
 Route::group(['prefix' => 'admin'], function () {

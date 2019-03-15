@@ -246,7 +246,7 @@
                             <a href="{{ $link['link'] }}">
                                 <img src="/storage/{{ $link->image }}">
                             </a>
-                            <a href="/">
+                            <a href="{{ $link['link'] }}">
                                 {{ $link->title }}
                             </a>
                         </div>

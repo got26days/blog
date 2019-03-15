@@ -10,10 +10,10 @@
                     @foreach($mainnews as $mainnew)
                     <div class="col-sm-12 col-md-6 col-lg-6">
                          <div class="teaser_image">                                
-                             <a href="/post{{  $mainnew->id }}" class="top-images">
+                            <a href="{{ $mainnew['link'] }}" class="top-images">
                                 <img src="{{Voyager::image($mainnew->thumbnail('new', 'image'))}}" alt="images">
                             </a>
-                             <a href="/post{{  $mainnew->id }}" class="utm_links click_link utm_loaded" target="_blank">
+                             <a href="{{ $mainnew['link'] }}" class="utm_links click_link utm_loaded" target="_blank">
                                  <div class="teaser_text">{{  $mainnew->title }}</div>
                              </a>
                          </div>

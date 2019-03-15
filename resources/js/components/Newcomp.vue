@@ -5,7 +5,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-12 col-lg-6" v-for="post in posts.slice(0, 2)">
-                        <a :href="`${post.link}`">
+                        <a :href="post.link">
                             <div class="lefar-card">
                                 <img :src="`${post.image}`">
 
@@ -13,7 +13,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-12 col-lg-4" v-for="post in posts.slice(2, 5)">
-                        <a :href="`${post.link}`">
+                        <a :href="post.link">
                             <div class="lefar-card">
                                 <img :src="`${post.image}`">
 
@@ -32,7 +32,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -47,10 +47,10 @@
                     <div class="row">
 
                         <div class="yllow-card" v-for="post in posts.slice(5, 8)">
-                            <a :href="`${post.link}`">
+                            <a :href="post.link">
                                 <img :src="`${post.image}`">
                             </a>
-                            <a :href="`${post.link}`">
+                            <a :href="post.link">
                                 {{ post.title }}
                             </a>
                         </div>
@@ -64,7 +64,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-6 col-lg-4" v-for="post in posts.slice(8, 11)">
-                        <a :href="`${post.link}`">
+                        <a :href="post.link">
                             <div class="lefar-card">
                                 <img :src="`${post.image}`">
 
@@ -72,7 +72,7 @@
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="`${post.link}`" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
                             </div>
                         </a>
                     </div>
