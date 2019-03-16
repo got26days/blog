@@ -135,7 +135,7 @@ class MainController extends Controller
     public function setUtm($request)
     {   
         foreach($this->utms as $utm){
-            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3')){
+            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3') || ($utm == 'gid4')){
 
             } else {
                 session(["utm_data.${utm}" => $request["${utm}"]]);
@@ -299,6 +299,7 @@ class MainController extends Controller
     {
         session()->forget('utm_data.gid2');
         session()->forget('utm_data.gid3');
+        session()->forget('utm_data.gid4');
     }
 
     public function shou($id, Request $request)
@@ -338,13 +339,14 @@ class MainController extends Controller
         foreach($massarea  as $post){
 
             session(["utm_data.gid3" => $post['id']]);
+            // session(["utm_data.gid4" => $post['id']]);
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' .  $link->slug  . $newstring;
+                    $post->link = '/' .  $link->slug  . $newstring . '?gid4=' . $link['option'];
                 } else {
                     $post->link = '/post' . $post->id . $newstring;
                 }
