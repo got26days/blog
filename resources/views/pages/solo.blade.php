@@ -191,7 +191,7 @@
                     @foreach($area5 as $link)
                     <div class="lk-revelation">
                         <a href="{{ $link['link'] }}">
-                            <img src="{{Voyager::image($link->thumbnail('new','image'))}}">
+                            <img src="/storage/{{ $link->image }}">
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
