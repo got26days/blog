@@ -13833,11 +13833,12 @@ body {
   z-index: 999;
   min-height: 84px;
   width: 100%;
+  color: #000;
   font-weight: 600;
 }
 
 .teaser_image:hover .teaser_text {
-  color: #fff;
+  color: #000;
   background-color: #dedede;
   text-decoration: none;
 }
