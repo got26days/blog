@@ -14494,6 +14494,6 @@ body {
 }
 
 .prod-element {
-  min-height: 102px;
+  min-height: 102px !important;
 }
 
