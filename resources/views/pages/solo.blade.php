@@ -234,7 +234,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-4">
                         <a href="{{ $link['link'] }}">
                             <div class="lefar-card {{ $link->color }}">
-                                <img src="{{ $link->thumbnail('cropped','image') }}">
+                                <img src="/storage/{{ $link->thumbnail('cropped','image') }}">
 
                                 <p>
                                     {{ $link->title }}
