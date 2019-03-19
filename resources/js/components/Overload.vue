@@ -13,6 +13,7 @@
     export default {
         props: {
             ops: Number,
+            postid: Number,
         },
         data() {
             return {
@@ -26,7 +27,7 @@
         methods: {
             getInitialPosts() {
 
-                axios.get(`/api/getposts`)
+                axios.get(`/api/getposts0/post${this.postid}`)
                     .then(response => {
                         this.posts.push(response.data);
                     });
@@ -38,7 +39,7 @@
                         .offsetHeight;
 
                     if (bottomOfWindow) {
-                        axios.get(`/api/getposts${this.ops}`)
+                        axios.get(`/api/getposts0/post${this.postid}`)
                             .then(response => {
                                 if (response.data.length > 0) {
                                     this.posts.push(response.data);

@@ -11,6 +11,8 @@ use App\Link;
 use Illuminate\Support\Facades\Route;
 use Session;
 use Illuminate\Support\Str;
+use App\Key;
+use App\Utm;
 
 class MainController extends Controller
 {
@@ -20,6 +22,21 @@ class MainController extends Controller
         if(!Session::get("utm_data.gid1")){
             session(["utm_data.gid1" => (string) Str::uuid()]);
         }
+
+        $arrut = [];
+        $modelUtms = Utm::latest()->get();
+        foreach($modelUtms as $mutm){
+            $arrut[] = $mutm->utm;
+        }
+        $this->utms = $arrut;
+
+        $strkey = Key::latest()->first();
+
+        if(!$strkey['var']){
+            $strkey['var'] = 'keykeykey'; 
+        }
+
+        session(["utm_data.key" => $strkey['var']]);
 
     }
 
@@ -41,8 +58,12 @@ class MainController extends Controller
         return  response()->json($mainnews);
     }
 
-    public function getposts($ops)
+    public function getposts($ops, $id)
     {
+        if($ops == null){
+            $ops = 0;
+        }
+
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
 
@@ -51,18 +72,28 @@ class MainController extends Controller
         // ->where('position', '=', $ops)
         ->limit(11)->get();
 
-        foreach($posts as $post){
+        $solo = Item::find($id);
+
+        foreach($posts as $key=>$post){
+
+            if($key % 2 === 0){{
+                $post->cols = true;
+            }}
+
             $post->image = Voyager::image($post->thumbnail('cropped','image'));
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' .  $link->slug .  $link['utm'];
+
+                    $ovgid5 = '?gid5=' . $link['option'];
+
+                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5;
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'pos3=' . $post->id;
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring  . 'pos3=' . $post->id;
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
         }
 
@@ -72,6 +103,7 @@ class MainController extends Controller
 
     public function getRight($newstring)
     {
+        
         for($i = 0; $i <= 5; $i++){
 
             ${'pos' . $i} = Item::latest()->where('position', '=', $i)
@@ -92,6 +124,38 @@ class MainController extends Controller
     {
         Session::flush();
         session(['utm' => false]);
+
+
+        $arrays = [
+            "utm_source",
+            "utm_tid",
+            "utm_campaign",
+            "utm_gid",
+            "utm_content",
+            "utm_catid",
+            "utm_addphrase",
+            "clickid",
+            "cost",
+            "age",
+            "tid",
+            "utm_content",
+            "gender",
+            "geo",
+            "impression_hour",
+            "user_timezone",
+            "placement",
+            "campid",
+            "creative",
+            "adg",
+        ];
+
+        // foreach($arrays as $row){
+        //     $new = new Utm;
+        //     $new->utm = $row;
+        //     $new->save();
+        // }
+
+
     }
 
 
@@ -105,37 +169,12 @@ class MainController extends Controller
         return $mainnews;
     }
 
-    private $utms = [
-        'utm_source',
-        'utm_tid',
-        'utm_campaign',
-        'utm_gid',
-        'utm_content',
-        'utm_catid',
-        'utm_addphrase',
-        'clickid',
-        'key',
-        'cost',
-        'age',
-        'tid',
-        'utm_content',
-        'gender',
-        'geo',
-        'impression_hour',
-        'user_timezone',
-        'placement',
-        'campid',
-        'creative',
-        'adg',
-        'gid1',
-        'gid2',
-        'gid3'
-    ];
+    private $utms;
 
     public function setUtm($request)
     {   
         foreach($this->utms as $utm){
-            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3')){
+            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3') || ($utm == 'gid4') || ($utm == 'gid5') || ($utm == 'key')){
 
             } else {
                 session(["utm_data.${utm}" => $request["${utm}"]]);
@@ -143,17 +182,11 @@ class MainController extends Controller
         }
     }
 
-    public function setGids()
-    {
-
-        if(!Session::get("utm_data.gid1")){
-            session(["utm_data.gid1" => (string) Str::uuid()]);
-        }
-
-    }
 
     public function checkUtm()
     {
+
+
         $arrayUtm = [];
         foreach($this->utms as $utm){
             if(Session::get("utm_data.{$utm}")){
@@ -162,6 +195,7 @@ class MainController extends Controller
                 $arrayUtm["{$utm}"] = null;
             }
         }
+
         return $arrayUtm;
     }
 
@@ -169,11 +203,11 @@ class MainController extends Controller
     {
 
         $string = '?';
-        foreach($checkers as $key => $utm){
+        foreach($checkers as $val => $utm){
             if($utm === null) {
 
             } else {
-                $string = $string . $key . '=' . $utm . '&';
+                $string = $string . $val . '=' . $utm . '&';
             }
             
         }
@@ -299,22 +333,13 @@ class MainController extends Controller
     {
         session()->forget('utm_data.gid2');
         session()->forget('utm_data.gid3');
+        session()->forget('utm_data.gid4');
+        session()->forget('utm_data.gid5');
     }
 
     public function shou($id, Request $request)
     {
 
-        if($request['gid3'] and $request['gid2']){
-            $this->forget();
-        } 
-
-        session(["utm_data.gid2" => $id]);
-
-        
-
-        $free = $this->setUtm($request);
-        $checkers = $this->checkUtm();
-        $newstring = $this->getUtmFor($checkers);
 
         $solo = Item::find($id);
 
@@ -335,21 +360,28 @@ class MainController extends Controller
 
         
 
-        foreach($massarea  as $post){
+        foreach($massarea  as $key=>$post){
 
-            session(["utm_data.gid3" => $post['id']]);
+            // colors
+            if($key % 2 === 0){{
+                $post->color = "backeven";
+            }}
+
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' .  $link->slug  . $newstring;
+
+                    $ovgid5 = '?gid5=' . $link['option'];
+
+                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5;
                 } else {
-                    $post->link = '/post' . $post->id . $newstring;
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring;
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
         }
 

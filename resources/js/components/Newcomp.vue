@@ -4,16 +4,16 @@
             <div class="col-sm-12 col-md-6 col-lg-5">
                 <div class="row newsupx">
 
-                    <div class="col-sm-12 col-md-12 col-lg-6" v-for="post in posts.slice(0, 2)">
+                    <div class="col-sm-12 col-md-12 col-lg-6" v-for="(post, index) in posts.slice(0, 2)">
                         <a :href="post.link">
-                            <div class="lefar-card">
+                            <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
                                 <p>
-                                    {{ post.title }}
+                                  {{ post.title }}
                                 </p>
 
-                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -25,14 +25,14 @@
 
                     <div class="col-sm-12 col-md-12 col-lg-4" v-for="post in posts.slice(2, 5)">
                         <a :href="post.link">
-                            <div class="lefar-card">
+                            <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
                                 <p>
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="yllow-area">
                     <div class="row">
 
-                        <div class="yllow-card" v-for="post in posts.slice(5, 8)">
+                        <div class="yllow-card" v-for="post in posts.slice(5, 8)"  :class="post.color">
                             <a :href="post.link">
                                 <img :src="`${post.image}`">
                             </a>
@@ -65,14 +65,14 @@
 
                     <div class="col-sm-12 col-md-6 col-lg-4" v-for="post in posts.slice(8, 11)">
                         <a :href="post.link">
-                            <div class="lefar-card">
+                            <div class="lefar-card"  :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
                                 <p>
-                                    {{ post.title }}
+                                    {{ post.title }} {{ post.cols }}
                                 </p>
 
-                                <a :href="post.link" role="button" class="btn btn-success">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>

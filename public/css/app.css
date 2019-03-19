@@ -13710,6 +13710,7 @@ a.text-dark:focus {
 
 body {
   background-color: #fff;
+  color: #6a6a6a;
 }
 
 .logo-area__first a {
@@ -13731,7 +13732,7 @@ body {
 }
 
 .navbar__bluecolor {
-  background: #254d8c;
+  background: #294e8b;
 }
 
 .new-flex-m {
@@ -13823,7 +13824,8 @@ body {
 }
 
 .teaser_text {
-  background-color: #5bbd72;
+  background-color: #dedede;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
   position: relative;
   bottom: 0;
   padding: 14px;
@@ -13833,13 +13835,12 @@ body {
   min-height: 84px;
   width: 100%;
   color: #fff;
-  box-shadow: 0 0 13px #00000059;
   font-weight: 600;
 }
 
 .teaser_image:hover .teaser_text {
-  color: #000;
-  background-color: #e0e0e0;
+  color: #fff;
+  background-color: #dedede;
   text-decoration: none;
 }
 
@@ -13857,6 +13858,9 @@ body {
 
 .over-card-new {
   transition: 0.3s;
+  border-width: 0px;
+  border-color: #f0f0f0;
+  border-style: solid;
   padding: 12px 12px 12px 12px;
 }
 
@@ -13884,22 +13888,33 @@ body {
 
 .over-card-new .btn {
   margin-top: 12px;
-  background: transparent;
-  color: #28a745;
+  background: #b6cf7c;
+  color: #fff;
+  border-color: #b6cf7c;
 }
 
 .over-card-new .btn:hover {
-  background: #28a745;
-  color: #fff;
+  background: #fff;
+  color: #b6cf7c;
 }
 
 .over-card-new:hover {
-  background-color: #c9f7cfcc;
+  border-width: 0px;
+  background-color: #fff;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.05);
 }
 
 .right-area {
   width: 100%;
   background-color: #eaf9eccc;
+}
+
+.right-area .ra__title {
+  background-color: #d4e4ff;
+}
+
+.right-area .ra__body {
+  background-color: #f6f6f6;
 }
 
 .right-area a {
@@ -13909,7 +13924,7 @@ body {
 .right-area h3 {
   margin: 0;
   padding: 12px;
-  color: #3c3c3c;
+  color: #525252;
   transition: 0.4s;
   text-align: center;
 }
@@ -13918,7 +13933,6 @@ body {
   padding-top: 7px;
   padding-bottom: 7px;
   transition: 0.3s;
-  background-color: #fff;
 }
 
 .ra__card a {
@@ -13933,11 +13947,11 @@ body {
 
 .ra__card .ra_cardtext {
   padding-left: 10px;
-  color: #252525;
+  color: #6a6a6a;
 }
 
 .ra__card:hover {
-  background-color: #c9f7cfcc;
+  background-color: #ecf3ff;
 }
 
 .btn-to-top {
@@ -13971,6 +13985,10 @@ body {
   padding-right: 0px !important;
 }
 
+.news-solo {
+  background: #f4f4f4;
+}
+
 .news-solo img {
   width: 100%;
 }
@@ -13984,7 +14002,7 @@ body {
 }
 
 .news-solo .teaser-title {
-  background-color: #eaffef;
+  background-color: #e4eeff;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -14000,13 +14018,12 @@ body {
 }
 
 .news-solo .teaser-title div {
-  color: #3b5998;
+  color: #6a6a6a;
   font-size: 16px !important;
 }
 
 .news-solo .teaser-title:hover {
-  background-color: #c9f7cfcc;
-  background: #c9f7cfcc;
+  background-color: #d4e4ff;
 }
 
 .news-solo .teaser p {
@@ -14136,7 +14153,6 @@ body {
 
 .more-read {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .more-read h5 {
@@ -14149,11 +14165,11 @@ body {
 }
 
 .more-read .more-read__solo {
-  margin-top: 6px;
-  background-color: #eaffef;
+  background-color: #f4f4f4;
   transition: background-color 0.2s ease-in-out;
   padding-top: 10px;
   padding-bottom: 10px;
+  z-index: 10;
 }
 
 .more-read .more-read__solo .container {
@@ -14162,7 +14178,9 @@ body {
 }
 
 .more-read .more-read__solo:hover {
-  background-color: #c9f7cfcc;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+  background-color: #eeeeee;
+  z-index: 67;
 }
 
 .more-read .more-read__solo-area {
@@ -14184,14 +14202,8 @@ body {
   margin-top: 10px;
 }
 
-.more-read .more-read__solo-area .btn:hover {
-  background-color: #bd5408 !important;
-}
-
 .lefar-card {
-  border-right: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
-  background-color: #eaffef;
+  background-color: #f4f4f4;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
 }
@@ -14218,8 +14230,16 @@ body {
   min-height: 88px;
 }
 
+.lefar-card__secgrey {
+  background-color: #eeeeee;
+}
+
+.lefar-card:hover .btn {
+  background: #93c71b !important;
+}
+
 .lefar-card:hover {
-  background-color: #c9f7cfcc;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
 }
 
 @media (min-width: 992px) {
@@ -14255,9 +14275,16 @@ body {
 }
 
 .solo-page .btn {
+  background-color: #93c71b !important;
   color: #fff;
+  border: 0px solid #93c71b !important;
   max-width: 104px;
   margin-top: 5px;
+  outline: none;
+}
+
+.solo-page .btn:hover {
+  background-color: #7eaa19 !important;
 }
 
 .solo-page .btn-to-top {
@@ -14280,6 +14307,7 @@ body {
   transition: background-color 0.2s ease-in-out;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 
 .width-card a {
@@ -14298,16 +14326,19 @@ body {
 }
 
 .width-card:hover {
-  background-color: #c9f7cfcc;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+  z-index: 71;
 }
 
 .lk-revelation {
   padding: 20px 30px 10px 30px;
-  background-color: #eaffef;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+  background: #f5ffed;
+  z-index: 10;
 }
 
 .lk-revelation img {
@@ -14326,7 +14357,8 @@ body {
 }
 
 .lk-revelation:hover {
-  color: #3b5998;
+  z-index: 15;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
 }
 
 @media (min-width: 992px) {
@@ -14364,9 +14396,9 @@ body {
 }
 
 .yllow-area {
-  border-bottom: 1px solid #ebebeb;
-  background-color: #eaffef;
+  background-color: #f5ffed;
   padding: 10px 0px 10px 0px;
+  z-index: 10;
 }
 
 .yllow-area .yllow-card {
@@ -14390,11 +14422,8 @@ body {
 
 .yllow-area .yllow-card:hover {
   transition: all 0.2s ease-in-out;
-  background: #c9f7cfcc;
-}
-
-.new-srow__back .lefar-card {
-  background-color: #fff;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+  z-index: 67;
 }
 
 .new-srow__back a {
@@ -14447,5 +14476,21 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.backeven {
+  background-color: #eee;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover {
+  color: #ffdf85 !important;
 }
 
