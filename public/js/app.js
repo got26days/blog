@@ -2002,7 +2002,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    ops: Number
+    ops: Number,
+    postid: Number
   },
   data: function data() {
     return {
@@ -2017,7 +2018,7 @@ __webpack_require__.r(__webpack_exports__);
     getInitialPosts: function getInitialPosts() {
       var _this = this;
 
-      axios.get("/api/getposts0").then(function (response) {
+      axios.get("/api/getposts0/post".concat(this.postid)).then(function (response) {
         _this.posts.push(response.data);
       });
     },
@@ -2028,7 +2029,7 @@ __webpack_require__.r(__webpack_exports__);
         var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
         if (bottomOfWindow) {
-          axios.get("/api/getposts".concat(_this2.ops)).then(function (response) {
+          axios.get("/api/getposts0/post".concat(_this2.postid)).then(function (response) {
             if (response.data.length > 0) {
               _this2.posts.push(response.data);
             }

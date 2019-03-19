@@ -14486,3 +14486,11 @@ body {
   box-shadow: none;
 }
 
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover {
+  color: #ffdf85 !important;
+}
+

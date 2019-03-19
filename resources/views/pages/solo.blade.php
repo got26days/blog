@@ -297,7 +297,7 @@
                 </div>
             </div>
         </div>
-        <overload :ops="{{ $ops }}"></overload>
+    <overload :ops="{{ $ops }}" :postid="{{ $solo->id }}"></overload>
 
     </div>
 

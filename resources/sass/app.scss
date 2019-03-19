@@ -770,3 +770,14 @@ body{
 .btn:focus{
   box-shadow: none;
 }
+
+.nav-link{
+  color: #ffffff !important;
+
+}
+
+.nav-link:hover{
+  color: #ffdf85 !important;
+  // border-bottom: 1px solid #ffdf85;
+  // text-decoration: underline;
+}
