@@ -451,6 +451,8 @@ body{
   }
   .more-read__solo{
     // margin-top: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: $maingrey;
     transition: background-color 0.2s ease-in-out;
     padding-top: 10px;
@@ -491,7 +493,7 @@ body{
 
 .lefar-card{
   // border-right: 1px solid #ebebeb;
-  // border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
   background-color: $maingrey;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
@@ -519,7 +521,7 @@ body{
 }
 
 .lefar-card:hover .btn {
-  background: #32CD32 !important;
+  // background: #32CD32 !important;
 }
 
 .lefar-card:hover{
