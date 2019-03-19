@@ -14493,3 +14493,7 @@ body {
   color: #ffdf85 !important;
 }
 
+.prod-element {
+  min-height: 102px;
+}
+

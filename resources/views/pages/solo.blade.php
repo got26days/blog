@@ -236,7 +236,7 @@
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
-                                <p>
+                                <p class="prod-element">
                                     {{ $link->title }}
                                 </p>
 

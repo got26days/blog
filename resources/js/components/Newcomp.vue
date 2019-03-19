@@ -28,7 +28,7 @@
                             <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
-                                <p>
+                                <p class="prod-element">
                                     {{ post.title }}
                                 </p>
 
