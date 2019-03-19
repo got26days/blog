@@ -13833,7 +13833,6 @@ body {
   z-index: 999;
   min-height: 84px;
   width: 100%;
-  color: #fff;
   font-weight: 600;
 }
 
@@ -14017,7 +14016,6 @@ body {
 }
 
 .news-solo .teaser-title div {
-  color: #6a6a6a;
   font-size: 16px !important;
 }
 
