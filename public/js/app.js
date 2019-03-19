@@ -38876,7 +38876,7 @@ var render = function() {
                   [
                     _c("img", { attrs: { src: "" + post.image } }),
                     _vm._v(" "),
-                    _c("p", [
+                    _c("p", { staticClass: "prod-element" }, [
                       _vm._v(
                         "\n                                " +
                           _vm._s(post.title) +
