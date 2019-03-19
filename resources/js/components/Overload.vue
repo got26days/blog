@@ -26,7 +26,7 @@
         methods: {
             getInitialPosts() {
 
-                axios.get(`/api/getposts`)
+                axios.get(`/api/getposts0`)
                     .then(response => {
                         this.posts.push(response.data);
                     });

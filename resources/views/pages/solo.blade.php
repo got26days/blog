@@ -119,7 +119,7 @@
                                 </a>
                                 <div class="more-read__solo-area">
                                     <a href="{{ $link['link'] }}">{{ $link->title }}</a>
-                                    <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                                    <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,22 @@
         <div class="col-sm-12 col-md-6 col-lg-7 sidebar">
             <div class="row">
                 @if (count($area3) > 0)
-                @foreach($area3 as $link)
+                @foreach($area3 as $key=>$link)
+                @if($key == 4)
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <a href="{{ $link['link'] }}">
+                        <div class="lefar-card lefar-card__secgrey">
+                            <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="min-height: 155px;">
+
+                            <p>
+                                {{ $link->title }}
+                            </p>
+
+                            <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                        </div>
+                    </a>
+                </div>
+                @else
                 <div class="col-sm-6 col-md-6 col-lg-4">
                     <a href="{{ $link['link'] }}">
                         <div class="lefar-card">
@@ -142,10 +157,11 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
                         </div>
                     </a>
                 </div>
+                @endif
                 @endforeach
                 @endif
             </div>
@@ -161,7 +177,7 @@
                             <a href="{{ $link['link'] }}">
                                 {{ $link->title }}
                             </a>
-                            <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </div>
                     </div>
                     @endforeach
@@ -179,7 +195,7 @@
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
-                            <a class="btn btn-success" href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
                         </a>
                     </div>
                     @endforeach
@@ -198,14 +214,14 @@
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <a href="{{ $link['link'] }}">
-                            <div class="lefar-card">
+                            <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -217,14 +233,14 @@
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
                         <a href="{{ $link['link'] }}">
-                            <div class="lefar-card">
+                            <div class="lefar-card {{ $link->color }}">
                                 <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
 
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -264,7 +280,7 @@
                     @foreach($area8 as $link)
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="{{ $link['link'] }}">
-                            <div class="lefar-card">
+                        <div class="lefar-card {{ $link->color }}">
                                 <a href="{{ $link['link'] }}">
                                     <img src="/storage/{{ $link->image }}">
                                 </a>
@@ -272,7 +288,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn btn-success">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>

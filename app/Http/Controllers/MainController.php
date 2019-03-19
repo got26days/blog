@@ -11,6 +11,7 @@ use App\Link;
 use Illuminate\Support\Facades\Route;
 use Session;
 use Illuminate\Support\Str;
+// use App\Key;
 
 class MainController extends Controller
 {
@@ -43,6 +44,10 @@ class MainController extends Controller
 
     public function getposts($ops)
     {
+        if($ops == null){
+            $ops = 0;
+        }
+
         $checkers = $this->checkUtm();
         $newstring = $this->getUtmFor($checkers);
 
@@ -51,7 +56,12 @@ class MainController extends Controller
         // ->where('position', '=', $ops)
         ->limit(11)->get();
 
-        foreach($posts as $post){
+        foreach($posts as $key=>$post){
+
+            if($key % 2 === 0){{
+                $post->cols = true;
+            }}
+
             $post->image = Voyager::image($post->thumbnail('cropped','image'));
 
             if($post->link != 0) {
@@ -129,13 +139,15 @@ class MainController extends Controller
         'adg',
         'gid1',
         'gid2',
-        'gid3'
+        'gid3',
+        'gid4',
+        'gid5'
     ];
 
     public function setUtm($request)
     {   
         foreach($this->utms as $utm){
-            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3') || ($utm == 'gid4')){
+            if(($utm == 'gid1') || ($utm == 'gid2') || ($utm == 'gid3') || ($utm == 'gid4') || ($utm == 'gid5')){
 
             } else {
                 session(["utm_data.${utm}" => $request["${utm}"]]);
@@ -300,22 +312,19 @@ class MainController extends Controller
         session()->forget('utm_data.gid2');
         session()->forget('utm_data.gid3');
         session()->forget('utm_data.gid4');
+        session()->forget('utm_data.gid5');
+    }
+
+    public function lastkey()
+    {
+        $key = 'keykeykey';
+
+        return $key;
     }
 
     public function shou($id, Request $request)
     {
 
-        if($request['gid3'] and $request['gid2']){
-            $this->forget();
-        } 
-
-        session(["utm_data.gid2" => $id]);
-
-        
-
-        $free = $this->setUtm($request);
-        $checkers = $this->checkUtm();
-        $newstring = $this->getUtmFor($checkers);
 
         $solo = Item::find($id);
 
@@ -336,22 +345,28 @@ class MainController extends Controller
 
         
 
-        foreach($massarea  as $post){
+        foreach($massarea  as $key=>$post){
 
-            session(["utm_data.gid3" => $post['id']]);
-            // session(["utm_data.gid4" => $post['id']]);
+            // colors
+            if($key % 2 === 0){{
+                $post->color = "backeven";
+            }}
+
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
 
             if($post->link != 0) {
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
-                    $post->link = '/' .  $link->slug  . $newstring . '?gid4=' . $link['option'];
+
+                    $ovgid5 = '?gid5=' . $link['option'];
+
+                    $post->link = '/' .  $link->slug  . $newstring . '?gid2=' . $solo['id'] . '?gid3=' . $post['id'] .'?gid4=' . $post['position'] . $ovgid5 . '?key=' . $this->lastkey();
                 } else {
-                    $post->link = '/post' . $post->id . $newstring;
+                    $post->link = '/post' . $post->id . $newstring . '?gid2=' . $solo['id'] . '?gid3=' . $post['id'] .'?gid4=' . $post['position'] . '?key' . $this->lastkey();
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring;
+                $post->link = '/post' . $post->id . $newstring . '?gid2=' . $solo['id'] . '?gid3=' . $post['id'] .'?gid4=' . $post['position'] . '?key' . $this->lastkey();
             }
         }
 

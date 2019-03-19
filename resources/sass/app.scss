@@ -14,11 +14,13 @@
 //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 // }
 
-$newcolor: #c9f7cfcc;
+$newcolor: #ecf3ff;
 
-$maingeen: #eaffef;
+$maingrey: #f4f4f4;
+
 body{
   background-color: #fff;
+  color: #6a6a6a;
 }
 
 .logo-area__first{
@@ -41,7 +43,7 @@ body{
 }
 
 .navbar__bluecolor{
-  background: #254d8c;
+  background: #294e8b;
 }
 
 .new-flex-m{
@@ -135,8 +137,10 @@ body{
   padding-top: 20px;
 }
 
+
 .teaser_text{
-  background-color: #5bbd72;
+  background-color: #dedede;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
   position: relative;
   bottom: 0;
   padding: 14px;
@@ -148,13 +152,15 @@ body{
   min-height: 84px;
   width: 100%;
   color: #fff;
-  box-shadow: 0 0 13px #00000059;
   font-weight: 600;
 }
 
+
+
+
 .teaser_image:hover .teaser_text{
-  color: #000;
-  background-color: #e0e0e0;
+  color: #fff;
+  background-color: #dedede;
   text-decoration: none;
 }
 .teaser_image:hover a{
@@ -170,6 +176,10 @@ body{
 
 .over-card-new{
   transition: 0.3s;
+
+  border-width: 0px;
+  border-color: rgb(240, 240, 240);
+  border-style: solid;
   img{
     width: 100%;
   }
@@ -189,23 +199,34 @@ body{
     color: #252525;
     transition: .4s;
   }
+
+  
   .btn{
     margin-top: 12px;
-    background: transparent;
-    color: #28a745;
+    background: #b6cf7c;
+    color: #fff;
+    border-color: #b6cf7c;
   }
   .btn:hover{
-    background: #28a745;
-    color: #fff;
+    background: #fff;
+    color: #b6cf7c;
   }
   padding: 12px 12px 12px 12px;
 }
 
 .over-card-new:hover{
-  background-color: $newcolor;
+  border-width: 0px;
+  background-color: #fff;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.05);
 }
 
 .right-area{
+  .ra__title{
+    background-color: #d4e4ff;
+  }
+  .ra__body{
+    background-color: #f6f6f6;
+  }
   width: 100%;
     background-color: #eaf9eccc;
     a{
@@ -214,7 +235,7 @@ body{
   h3{
     margin: 0;
     padding: 12px;
-    color: #3c3c3c;
+    color: #525252;
     transition: .4s;
     text-align: center;
   }
@@ -225,7 +246,7 @@ body{
   padding-top: 7px;
   padding-bottom: 7px;
   transition: 0.3s;
-  background-color: #fff;
+  // background-color: #fff;
   a{
     display: flex;
     font-size: 12px;
@@ -236,7 +257,7 @@ body{
   }
   .ra_cardtext{
     padding-left: 10px;
-   color: #252525;
+   color: #6a6a6a;
   }
 }
 
@@ -277,6 +298,7 @@ body{
 }
 
 .news-solo{
+  background: #f4f4f4;
   img{
     width: 100%;
   }
@@ -292,7 +314,7 @@ body{
   }
 
   .teaser-title{
-    background-color: $maingeen;
+    background-color: #e4eeff;
     transition: all .2s ease-in-out;
     cursor: pointer;
     img{
@@ -305,13 +327,12 @@ body{
     }
 
     div{
-      color: #3b5998;
+      color: #6a6a6a;
       font-size: 16px !important;
     }
   }
   .teaser-title:hover{
-    background-color: $newcolor;
-    background: $newcolor;
+    background-color: #d4e4ff;
   }
   .teaser{
     p{
@@ -419,7 +440,7 @@ body{
 
 .more-read{
   margin-top: 10px;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   h5{
     
     color: #3b5998;
@@ -429,18 +450,22 @@ body{
     max-width: 137px;
   }
   .more-read__solo{
-    margin-top: 6px;
-    background-color: $maingeen;
+    // margin-top: 6px;
+    background-color: $maingrey;
     transition: background-color 0.2s ease-in-out;
     padding-top: 10px;
     padding-bottom: 10px;
+    z-index: 10;
     .container{
       display: flex;
       align-items: center;
     }
   }
+  
   .more-read__solo:hover{
-    background-color: $newcolor;
+    box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+    background-color: rgb(238, 238, 238);
+    z-index: 67;
   }
   .more-read__solo-area{
     margin-left: 14px;
@@ -460,16 +485,14 @@ body{
       max-width: 104px;
       margin-top: 10px;
     }
-    .btn:hover{
-      background-color: #bd5408 !important;
-    }
+
   }
 }
 
 .lefar-card{
-  border-right: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
-  background-color: $maingeen;
+  // border-right: 1px solid #ebebeb;
+  // border-bottom: 1px solid #ebebeb;
+  background-color: $maingrey;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
   
@@ -491,8 +514,16 @@ body{
   }
 }
 
+.lefar-card__secgrey{
+  background-color: #eeeeee;
+}
+
+.lefar-card:hover .btn {
+  background: #93c71b !important;
+}
+
 .lefar-card:hover{
-  background-color: $newcolor;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
 }
 .solo-page{
     
@@ -526,16 +557,17 @@ body{
     margin-right: 0px !important;
   }
   .btn{
-    // background-color: #ff7918 !important;
+    background-color: #93c71b !important;
     color: #fff;
-    // border: 1px solid #ff7918 !important;
+    border: 0px solid #93c71b !important;
     max-width: 104px;
     margin-top: 5px;
+    outline: none;
   }
 
 
   .btn:hover{
-    // background-color: #bd5408 !important;
+    background-color: #7eaa19 !important;
   }
   .btn-to-top{
     background-color: #898f97 !important;
@@ -558,6 +590,7 @@ body{
   transition: background-color 0.2s ease-in-out;
   display: flex;
   align-items: center;
+  z-index: 10;
   img{
     // width: 137px;
   }
@@ -576,17 +609,21 @@ body{
   }
 }
 
+
 .width-card:hover{
-  background-color: $newcolor;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+  z-index: 71;
 }
 
 .lk-revelation{
   padding: 20px 30px 10px 30px;
-  background-color: $maingeen;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+  background: #f5ffed;
+  z-index: 10;
   img{
     width: 100%;
     height: 130px;
@@ -601,8 +638,10 @@ body{
 
 }
 
+
 .lk-revelation:hover{
-   color: #3b5998;
+  z-index: 15;
+  box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
 }
 
 .lk-revelation__title{
@@ -637,10 +676,10 @@ body{
 }
 
 .yllow-area{
-  border-bottom: 1px solid #ebebeb;
-  background-color: $maingeen;
+  // border-bottom: 1px solid #f5ffed;
+  background-color: #f5ffed;
   padding: 10px 0px 10px 0px;
-  
+  z-index: 10;
   .yllow-card{
     padding: 10px 10px 10px 10px;
     min-height: 106px;
@@ -659,17 +698,23 @@ body{
   }
   .yllow-card:hover{
     transition: all .2s ease-in-out;
-    background: $newcolor;
+    // background: #eee;
+    box-shadow: 0px 13px 40px 0px rgba(34, 30, 31, 0.08);
+    z-index: 67;
   }
+
+  
 }
 
 .new-srow__back{
   .lefar-card{
-    background-color: #fff;
+    // background-color: #fff;
   }
   a{
     text-decoration: none;
   }
+
+
 }
 
 .prenewsaa{
@@ -716,4 +761,12 @@ body{
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.backeven{
+  background-color: #eee;
+}
+
+.btn:focus{
+  box-shadow: none;
 }

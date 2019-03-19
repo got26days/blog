@@ -2017,7 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
     getInitialPosts: function getInitialPosts() {
       var _this = this;
 
-      axios.get("/api/getposts").then(function (response) {
+      axios.get("/api/getposts0").then(function (response) {
         _this.posts.push(response.data);
       });
     },
@@ -38781,7 +38781,7 @@ var render = function() {
               _c(
                 "a",
                 {
-                  staticClass: "btn btn-success",
+                  staticClass: "btn ",
                   attrs: { role: "button", href: post.link }
                 },
                 [_vm._v("Подробнее")]
@@ -38822,29 +38822,36 @@ var render = function() {
         _c(
           "div",
           { staticClass: "row newsupx" },
-          _vm._l(_vm.posts.slice(0, 2), function(post) {
+          _vm._l(_vm.posts.slice(0, 2), function(post, index) {
             return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
               _c("a", { attrs: { href: post.link } }, [
-                _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "" + post.image } }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(post.title) +
-                        "\n                            "
+                _c(
+                  "div",
+                  {
+                    staticClass: "lefar-card",
+                    class: [!post.cols ? "backeven" : ""]
+                  },
+                  [
+                    _c("img", { attrs: { src: "" + post.image } }),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                              " +
+                          _vm._s(post.title) +
+                          "\n                            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn ",
+                        attrs: { href: post.link, role: "button" }
+                      },
+                      [_vm._v("Подробнее")]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { href: post.link, role: "button" }
-                    },
-                    [_vm._v("Подробнее")]
-                  )
-                ])
+                  ]
+                )
               ])
             ])
           }),
@@ -38859,26 +38866,33 @@ var render = function() {
           _vm._l(_vm.posts.slice(2, 5), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-4" }, [
               _c("a", { attrs: { href: post.link } }, [
-                _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "" + post.image } }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(post.title) +
-                        "\n                            "
+                _c(
+                  "div",
+                  {
+                    staticClass: "lefar-card",
+                    class: [!post.cols ? "backeven" : ""]
+                  },
+                  [
+                    _c("img", { attrs: { src: "" + post.image } }),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(post.title) +
+                          "\n                            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn ",
+                        attrs: { href: post.link, role: "button" }
+                      },
+                      [_vm._v("Подробнее")]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { href: post.link, role: "button" }
-                    },
-                    [_vm._v("Подробнее")]
-                  )
-                ])
+                  ]
+                )
               ])
             ])
           }),
@@ -38894,19 +38908,23 @@ var render = function() {
             "div",
             { staticClass: "row" },
             _vm._l(_vm.posts.slice(5, 8), function(post) {
-              return _c("div", { staticClass: "yllow-card" }, [
-                _c("a", { attrs: { href: post.link } }, [
-                  _c("img", { attrs: { src: "" + post.image } })
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: post.link } }, [
-                  _vm._v(
-                    "\n                            " +
-                      _vm._s(post.title) +
-                      "\n                        "
-                  )
-                ])
-              ])
+              return _c(
+                "div",
+                { staticClass: "yllow-card", class: post.color },
+                [
+                  _c("a", { attrs: { href: post.link } }, [
+                    _c("img", { attrs: { src: "" + post.image } })
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: post.link } }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(post.title) +
+                        "\n                        "
+                    )
+                  ])
+                ]
+              )
             }),
             0
           )
@@ -38920,26 +38938,35 @@ var render = function() {
           _vm._l(_vm.posts.slice(8, 11), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-4" }, [
               _c("a", { attrs: { href: post.link } }, [
-                _c("div", { staticClass: "lefar-card" }, [
-                  _c("img", { attrs: { src: "" + post.image } }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(post.title) +
-                        "\n                            "
+                _c(
+                  "div",
+                  {
+                    staticClass: "lefar-card",
+                    class: [!post.cols ? "backeven" : ""]
+                  },
+                  [
+                    _c("img", { attrs: { src: "" + post.image } }),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(post.title) +
+                          " " +
+                          _vm._s(post.cols) +
+                          "\n                            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn ",
+                        attrs: { href: post.link, role: "button" }
+                      },
+                      [_vm._v("Подробнее")]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { href: post.link, role: "button" }
-                    },
-                    [_vm._v("Подробнее")]
-                  )
-                ])
+                  ]
+                )
               ])
             ])
           }),
