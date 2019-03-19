@@ -13887,14 +13887,14 @@ body {
 
 .over-card-new .btn {
   margin-top: 12px;
-  background: #b6cf7c;
+  background: #32CD32;
   color: #fff;
-  border-color: #b6cf7c;
+  border-color: #32CD32;
 }
 
 .over-card-new .btn:hover {
   background: #fff;
-  color: #b6cf7c;
+  color: #32CD32;
 }
 
 .over-card-new:hover {
