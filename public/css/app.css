@@ -13710,7 +13710,6 @@ a.text-dark:focus {
 
 body {
   background-color: #fff;
-  color: #6a6a6a;
 }
 
 .logo-area__first a {
@@ -14235,7 +14234,7 @@ body {
 }
 
 .lefar-card:hover .btn {
-  background: #93c71b !important;
+  background: #32CD32 !important;
 }
 
 .lefar-card:hover {
@@ -14275,9 +14274,9 @@ body {
 }
 
 .solo-page .btn {
-  background-color: #93c71b !important;
+  background-color: #32CD32 !important;
   color: #fff;
-  border: 0px solid #93c71b !important;
+  border: 0px solid #32CD32 !important;
   max-width: 104px;
   margin-top: 5px;
   outline: none;
