@@ -413,7 +413,7 @@ class MainController extends Controller
     {
         foreach($array as $post)
         {
-            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+            $post->image = $post->thumbnail('cropped','image');
         }
 
         return $array;
