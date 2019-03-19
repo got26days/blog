@@ -14164,6 +14164,8 @@ body {
 }
 
 .more-read .more-read__solo {
+  margin-top: 5px;
+  margin-bottom: 5px;
   background-color: #f4f4f4;
   transition: background-color 0.2s ease-in-out;
   padding-top: 10px;
@@ -14202,6 +14204,7 @@ body {
 }
 
 .lefar-card {
+  border-bottom: 1px solid #ebebeb;
   background-color: #f4f4f4;
   padding: 20px 20px 10px 20px;
   cursor: pointer;
@@ -14231,10 +14234,6 @@ body {
 
 .lefar-card__secgrey {
   background-color: #eeeeee;
-}
-
-.lefar-card:hover .btn {
-  background: #32CD32 !important;
 }
 
 .lefar-card:hover {
