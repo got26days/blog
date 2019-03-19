@@ -151,7 +151,7 @@ body{
   z-index: 999;
   min-height: 84px;
   width: 100%;
-  // color: #fff;
+  color: #000;
   font-weight: 600;
 }
 
@@ -159,7 +159,7 @@ body{
 
 
 .teaser_image:hover .teaser_text{
-  color: #fff;
+  color: #000;
   background-color: #dedede;
   text-decoration: none;
 }
