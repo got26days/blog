@@ -30,13 +30,13 @@ class MainController extends Controller
         }
         $this->utms = $arrut;
 
-        $strkey = Key::latest()->first();
+        // $strkey = Key::latest()->first();
 
-        if(!$strkey['var']){
-            $strkey['var'] = 'keykeykey'; 
-        }
+        // if(!$strkey['var']){
+        //     $strkey['var'] = 'keykeykey'; 
+        // }
 
-        session(["utm_data.key" => $strkey['var']]);
+        // session(["utm_data.key" => $strkey['var']]);
 
     }
 
@@ -86,9 +86,9 @@ class MainController extends Controller
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
 
-                    $ovgid5 = '?gid5=' . $link['option'];
+                    $ovgid5 = '&gid5=' . $link['option'];
 
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5;
+                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
@@ -374,9 +374,9 @@ class MainController extends Controller
                 $link = Link::where('option', '=', $post->link)->latest()->first();
                 if($link){
 
-                    $ovgid5 = '?gid5=' . $link['option'];
+                    $ovgid5 = '&gid5=' . $link['option'];
 
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5;
+                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
