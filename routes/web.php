@@ -17,7 +17,7 @@
 // Route::get('/prod5', 'DomainController@prod5');
 // Route::get('/prod6', 'DomainController@prod6');
 
-
+Route::get('/test{id}', 'MainController@test');
 Route::get('/change', 'MainController@change');
 
 Route::get('/', 'MainController@index')->name('manepage');
