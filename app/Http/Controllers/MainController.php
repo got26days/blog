@@ -40,6 +40,50 @@ class MainController extends Controller
 
     }
 
+    public function test($id)
+    {
+
+  
+        $ops = 2;
+     
+
+        $checkers = $this->checkUtm();
+        $newstring = $this->getUtmFor($checkers);
+
+        $posts =  Item::orderBy('result', 'desc')
+        // ->where('position', '=', $ops)
+        ->get();
+
+        $solo = Item::find($id);
+
+        foreach($posts as $key=>$post){
+
+            if($key % 2 === 0){{
+                $post->cols = true;
+            }}
+
+            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+
+            if($post->link != 0) {
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+
+                    $ovgid5 = '&gid5=' . $link['option'];
+
+                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                } else {
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                }
+            } else {
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+            }
+        }
+
+        return  response()->json($posts);
+
+
+    }
+
     public function getdata($position, $last)
     {
         $checkers = $this->checkUtm();
@@ -343,6 +387,24 @@ class MainController extends Controller
 
         $solo = Item::find($id);
 
+        if($solo->click == null){
+            $solo->click = 0;
+        }
+
+        if($solo->view == null){
+            $solo->view = 0;
+        }
+
+
+        $solo->click = ++$solo->click;
+        $solo->view = ++$solo->view;
+        $str = $solo->click/$solo->view;
+        $solo->result = round((float)$str * 100 );
+        $solo->save();
+
+
+        
+
         if(!$solo){
             abort(404);
         }
@@ -353,14 +415,25 @@ class MainController extends Controller
             $ops = 0;
         }
 
+    
+
         $massarea = Item::where('area2', '=', 0)
         // where('position', '=', $ops)
         // ->where('area2', '=', 0)
-        ->orderBy(DB::raw('RAND()'))->get();
+        ->orderBy('market', 'desc')
+        ->orderBy('result', 'desc')
+        ->get();
 
         
 
         foreach($massarea  as $key=>$post){
+
+            if($post->view == null){
+                $post->view = 0;
+            }
+
+            $post->view = ++$post->view;
+            $post->save();
 
             // colors
             if($key % 2 === 0){{
@@ -383,16 +456,95 @@ class MainController extends Controller
             } else {
                 $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
+
+
         }
 
-        $area2 = $massarea->slice(0,3);
-        $area3 = $massarea->slice(3,3);
+        $key1 = 0;
+        $key2 = 0;
+        $key3 = 0;
+        $key4 = 0;
+        $key5 = 0;
+        $key6 = 0;
+        $key7 = 0;
+        $key8 = 0;
+
+        $area3 = $massarea->slice(0,3);
+
+        if(!$area3->isEmpty())
+     
+            foreach($area3 as $key => $post){
+                $post->link = $post->link . '&bid1=1' . '&bid2=' . ++$key1;
+            }
+    
+
+        $area9 = $massarea->slice(3,3);
+
+        if(!$area9->isEmpty()){
+
+            foreach($area9 as $key => $post){
+                $post->link = $post->link . '&bid1=2' . '&bid2=' . ++$key2;
+            }
+        }
+     
+
         $area4 = $massarea->slice(6,5);
+
+        if(!$area4->isEmpty()){
+
+            foreach($area4 as $key => $post){
+                $post->link = $post->link . '&bid1=3' . '&bid2=' . ++$key3;
+            }
+    
+        }
+
         $area5 = $massarea->slice(11,2);
-        $area6 = $massarea->slice(13,5);
-        $area7 = $massarea->slice(18,3);
-        $area8 = $massarea->slice(21,3);
-        $area9 = $massarea->slice(24,3);
+
+        if(!$area5->isEmpty()){
+            foreach($area5 as $key => $post){
+                $post->link = $post->link . '&bid1=4' . '&bid2=' . ++$key4;
+            }
+        }
+
+        $area2 = $massarea->slice(13,3);
+
+        if(!$area2->isEmpty()){
+
+            foreach($area2 as $key => $post){
+                $post->link = $post->link . '&bid1=5' . '&bid2=' . ++$key5;
+            }
+        }
+
+        $area6 = $massarea->slice(16,5);
+
+        if(!$area6->isEmpty()){
+      
+            foreach($area6 as $key => $post){
+                $post->link = $post->link . '&bid1=6' . '&bid2=' . ++$key6;
+            }
+        }
+
+
+
+        $area7 = $massarea->slice(21,3);
+
+        if(!$area7->isEmpty()){
+
+            foreach($area7 as $key => $post){
+                $post->link = $post->link . '&bid1=7' . '&bid2=' . ++$key7;
+            }    
+        }
+
+
+        $area8 = $massarea->slice(24,3);
+
+        if(!$area8->isEmpty()){
+  
+            foreach($area8 as $key => $post){
+                $post->link = $post->link . '&bid1=8' . '&bid2=' . ++$key8;
+            }
+        }
+
 
         $area8 = $this->slic($area8);
         $area7 = $this->slic($area7);
@@ -400,13 +552,11 @@ class MainController extends Controller
         $area5 = $this->slic($area5);
         
 
-        
-
 
         return view('pages.solo', compact('solo', 
         'teaser1', 'teaser2', 'teaser3', 
         'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4', 'area9', 'ops',
-    'checkers'));
+        'checkers'));
     }
 
     public function slic($array)

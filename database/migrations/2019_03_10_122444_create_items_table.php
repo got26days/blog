@@ -22,6 +22,8 @@ class CreateItemsTable extends Migration
             $table->string('link')->nullable();
             $table->text('position')->nullable();
 
+            $table->integer('market')->nullable();
+
             
             $table->text('body1')->nullable();
             $table->text('teaser1')->nullable();
