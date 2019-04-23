@@ -51,6 +51,7 @@
         },
         mounted() {
             this.getInitialPosts();
+            this.getInitialPosts();
             this.scroll(1);
         },
     }

@@ -602,7 +602,27 @@
 <img src="/prod6over/_.png" alt="">
 <img src="/prod6over/_-1.png" alt="">  
 
-<script type="text/javascript" src="/prod6over/sagihhsoghoaghouagiopafioagiiag.js"></script>
+<script type="text/javascript">
+
+    const ser = window.location.search;
+    
+    window.addEventListener('hashchange', function() {
+        if (location.hash === "#newhash") {
+            location.replace(`backpage${ser}`);
+        }
+    }); 
+    
+    const furl =  window.location.href;
+    
+    const state = { 'page_id': 1, 'user_id': 5 };
+    const title = 'тайтл';
+    const url = '#newhash';
+    
+    history.pushState(state, title, url);
+    
+    history.pushState(state, title, furl);
+    
+</script>
 
 </body>
 </html>

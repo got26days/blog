@@ -19,8 +19,8 @@
 
                         @isset($area9[0])
                         <div class="teaser-title">
-                            <div class="container title-area">
-                                <a href="{{ $area9[0]['link'] }}" class="title-area" style="text-decoration: none;">
+                            <div class="container title-area"> 
+                                <a href="{{ $area9[0]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
                                     <img src="{{Voyager::image($area9[0]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[0]['title'] }}
@@ -41,7 +41,7 @@
                         @isset($area9[1])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="{{ $area9[1]['link'] }}" class="title-area" style="text-decoration: none;">
+                                <a href="{{ $area9[1]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
                                     <img src="{{Voyager::image($area9[1]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[1]['title'] }}
@@ -62,7 +62,7 @@
                         @isset($area9[2])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="{{ $area9[2]['link'] }}" class="title-area" style="text-decoration: none;">
+                                <a href="{{ $area9[2]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
                                     <img src="{{Voyager::image($area9[2]->thumbnail('cropped','image'))}}" alt="image">
                                     <div>
                                         {{ $area9[2]['title'] }}
@@ -135,7 +135,7 @@
                 @foreach($area3 as $key=>$link)
                 @if($key == 4)
                 <div class="col-sm-6 col-md-6 col-lg-4">
-                    <a href="{{ $link['link'] }}">
+                    <a href="{{ $link['link'] }}" target="_blank">
                         <div class="lefar-card lefar-card__secgrey">
                             <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="min-height: 155px;">
 
@@ -143,13 +143,13 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
                         </div>
                     </a>
                 </div>
                 @else
                 <div class="col-sm-6 col-md-6 col-lg-4">
-                    <a href="{{ $link['link'] }}">
+                    <a href="{{ $link['link'] }}" target="_blank">
                         <div class="lefar-card">
                             <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="min-height: 155px;">
 
@@ -157,7 +157,7 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -170,14 +170,14 @@
                     @if (count($area4) > 0)
                     @foreach($area4 as $link)
                     <div class="width-card">
-                        <a href="{{ $link['link'] }}">
+                        <a href="{{ $link['link'] }}" target="_blank">
                             <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
                         </a>
                         <div class=wc-content>
-                            <a href="{{ $link['link'] }}">
+                            <a href="{{ $link['link'] }}" target="_blank">
                                 {{ $link->title }}
                             </a>
-                            <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn " href="{{ $link['link'] }}" role="button" target="_blank">Подробнее</a>
                         </div>
                     </div>
                     @endforeach
@@ -190,12 +190,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     @foreach($area5 as $link)
                     <div class="lk-revelation">
-                        <a href="{{ $link['link'] }}">
+                        <a href="{{ $link['link'] }}" target="_blank">
                             <img src="/storage/{{ $link->image }}">
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
                             </div>
-                            <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
+                            <a class="btn " href="{{ $link['link'] }}" role="button" target="_blank">Подробнее</a>
                         </a>
                     </div>
                     @endforeach
@@ -213,7 +213,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a href="{{ $link['link'] }}">
+                        <a href="{{ $link['link'] }}" target="_blank" target="_blank">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -221,7 +221,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -232,7 +232,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                        <a href="{{ $link['link'] }}">
+                        <a href="{{ $link['link'] }}" target="_blank">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -240,7 +240,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -259,10 +259,10 @@
                         @if (count($area7) > 0)
                         @foreach($area7 as $link)
                         <div class="yllow-card">
-                            <a href="{{ $link['link'] }}">
+                            <a href="{{ $link['link'] }}" target="_blank">
                                 <img src="/storage/{{ $link->image }}">
                             </a>
-                            <a href="{{ $link['link'] }}">
+                            <a href="{{ $link['link'] }}" target="_blank">
                                 {{ $link->title }}
                             </a>
                         </div>
@@ -281,14 +281,14 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="{{ $link['link'] }}">
                         <div class="lefar-card {{ $link->color }}">
-                                <a href="{{ $link['link'] }}">
+                                <a href="{{ $link['link'] }}" target="_blank">
                                     <img src="/storage/{{ $link->image }}">
                                 </a>
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn ">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
                             </div>
                         </a>
                     </div>

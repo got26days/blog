@@ -8,7 +8,7 @@
                         <img  class="lazyload-done" :data-src="`/storage/${post.image}`" v-lazyload>
                     </div>
                     <div class="lk_text-yellow-area">{{  post.title }}</div>
-                    <a class="btn " role="button" :href="post.link">Подробнее</a>
+                    <a class="btn " role="button" :href="post.link" target="_blank">Подробнее</a>
                 </a>
             </div>
         </div>
@@ -64,6 +64,7 @@
         },
         mounted() {
             this.getInitialPosts();
+            
              this.scroll(1);
         },
         computed: {

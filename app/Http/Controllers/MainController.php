@@ -164,6 +164,27 @@ class MainController extends Controller
         return array($pos0, $pos1, $pos2, $pos3, $pos4);
     }
 
+    public function backpage(Request $request)
+    {
+
+        $solo = Item::find($request['gid2']);
+
+        if(!$solo){
+            abort(404);
+        }
+
+        if($solo->position){
+            $ops = $solo['position'];
+        } else {
+            $ops = 0;
+        }
+
+        $checkers = $this->checkUtm();
+
+
+        return view('pages.backpage', compact('solo', 'ops', 'checkers'));
+    }
+
     public function change()
     {
         Session::flush();

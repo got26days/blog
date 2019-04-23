@@ -2040,6 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getInitialPosts();
+    this.getInitialPosts();
     this.scroll(1);
   }
 });
@@ -38783,7 +38784,7 @@ var render = function() {
                 "a",
                 {
                   staticClass: "btn ",
-                  attrs: { role: "button", href: post.link }
+                  attrs: { role: "button", href: post.link, target: "_blank" }
                 },
                 [_vm._v("Подробнее")]
               )
@@ -38938,7 +38939,7 @@ var render = function() {
           { staticClass: "row newsupx" },
           _vm._l(_vm.posts.slice(8, 11), function(post) {
             return _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-4" }, [
-              _c("a", { attrs: { href: post.link } }, [
+              _c("a", { attrs: { href: post.link, target: "_blank" } }, [
                 _c(
                   "div",
                   {
@@ -38961,8 +38962,12 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        staticClass: "btn ",
-                        attrs: { href: post.link, role: "button" }
+                        staticClass: "btn",
+                        attrs: {
+                          href: post.link,
+                          role: "button",
+                          target: "_blank"
+                        }
                       },
                       [_vm._v("Подробнее")]
                     )

@@ -64,7 +64,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-6 col-lg-4" v-for="post in posts.slice(8, 11)">
-                        <a :href="post.link">
+                        <a :href="post.link" target="_blank">
                             <div class="lefar-card"  :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
@@ -72,7 +72,7 @@
                                     {{ post.title }} {{ post.cols }}
                                 </p>
 
-                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn" target="_blank">Подробнее</a>
                             </div>
                         </a>
                     </div>
