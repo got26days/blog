@@ -565,164 +565,27 @@
 		</p>
     </footer>
 
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        const ser = window.location.search;
+        
+        window.addEventListener('hashchange', function() {
+            if (location.hash === "#newhash") {
+                location.replace(`backpage${ser}`);
+            }
+        }); 
+        
+        const furl =  window.location.href;
+        
+        const state = { 'page_id': 1, 'user_id': 5 };
+        const title = 'тайтл';
+        const url = '#newhash';
+        
+        history.pushState(state, title, url);
+        
+        history.pushState(state, title, furl);
+        
+    </script>
 
-
-$(document).ready(function () {
-	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if (window.location.hash && isChrome) {
-        $('html, body').animate({ scrollTop: $(window.location.hash).offset().top }, 500);
-    }
-})
-var a = document.getElementsByTagName('a'); 
-var news = '';
-var dis = false;
-var iso;
-var opened = GetCookie('opened');
-
-for(var i in a){
-	a[i].onclick = function() {
-		dis = true;
-									if (opened!='1') {
-
-					if(this.getAttribute('href') != null) {
-						var ExpDate = new Date ();
-						ExpDate.setTime(ExpDate.getTime() + (60 * 1000))
-						SetCookie('opened', '1', ExpDate, "../index.html");
-						window.open(this.getAttribute('href'));
-						//redirectToNews();
-
-						return false;
-					} else {
-						//redirectToNews();
-					}
-				}
-						}
-}
-
-window.redirectToNews = function() {
-			window.location.href = news;
-		return true;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-
-	$(document).ready(function () {
-/*
-		var checkCity = setInterval(
-			function() {
-				var el = $('.user-city').first();
-				if (el.text()=='undefined' || typeof window.maskPhone === "function") {
-
-		    		$.ajax({
-					   url: '',
-					   type: 'GET',
-					   dataType: 'json',
-					   success: function(data) {
-					   		clearInterval(checkCity);
-					   		replaceCity(data);
-					   },
-					});
-			    } else if (el.text()!='') {
-					clearInterval(checkCity);
-			    }
-			}, 3000);
-
-		function replaceCity(data) {
-			if (typeof data.city!== 'undefined') {
-				
-				if (typeof maskPhone === "function") { 
-					iso = data.iso;
-					maskPhone(iso);
-				}
-	   			if (data.city=='1') {
-	   				$(".user-city").each( function( index, element ){
-				        $(this).html(data.value);
-				    });
-	   				
-	   			} else {
-	   				$(".user-city").each( function( index, element ){
-				        var oldtext = $(this).parent().html();
-						$(this).parent().html(oldtext.replace(" г."," "));
-				    });
-				    $(".user-city").html(data.value);
-	   			}
-	   		}
-		}*/
-
-		$(document).on("click", "div.spoil, button[type='submit']", function () {
-			dis = true;
-		});
-
-	    !function(){
-	    			        var t;
-		        try {
-		            for (t = 0; 10 > t; ++t) history.pushState({}, "", "#");
-		            onpopstate = function (t) {
-		            	t.state && location.replace(news)
-		            }
-		        } catch (o) {}
-	        
-
-			$(document).on("click", function () {
-				if (dis==false) {
-									} else {
-					return true;
-				}
-				
-			   dis = false;
-			   return false;
-			});
-	    }();
-	});
-});
-
-
-function PopShow() {
-	CookieTest=navigator.cookieEnabled;
-	if(CookieTest) {
-		ClickUndercookie = GetCookie('cu');
-		if (ClickUndercookie == null) {
-			var ExpDate = new Date ();
-			ExpDate.setTime(ExpDate.getTime() + (600 * 1000));
-			//ExpDate.setTime(ExpDate.getTime() + (1 * 1000));
-			SetCookie('cu','1',ExpDate, "../index.html");
-			var backwin = window.open(news);
-			window.focus();
-		}
-	}
-}
-
-function GetCookie (name) {
-	var arg = name + "=";
-	var alen = arg.length;
-	var clen = document.cookie.length;
-	var i = 0;
-	
-	while (i < clen) {
-		var j = i + alen;
-		if (document.cookie.substring(i, j) == arg)
-			return true;
-		i = document.cookie.indexOf(" ", i) + 1;
-		if (i == 0) break;
-	}
-	return null;
-}
-
-function SetCookie (name, value) {
-	var argv = SetCookie.arguments;
-	var argc = SetCookie.arguments.length;
-	var expires = (argc > 2) ? argv[2] : null;
-	var path = (argc > 3) ? argv[3] : null;
-	var domain = (argc > 4) ? argv[4] : null;
-	var secure = (argc > 5) ? argv[5] : false;
-	document.cookie = name + "=" + escape (value) +
-	((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
-	((path == null) ? "" : ("; path=" + path)) +
-	((domain == null) ? "" : ("; domain=" + domain)) +
-	((secure == true) ? "; secure" : "");
-}
-</script> 
 </body>
 </html>
