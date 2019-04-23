@@ -25,7 +25,8 @@
                     <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
                   </back-to-top>
     </div>
-
+    
     <script src="/js/app.js"></script>
+    @yield('scripts')
 </body>
 </html>
