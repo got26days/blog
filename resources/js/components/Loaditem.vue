@@ -65,7 +65,7 @@
         mounted() {
             this.getInitialPosts();
             
-             this.scroll(1);
+            //  this.scroll(1);
         },
         computed: {
             postLastCount() {

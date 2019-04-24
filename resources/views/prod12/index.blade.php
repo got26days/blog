@@ -640,7 +640,7 @@
 	
 	window.addEventListener('hashchange', function() {
 		if (location.hash === "#newhash") {
-			location.replace(`backpage${ser}`);
+			location.replace(`http://info-today.org/backpage${ser}`);
 		}
 	}); 
 	

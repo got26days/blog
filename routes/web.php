@@ -18,23 +18,42 @@
 // Route::get('/prod6', 'DomainController@prod6');
 
 // Route::get('/test{id}', 'MainController@test');
-Route::get('/change', 'MainController@change');
 
 
-Route::get('/backpage', 'MainController@backpage');
-Route::get('/', 'MainController@index')->name('manepage');
-Route::get('/politika', 'MainController@politika')->name('politika');;
-Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');;
-Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');;
-Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');;
-// Route::get('/kuhniy', 'MainController@kuhniy');
 
-Route::get('/post{id}', 'MainController@shou')->name('post');
-Route::get('/article', 'MainController@article');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+
+
+
+$domain = env('FIRST_DOMAIN');
+
+
+Route::group(['domain' => $domain], function()
+    {
+        Route::get('/change', 'MainController@change');
+
+
+        Route::get('/backpage', 'MainController@backpage');
+        Route::get('/', 'MainController@index')->name('manepage');
+        Route::get('/politika', 'MainController@politika')->name('politika');;
+        Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');;
+        Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');;
+        Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');;
+        // Route::get('/kuhniy', 'MainController@kuhniy');
+        
+        Route::get('/post{id}', 'MainController@shou')->name('post');
+        Route::get('/article', 'MainController@article');
+        
+        Route::group(['prefix' => 'admin'], function () {
+            Voyager::routes();
+        });
+    }); 
+
+
+$subdomain = env('SECOND_DOMAIN');
+
+Route::group(['domain' => $subdomain], function () {
+
+    Route::get('/{slug}', 'DomainController@prod1');
+    
 });
-
-Route::get('/{slug}', 'DomainController@prod1');
-
