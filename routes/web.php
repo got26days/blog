@@ -30,7 +30,7 @@ $domain = env('FIRST_DOMAIN');
 Route::get('/', 'MainController@index')->name('manepage');
 
 
-Route::group(['domain' => $domain], function()
+Route::group(['domain' => 'info-today.org'], function()
     {
         Route::get('/change', 'MainController@change');
 
