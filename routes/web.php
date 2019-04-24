@@ -22,7 +22,7 @@
 $domain = env('FIRST_DOMAIN');
 $subdomain = env('SECOND_DOMAIN');
 
-Route::domain($domain)->group(function () {
+Route::domain('info-today.org')->group(function () {
     Route::get('/change', 'MainController@change');
 
 
