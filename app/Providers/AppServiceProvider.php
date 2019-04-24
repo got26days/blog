@@ -25,5 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        \Route::pattern('domain', '[a-z0-9.\-]+'); 
+        parent::boot();
     }
 }
