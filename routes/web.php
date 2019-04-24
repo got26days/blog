@@ -54,7 +54,7 @@ Route::group(['domain' => 'info-today.org'], function()
 
 $subdomain = env('SECOND_DOMAIN');
 
-Route::group(['domain' => $subdomain], function () {
+Route::group(['domain' => 'news24hours.org'], function () {
 
     Route::get('/{slug}', 'DomainController@prod1');
     
