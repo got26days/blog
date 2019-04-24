@@ -26,20 +26,20 @@ Vue.component('loaditem', require('./components/Loaditem.vue').default);
 Vue.component('overload', require('./components/Overload.vue').default);
 Vue.component('newcomp', require('./components/Newcomp.vue').default);
 
-import BackToTop from 'vue-backtotop'
-Vue.use(BackToTop)
+// import BackToTop from 'vue-backtotop'
+// Vue.use(BackToTop)
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import 'es6-promise/auto'
 
  import lazyload  from './directives/lazyload';
- import StickySidebar from 'sticky-sidebar';
 
 const app = new Vue({
     el: '#app',
-    components: { BackToTop },
+    // components: { BackToTop },
     directives: {
         lazyload
       },

@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.8"
     },
     "dependencies": {
+        "@inotom/vue-go-top": "^1.1.0",
+        "es6-promise": "^4.2.6",
         "font-awesome": "^4.7.0",
         "sticky-sidebar": "^3.3.1",
         "vue-backtotop": "^1.6.1"

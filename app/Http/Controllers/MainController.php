@@ -132,7 +132,9 @@ class MainController extends Controller
 
                     $ovgid5 = '&gid5=' . $link['option'];
 
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                    $domain = env("SECOND_DOMAIN", "http://info-today.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
@@ -470,7 +472,9 @@ class MainController extends Controller
 
                     $ovgid5 = '&gid5=' . $link['option'];
 
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'];
+                    $domain = env("SECOND_DOMAIN", "http://info-today.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'];
                 } else {
                     $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
                 }
