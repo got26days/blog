@@ -27,6 +27,8 @@
 
 $domain = env('FIRST_DOMAIN');
 
+Route::get('/', 'MainController@index')->name('manepage');
+
 
 Route::group(['domain' => $domain], function()
     {
