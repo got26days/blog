@@ -41,7 +41,7 @@ Route::group(['domain' => $domain], function() {
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
     });
-});
+})->where('domain', '[A-Za-z0-9_\-]+');;
 
 
 
