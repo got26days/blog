@@ -23,7 +23,7 @@
 $domain = env('FIRST_DOMAIN');
 $subdomain = env('SECOND_DOMAIN');
 
-Route::domain($domain)->group(function () {
+Route::group(['domain' => $domain], function() {
     Route::get('/change', 'MainController@change');
 
 
@@ -41,7 +41,9 @@ Route::domain($domain)->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
     });
-})->where('domain', '[A-Za-z0-9_\-]+');;
+});
+
+
 
 Route::domain($subdomain)->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
