@@ -43,7 +43,7 @@ Route::domain($domain)->group(function () {
 
  });
 
-Route::domain($subdomain)->group(function () {
+Route::domain('news24hours.org')->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
 });
 
