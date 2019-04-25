@@ -19,6 +19,8 @@
 
 // Route::get('/test{id}', 'MainController@test');
 
+Route::pattern('domain', '[a-z0-9.\-]+');
+
 $domain = env('FIRST_DOMAIN');
 $subdomain = env('SECOND_DOMAIN');
 
