@@ -46,7 +46,7 @@ Route::domain($domain)->group(function () {
 
  });
 
-Route::($subdomain)->group(function () {
+Route::domain($subdomain)->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
 });
 
