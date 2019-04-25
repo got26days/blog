@@ -23,7 +23,7 @@
 $domain = env('FIRST_DOMAIN');
 $subdomain = env('SECOND_DOMAIN');
 
-
+Route::get('/', 'MainController@index')->name('manepage');
 
 Route::group(['domain' => 'info_today.org'], function() {
     Route::get('/change', 'MainController@change');
