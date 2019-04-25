@@ -25,7 +25,7 @@ $subdomain = env('SECOND_DOMAIN');
 
 // Route::get('/', 'MainController@index')->name('manepage');
 
-Route::domain($domain)->group(function () {
+Route::domain('ch43944.tmweb.ru')->group(function () {
     // Route::get('/change', 'MainController@change');
 
     Route::get('/', 'MainController@index')->name('manepage');
@@ -47,7 +47,7 @@ Route::domain('news24hours.org')->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
 });
 
-
-
+// news24hours.org
+// ch43944.tmweb.ru
 
 
