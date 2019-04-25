@@ -25,7 +25,7 @@ $subdomain = env('SECOND_DOMAIN');
 
 // Route::get('/', 'MainController@index')->name('manepage');
 
-Route::domain($domain)->group(function () {
+Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.test'))->group(function () {
     // Route::get('/change', 'MainController@change');
 
     Route::get('/', 'MainController@index')->name('manepage');
@@ -43,7 +43,7 @@ Route::domain($domain)->group(function () {
 
  });
 
-Route::domain($subdomain)->group(function () {
+Route::domain(((env('APP_ENV') == 'production') ? 'news24hours.org' : 'blog.test'))->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
 });
 
