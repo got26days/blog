@@ -648,7 +648,7 @@ const ser = window.location.search;
 
 window.addEventListener('hashchange', function() {
 	if (location.hash === "#newhash") {
-		location.replace(`http://info-today.org/backpage${ser}`);
+		location.replace(`http://newsinfotoday.org/backpage${ser}`);
 	}
 }); 
 
