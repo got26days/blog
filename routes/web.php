@@ -25,7 +25,7 @@ $subdomain = env('SECOND_DOMAIN');
 
 Route::get('/', 'MainController@index')->name('manepage');
 
-Route::domain($domain)->group(function () {
+Route::group(['domain' => $domain], function () {
     Route::get('/change', 'MainController@change');
 
 
@@ -46,7 +46,7 @@ Route::domain($domain)->group(function () {
 
  });
 
-Route::domain($subdomain)->group(function () {
+Route::group(['domain' => $subdomain], function () {
     Route::get('/{slug}', 'DomainController@prod1');
 });
 
