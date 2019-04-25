@@ -25,7 +25,7 @@ $subdomain = env('SECOND_DOMAIN');
 
 
 
-Route::group(['domain' => 'info-today.org'], function() {
+Route::group(['domain' => 'info_today.org'], function() {
     Route::get('/change', 'MainController@change');
 
 
