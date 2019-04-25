@@ -49,5 +49,6 @@ Route::domain($subdomain)->group(function () {
 
 // news24hours.org
 // ch43944.tmweb.ru
+// http://newsinfotoday.org/
 
 
