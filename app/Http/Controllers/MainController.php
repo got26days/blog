@@ -40,6 +40,17 @@ class MainController extends Controller
 
     }
 
+    public function destpos()
+    {
+        $updatedData = [
+            'result' => 0, 'click' => 0, 'view' => 0
+        ];
+
+        $affected = DB::table('items')->update($updatedData);
+
+        return back();
+    }
+
     public function test($id)
     {
 

@@ -30,15 +30,16 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
 
     Route::get('/', 'MainController@index')->name('manepage');
     Route::get('/backpage', 'MainController@backpage');
-    Route::get('/politika', 'MainController@politika')->name('politika');;
-    Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');;
-    Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');;
-    Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');;
+    Route::get('/politika', 'MainController@politika')->name('politika');
+    Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');
+    Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');
+    Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');
     Route::get('/post{id}', 'MainController@shou')->name('post');
     Route::get('/article', 'MainController@article');
     
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
+        Route::get('/destpos', 'MainController@destpos');
     });
 
  });
