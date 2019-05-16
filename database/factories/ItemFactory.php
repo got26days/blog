@@ -10,8 +10,8 @@ $factory->define(App\Item::class, function (Faker $faker) {
     return [
         'title' => $title,
         'slug' => $slug,
-        'image' => 'http://placehold.it/787x392',
-        'link' => false,
+        'image' => $faker->randomElement(['items/March2019/BMGrMjDf9IPWUzKjiEJY.jpg', 'items/March2019/SUpQvFPxIasSh5pSEWCX.jpg']),
+        'link' => $faker->numberBetween(0,6),
         'position' => $faker->numberBetween(0,5),
         'body1' => $faker->paragraph(15),
         'body2' => $faker->paragraph(15),
@@ -41,6 +41,9 @@ $factory->define(App\Item::class, function (Faker $faker) {
                 return 0;
             }
         },
+        'showt1' => $faker->boolean(),
+        'showt2' => $faker->boolean(),
+        'showt3' => $faker->boolean(),
         'area2' => $faker->boolean(),
         'area3' => $faker->boolean(),
         'area4' => $faker->boolean(),

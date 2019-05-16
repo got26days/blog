@@ -1,97 +1,33 @@
 <div class="right-area">
 
-    @if(count($pos0) > 0)
+
+    @foreach($pos as $key => $card)
+
+    @if(count($card) > 0)
 
     <div class="ra__title">
         <a href="/">
-            <h3>Шоу-бизнес</h3>
-        </a>
-    </div>
-    <div class="ra__body">
-
-        @foreach($pos0 as $pos)
-        <div class="ra__card">
-            <a href="/post{{ $pos->id }}" target="_blank">
-                <div class="img-wrap">
-                    <img src="/storage/{{ $pos->image }}" width="100px">
-                </div>
-                <div class="ra_cardtext">{{ $pos->title }}</div>
-            </a>
-        </div>
-        @endforeach
-    </div>
-    @endif
-
-    @if(count($pos1) > 0)
-        <div class="ra__title">
-            <a href="/">
-                <h3>Политика</h3>
-            </a>
-        </div>
-        <div class="ra__body">
-            @foreach($pos1 as $pos)
-            <div class="ra__card">
-                <a href="/post{{ $pos->id }}" target="_blank">
-                    <div class="img-wrap">
-                        <img src="/storage/{{ $pos->image }}" width="100px">
-                    </div>
-                    <div class="ra_cardtext">{{ $pos->title }}</div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    @endif
-
-    @if(count($pos2) > 0)
-    <div class="ra__title">
-        <a href="/">
-            <h3>Новости</h3>
-        </a>
-    </div>
-    <div class="ra__body">
-        @foreach($pos2 as $pos)
-        <div class="ra__card">
-            <a href="/post{{ $pos->id }}" target="_blank">
-                <div class="img-wrap">
-                    <img src="/storage/{{ $pos->image }}" width="100px">
-                </div>
-                <div class="ra_cardtext">{{ $pos->title }}</div>
-            </a>
-        </div>
-        @endforeach
-    </div>
-    @endif
-
-    @if(count($pos3) > 0)
-    <div class="ra__title">
-        <a href="/">
-            <h3>Оборона</h3>
-        </a>
-    </div>
-    <div class="ra__body">
-        @foreach($pos3 as $pos)
-        <div class="ra__card">
-            <a href="/post{{ $pos->id }}" target="_blank">
-                <div class="img-wrap">
-                    <img src="/storage/{{ $pos->image }}" width="100px">
-                </div>
-                <div class="ra_cardtext">{{ $pos->title }}</div>
-            </a>
-        </div>
-        @endforeach
-    </div>
-    @endif
-
-    @if(count($pos4) > 0)
-    <div class="ra__title">
-        <a href="/">
+            @if($key === 0) 
+            <h3>Финансы</h3>
+            @endif
+            @if($key === 1) 
+            <h3>Политика</h3>
+            @endif
+            @if($key === 2) 
+            <h3>Шоу бизнес</h3>
+            @endif
+            @if($key === 3) 
             <h3>Здоровье</h3>
+            @endif
+            @if($key === 4) 
+            <h3>Астрология</h3>
+            @endif
         </a>
     </div>
     <div class="ra__body">
-        @foreach($pos4 as $pos)
+    @foreach($card as $pos)
         <div class="ra__card">
-            <a href="/post{{ $pos->id }}" target="_blank">
+            <a href="{{ $pos['link'] }}" target="_blank">
                 <div class="img-wrap">
                     <img src="/storage/{{ $pos->image }}" width="100px">
                 </div>
@@ -101,23 +37,8 @@
         @endforeach
     </div>
     @endif
-    @if(count($pos5) > 0)
-    <div class="ra__title">
-        <a href="/">
-            <h3>Кухня</h3>
-        </a>
-    </div>
-    <div class="ra__body">
-            @foreach($pos5 as $pos)
-            <div class="ra__card">
-                <a href="/post{{ $pos->id }}" target="_blank">
-                    <div class="img-wrap">
-                        <img src="/storage/{{ $pos->image }}" width="100px">
-                    </div>
-                    <div class="ra_cardtext">{{ $pos->title }}</div>
-                </a>
-            </div>
-            @endforeach
-    </div>
-    @endif
+
+    @endforeach
+
+
 </div>

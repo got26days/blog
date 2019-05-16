@@ -2,14 +2,18 @@
   <div class="container">
         <div class="logo-area">
           <div class="logo-area__first">
-              <img src="/images/logo.png" alt="logo">
+              {{-- <img src="/images/logo.png" alt="logo"> --}}
+              <a href="{{ route('manepage', $checkers) }}">
+                <span>НОВОСТИ</span> <span class="logotime">24</span>
+              </a>
+              
           </div>
-          <div class="logo-area__second">
+          {{-- <div class="logo-area__second">
               МОСКВА<br />
               <span>
                   07.03.2019, 08:13
               </span>
-          </div>
+          </div> --}}
         </div>
 
 
@@ -20,28 +24,24 @@
       
         <div class="collapse navbar-collapse new-flex-m" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto new-flex-m">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Шоу бизнес <span class="sr-only">(current)</span></a>
+            <li class="nav-item {{ Request::is('manepage') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('manepage', $checkers) }}">Финансы <span class="sr-only">(current)</span></a>
             </li>
-            <li class="delim"> | </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/politika">Политика</a>
+   
+            <li class="nav-item {{ Request::is('politika') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('politika', $checkers) }}">Политика</a>
             </li>
-            <li class="delim"> | </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/novosti">Новости</a>
+         
+            <li class="nav-item {{ Request::is('shou-biznes') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('shou-biznes', $checkers) }}">Шоу бизнес</a>
             </li>
-            <li class="delim"> | </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/oborona">Оборона</a>
+        
+            <li class="nav-item {{ Request::is('zdorove') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('zdorove', $checkers) }}">Здоровье</a>
             </li>
-            <li class="delim"> | </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/zdorovie">Здоровье </a>
-            </li>
-            <li class="delim"> | </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/kuhniy">Кухня</a>
+   
+            <li class="nav-item {{ Request::is('astrologiya') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('astrologiya', $checkers) }}">Астрология</a>
             </li>
           </ul>
 

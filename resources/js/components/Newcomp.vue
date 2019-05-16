@@ -4,16 +4,16 @@
             <div class="col-sm-12 col-md-6 col-lg-5">
                 <div class="row newsupx">
 
-                    <div class="col-sm-12 col-md-12 col-lg-6" v-for="post in posts.slice(0, 2)">
-                        <a :href="`/post${post.id}`">
-                            <div class="lefar-card">
-                                <img :src="`/storage/${post.image}`">
+                    <div class="col-sm-12 col-md-12 col-lg-6" v-for="(post, index) in posts.slice(0, 2)">
+                        <a :href="post.link">
+                            <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
+                                <img :src="`${post.image}`">
 
                                 <p>
-                                    {{ post.title }}
+                                  {{ post.title }}
                                 </p>
 
-                                <a href="`/post${post.id}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -24,15 +24,15 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-12 col-lg-4" v-for="post in posts.slice(2, 5)">
-                        <a :href="`/post${post.id}`">
-                            <div class="lefar-card">
-                                <img :src="`/storage/${post.image}`">
+                        <a :href="post.link">
+                            <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
+                                <img :src="`${post.image}`">
 
-                                <p>
+                                <p class="prod-element">
                                     {{ post.title }}
                                 </p>
 
-                                <a :href="`/post${post.id}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -46,11 +46,11 @@
                 <div class="yllow-area">
                     <div class="row">
 
-                        <div class="yllow-card" v-for="post in posts.slice(5, 8)">
-                            <a :href="`/post${post.id}`">
-                                <img :src="`/storage/${post.image}`">
+                        <div class="yllow-card" v-for="post in posts.slice(5, 8)"  :class="post.color">
+                            <a :href="post.link">
+                                <img :src="`${post.image}`">
                             </a>
-                            <a :href="`/post${post.id}`">
+                            <a :href="post.link">
                                 {{ post.title }}
                             </a>
                         </div>
@@ -64,15 +64,15 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-6 col-lg-4" v-for="post in posts.slice(8, 11)">
-                        <a :href="`/post${post.id}`">
-                            <div class="lefar-card">
-                                <img :src="`/storage/${post.image}`">
+                        <a :href="post.link" target="_blank">
+                            <div class="lefar-card"  :class="[!post.cols ? 'backeven' : '']">
+                                <img :src="`${post.image}`">
 
                                 <p>
-                                    {{ post.title }}
+                                    {{ post.title }} {{ post.cols }}
                                 </p>
 
-                                <a :href="`/post${post.id}`" role="button" class="btn btn-primary">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn" target="_blank">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -87,6 +87,7 @@
     export default {
          props: {
             posts: Array,
+            ops: Number,
         },
         mounted() {
             console.log('Component mounted.')
