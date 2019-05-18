@@ -73,7 +73,7 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             $datesecond = $request->get('sdate', null);
 
             if($datesecond) {
-                $query->where('created_at', '>=', $datesecond ); 
+                $query->where('created_at', '<=', $datesecond ); 
             }
 
             $sdata = $datefirst;
