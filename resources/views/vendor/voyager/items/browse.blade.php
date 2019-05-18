@@ -61,9 +61,9 @@
                                         <div class="input-group col-md-2">
                                             <input type="date" name="sdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $sdata }}">
                                         </div>
-                                        <span class="input-group-btn">
+                                        <span class="input-group-btn" style="width: 40px;">
                                             
-                                            <button class="btn btn-info btn-lg" type="submit">
+                                            <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
                                                 <i class="voyager-search"></i>
                                             </button>
                                         </span>
