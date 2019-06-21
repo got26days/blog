@@ -37,12 +37,14 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
     Route::get('/post{id}', 'MainController@shou')->name('post');
     Route::get('/article', 'MainController@article');
     
-    Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-        Route::get('/destpos', 'MainController@destpos');
-    });
 
  });
+
+ Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+    Route::get('/destpos', 'MainController@destpos');
+});
+
 
 Route::domain(((env('APP_ENV') == 'production') ? 'news24hours.org' : 'blog.test'))->group(function () {
     Route::get('/{slug}', 'DomainController@prod1');
