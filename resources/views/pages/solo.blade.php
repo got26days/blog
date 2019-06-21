@@ -6,6 +6,10 @@
 
     {{App::environment()}}
 
+    123123
+
+    {{ env('APP_ENV') }}
+
     <div class="row padder-main-row">
 
         <div class="col-sm-12 col-md-6 col-lg-5 contnet">
