@@ -212,7 +212,7 @@
 
     </div>
     <div class="new-srow ">
-
+123123213
         @if (count($area6) > 4)
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-5">
