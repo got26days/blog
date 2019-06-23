@@ -1969,21 +1969,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     posts: Array,
@@ -38457,15 +38442,11 @@ var render = function() {
                             "\n                            "
                         )
                       ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(post.link) +
-                            "\n                "
-                        )
-                      ]),
-                      _vm._v(" "),
+                      _vm._v(
+                        "\n\n                            " +
+                          _vm._s(post.link) +
+                          "\n                            "
+                      ),
                       _c(
                         "a",
                         {
@@ -38507,14 +38488,6 @@ var render = function() {
                     },
                     [
                       _c("img", { attrs: { src: "" + post.image } }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(post.link) +
-                            "\n                "
-                        )
-                      ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "prod-element" }, [
                         _vm._v(
@@ -38564,14 +38537,6 @@ var render = function() {
                     },
                     [_c("img", { attrs: { src: "" + post.image } })]
                   ),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(post.link) +
-                        "\n                "
-                    )
-                  ]),
                   _vm._v(" "),
                   _c(
                     "a",
@@ -38629,14 +38594,6 @@ var render = function() {
                             " " +
                             _vm._s(post.cols) +
                             "\n                            "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(post.link) +
-                            "\n                "
                         )
                       ]),
                       _vm._v(" "),
