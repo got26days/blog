@@ -498,6 +498,8 @@ class MainController extends Controller
                 $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
 
+            dd($post->another_sit);
+
             if($post->another_site != NULL) {
                 $post->link = $post->another_site;
             }
