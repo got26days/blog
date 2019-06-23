@@ -20,7 +20,7 @@
                         @isset($area9[3])
                         <div class="teaser-title">
                             <div class="container title-area"> 
-                                <a href="{{ $area9[3]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
+                                <a href="{{ $area9[3]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                     <img src="{{Voyager::image($area9[3]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[3]['title'] }}
@@ -41,7 +41,7 @@
                         @isset($area9[4])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="{{ $area9[4]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
+                                <a href="{{ $area9[4]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank"onclick="ym(54175381, 'reachGoal', 'LAND')">
                                     <img src="{{Voyager::image($area9[4]->thumbnail('cropped','image'))}}">
                                     <div>
                                         {{ $area9[4]['title'] }}
@@ -62,7 +62,7 @@
                         @isset($area9[5])
                         <div class="teaser-title">
                             <div class="container title-area">
-                                <a href="{{ $area9[5]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank">
+                                <a href="{{ $area9[5]['link'] }}" class="title-area" style="text-decoration: none;" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                     <img src="{{Voyager::image($area9[5]->thumbnail('cropped','image'))}}" alt="image">
                                     <div>
                                         {{ $area9[5]['title'] }}
@@ -87,12 +87,12 @@
                         @foreach($area2 as $link)
                         <div class="more-read__solo">
                             <div class="container">
-                                <a href="{{ $link['link'] }}">
+                                <a href="{{ $link['link'] }}" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                     <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
                                 </a>
                                 <div class="more-read__solo-area">
-                                    <a href="{{ $link['link'] }}">{{ $link->title }}</a>
-                                    <a class="btn " href="{{ $link['link'] }}" role="button">Подробнее</a>
+                                    <a href="{{ $link['link'] }}" onclick="ym(54175381, 'reachGoal', 'LAND')">{{ $link->title }}</a>
+                                    <a class="btn " href="{{ $link['link'] }}" role="button" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -130,7 +130,7 @@
                                 {{ $link->title }}
                             </p>
 
-                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
+                            <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                         </div>
                     </a>
                 </div>
@@ -143,11 +143,11 @@
                     @if (count($area4) > 0)
                     @foreach($area4 as $link)
                     <div class="width-card">
-                        <a href="{{ $link['link'] }}" target="_blank">
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
                         </a>
                         <div class=wc-content>
-                            <a href="{{ $link['link'] }}" target="_blank">
+                            <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 {{ $link->title }}
                             </a>
                             <a class="btn " href="{{ $link['link'] }}" role="button" target="_blank">Подробнее</a>
@@ -163,7 +163,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     @foreach($area5 as $link)
                     <div class="lk-revelation">
-                        <a href="{{ $link['link'] }}" target="_blank">
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <img src="/storage/{{ $link->image }}">
                             <div class="lk-revelation__title">
                                 {{ $link->title }}
@@ -186,7 +186,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a href="{{ $link['link'] }}" target="_blank" target="_blank">
+                        <a href="{{ $link['link'] }}" target="_blank" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -205,7 +205,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                        <a href="{{ $link['link'] }}" target="_blank">
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -213,7 +213,7 @@
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                             </div>
                         </a>
                     </div>
@@ -232,7 +232,7 @@
                         @if (count($area7) > 0)
                         @foreach($area7 as $link)
                         <div class="yllow-card">
-                            <a href="{{ $link['link'] }}" target="_blank">
+                            <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 <img src="/storage/{{ $link->image }}">
                             </a>
                             <a href="{{ $link['link'] }}" target="_blank">
@@ -254,14 +254,14 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="{{ $link['link'] }}">
                         <div class="lefar-card {{ $link->color }}">
-                                <a href="{{ $link['link'] }}" target="_blank">
+                                <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                     <img src="/storage/{{ $link->image }}">
                                 </a>
                                 <p>
                                     {{ $link->title }}
                                 </p>
 
-                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank">Подробнее</a>
+                                <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                             </div>
                         </a>
                     </div>

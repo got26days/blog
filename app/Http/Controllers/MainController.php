@@ -17,6 +17,11 @@ use App\Utm;
 class MainController extends Controller
 {
 
+    public function prod7()
+    {
+        return view('prod9.index');
+    }
+
     public function __construct()
     {
         if(!Session::get("utm_data.gid1")){

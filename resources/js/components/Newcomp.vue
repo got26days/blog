@@ -5,7 +5,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-12 col-lg-6" v-for="(post, index) in posts.slice(0, 2)">
-                        <a :href="post.link">
+                        <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
@@ -24,7 +24,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-12 col-lg-4" v-for="post in posts.slice(2, 5)">
-                        <a :href="post.link">
+                        <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
@@ -47,10 +47,10 @@
                     <div class="row">
 
                         <div class="yllow-card" v-for="post in posts.slice(5, 8)"  :class="post.color">
-                            <a :href="post.link">
+                            <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 <img :src="`${post.image}`">
                             </a>
-                            <a :href="post.link">
+                            <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 {{ post.title }}
                             </a>
                         </div>
@@ -64,7 +64,7 @@
                 <div class="row newsupx">
 
                     <div class="col-sm-12 col-md-6 col-lg-4" v-for="post in posts.slice(8, 11)">
-                        <a :href="post.link" target="_blank">
+                        <a :href="post.link" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card"  :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
 
@@ -72,7 +72,7 @@
                                     {{ post.title }} {{ post.cols }}
                                 </p>
 
-                                <a :href="post.link" role="button" class="btn" target="_blank">Подробнее</a>
+                                <a :href="post.link" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                             </div>
                         </a>
                     </div>
