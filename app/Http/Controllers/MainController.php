@@ -475,9 +475,9 @@ class MainController extends Controller
             $post->save();
 
             // colors
-            if($key % 2 === 0){{
+            if($key % 2 === 0){
                 $post->color = "backeven";
-            }}
+            }
 
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
@@ -498,7 +498,7 @@ class MainController extends Controller
                 $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
 
-            if($post->another_site) {
+            if($post->another_site != NULL) {
                 $post->link = $post->another_site;
             }
 
