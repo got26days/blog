@@ -113,6 +113,9 @@ class MainController extends Controller
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
             $post->link = '/post' . $post->id . $newstring;
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
+            }
         }
 
         return  response()->json($mainnews);
@@ -156,6 +159,9 @@ class MainController extends Controller
                 }
             } else {
                 $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+            }
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
             }
         }
 
@@ -498,11 +504,10 @@ class MainController extends Controller
                 $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
             }
 
-            dd($post->another_sit);
-
-            if($post->another_site != NULL) {
+            if($post->another_site != null) {
                 $post->link = $post->another_site;
             }
+
 
 
         }
@@ -522,6 +527,9 @@ class MainController extends Controller
      
             foreach($area3 as $key => $post){
                 $post->link = $post->link . '&bid1=1' . '&bid2=' . ++$key1;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
     
 
@@ -531,6 +539,9 @@ class MainController extends Controller
 
             foreach($area9 as $key => $post){
                 $post->link = $post->link . '&bid1=2' . '&bid2=' . ++$key2;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
         }
      
@@ -541,6 +552,9 @@ class MainController extends Controller
 
             foreach($area4 as $key => $post){
                 $post->link = $post->link . '&bid1=3' . '&bid2=' . ++$key3;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
     
         }
@@ -550,6 +564,9 @@ class MainController extends Controller
         if(!$area5->isEmpty()){
             foreach($area5 as $key => $post){
                 $post->link = $post->link . '&bid1=4' . '&bid2=' . ++$key4;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
         }
 
@@ -559,6 +576,9 @@ class MainController extends Controller
 
             foreach($area2 as $key => $post){
                 $post->link = $post->link . '&bid1=5' . '&bid2=' . ++$key5;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
         }
 
@@ -568,6 +588,9 @@ class MainController extends Controller
       
             foreach($area6 as $key => $post){
                 $post->link = $post->link . '&bid1=6' . '&bid2=' . ++$key6;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
         }
 
@@ -579,6 +602,9 @@ class MainController extends Controller
 
             foreach($area7 as $key => $post){
                 $post->link = $post->link . '&bid1=7' . '&bid2=' . ++$key7;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }    
         }
 
@@ -589,6 +615,9 @@ class MainController extends Controller
   
             foreach($area8 as $key => $post){
                 $post->link = $post->link . '&bid1=8' . '&bid2=' . ++$key8;
+                if($post->another_site != null) {
+                    $post->link = $post->another_site;
+                }
             }
         }
 
