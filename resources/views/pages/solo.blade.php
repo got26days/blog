@@ -79,34 +79,7 @@
                         </div>
                         @endisset
                     </div>
-                    <div class="social-area container">
-                        <div class="social-link">
-                            <a class="icon-fromsolo vk-icon" href="/">
-                                <i class="fab fa-vk"></i>
-                            </a>
-                            <a class="icon-fromsolo ok-icon" href="/">
-                                <i class="fab fa-odnoklassniki"></i>
-                            </a>
-                            <a class="icon-fromsolo fb-icon" href="/">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="icon-fromsolo viber-icon" href="/">
-                                <i class="fab fa-viber"></i>
-                            </a>
-                            <a class="icon-fromsolo whats-icon" href="/">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a class="icon-fromsolo telegram-icon" href="/">
-                                <i class="fab fa-telegram-plane"></i>
-                            </a>
-                            <a class="icon-fromsolo twitter-icon" href="/">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="icon-fromsolo skype-icon" href="/">
-                                <i class="fab fa-skype"></i>
-                            </a>
-                        </div>
-                    </div>
+
                     @if (count($area2) > 0)
                     <div class="more-read">
                         <h5>ЧИТАЙТЕ ТАКЖЕ:</h5>
