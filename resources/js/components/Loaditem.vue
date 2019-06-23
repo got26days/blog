@@ -8,9 +8,6 @@
                         <img  class="lazyload-done" :data-src="`/storage/${post.image}`" v-lazyload>
                     </div>
                     <div class="lk_text-yellow-area">{{  post.title }}</div>
-                    <p>
-                        {{ post.link }}
-                    </p>
                     <a class="btn " role="button" :href="post.link" target="_blank">Подробнее</a>
                 </a>
             </div>

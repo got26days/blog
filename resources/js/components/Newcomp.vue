@@ -13,6 +13,10 @@
                                   {{ post.title }}
                                 </p>
 
+                        <p>
+                        {{ post.link }}
+                    </p>
+
                                 <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
@@ -27,6 +31,10 @@
                         <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card" :class="[!post.cols ? 'backeven' : '']">
                                 <img :src="`${post.image}`">
+
+                                                    <p>
+                        {{ post.link }}
+                    </p>
 
                                 <p class="prod-element">
                                     {{ post.title }}
@@ -50,6 +58,10 @@
                             <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 <img :src="`${post.image}`">
                             </a>
+
+                                                <p>
+                        {{ post.link }}
+                    </p>
                             <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 {{ post.title }}
                             </a>
@@ -71,6 +83,10 @@
                                 <p>
                                     {{ post.title }} {{ post.cols }}
                                 </p>
+
+                                                    <p>
+                        {{ post.link }}
+                    </p>
 
                                 <a :href="post.link" role="button" class="btn" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                             </div>

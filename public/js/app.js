@@ -1815,9 +1815,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -1886,6 +1883,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38373,14 +38386,6 @@ var render = function() {
                 _vm._v(_vm._s(post.title))
               ]),
               _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(post.link) +
-                    "\n                "
-                )
-              ]),
-              _vm._v(" "),
               _c(
                 "a",
                 {
@@ -38453,6 +38458,14 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(post.link) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "a",
                         {
@@ -38494,6 +38507,14 @@ var render = function() {
                     },
                     [
                       _c("img", { attrs: { src: "" + post.image } }),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(post.link) +
+                            "\n                "
+                        )
+                      ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "prod-element" }, [
                         _vm._v(
@@ -38543,6 +38564,14 @@ var render = function() {
                     },
                     [_c("img", { attrs: { src: "" + post.image } })]
                   ),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(post.link) +
+                        "\n                "
+                    )
+                  ]),
                   _vm._v(" "),
                   _c(
                     "a",
@@ -38600,6 +38629,14 @@ var render = function() {
                             " " +
                             _vm._s(post.cols) +
                             "\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(post.link) +
+                            "\n                "
                         )
                       ]),
                       _vm._v(" "),
