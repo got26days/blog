@@ -13,7 +13,6 @@
                                   {{ post.title }}
                                 </p>
 
-                                {{ post.link }}
                                 <a :href="post.link" role="button" class="btn ">Подробнее</a>
                             </div>
                         </a>
