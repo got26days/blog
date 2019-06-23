@@ -113,9 +113,6 @@ class MainController extends Controller
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
             $post->link = '/post' . $post->id . $newstring;
-            if($post->another_site != null) {
-                $post->link = $post->another_site;
-            }
         }
 
         return  response()->json($mainnews);
