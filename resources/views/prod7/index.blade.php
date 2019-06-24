@@ -26,7 +26,7 @@
         <section>
             <div class="header">
                 <div class="container">
-                    <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" class="mainlogo">
+                    <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" class="mainlogo" onclick="ym(54177763, 'reachGoal', 'ODS')">
                        NEWS TODAY
                     </a>
                 </div>
@@ -37,12 +37,12 @@
                 <div class="container">
                     <ul class="nav-ul">
 
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Новости</a></li>
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Спорт</a></li>
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Здоровье</a></li>
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Диеты</a></li>
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Красота</a></li>
-                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: #212529; cursor: pointer;">Мода и стиль</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Новости</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Спорт</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Здоровье</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Диеты</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Красота</a></li>
+                        <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: #212529; cursor: pointer;">Мода и стиль</a></li>
 
                     </ul>
                 </div>
@@ -68,12 +68,12 @@
                             </div>
 
                             <div class="text-area">
-                                <p><strong>Жизнь Ивана сильно изменилась благодаря проекту <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">Общее дело</a>. Он работал охранником в сельском магазине более 4-х лет. Его доход составлял менее 27 тысяч рублей в месяц. Сегодня его жизнь кардинально изменилась. Ежедневно на свой банковский счет он кладет около 12 тысяч рублей.</strong></p>
+                                <p><strong>Жизнь Ивана сильно изменилась благодаря проекту <a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">Общее дело</a>. Он работал охранником в сельском магазине более 4-х лет. Его доход составлял менее 27 тысяч рублей в месяц. Сегодня его жизнь кардинально изменилась. Ежедневно на свой банковский счет он кладет около 12 тысяч рублей.</strong></p>
                                 <p>
                                     Рассказывает Иван Владимирович: "Обычный день, пошел на работу. Подумать не мог как все изменится..." И никто не мог! Обычный охранник из деревни, едва сводит концы с концами, долги по кредитам. Вдруг зарабатывает более двухсот тысяч рублей в месяц! Жена вечно была не довольна нехваткой денег, хотя Иван постоянно работал сверхурочно. Он делал все, чтобы обеспечить свою семью. Однако денег не хватало, и приходилось брать кредиты. Работа не приносила много радости. Разнимать драки бомжей у входа в магазин, а порой хамство покупателей - слабое удовольствие. 
 </p>
 <p>
-По счастливой случайности, в социальной сети он наткнулся на интересный сайт. Там предлагалось <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">зарегистрироваться</a> и получить возможность реального ежедневного дохода.
+По счастливой случайности, в социальной сети он наткнулся на интересный сайт. Там предлагалось <a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">зарегистрироваться</a> и получить возможность реального ежедневного дохода.
                                 </p>
                                 <p>
                                     Предложение было как нельзя кстати. На сайте еще оставались свободные места для регистрации, и Иван ухватился за свой шанс. Зарегистрировался, следуя всем инструкциям. Спустя 3 дня его удивлению не было предела. Поверить своим глазам было сложно, на счету была сумма, превышавшая его месячный заработок.
@@ -87,33 +87,33 @@
                                 <img src="/prod7over/imgs/od.jpg" alt="Автоматизированная система">
                             </div>
                             <div class="text-area">
-                                <p><strong>Без каких либо усилий Иван заработал в приложении <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">Общее дело</a> 1 325 300 рублей. О таких доходах он только мечтал. Всего за неделю он стал миллионером, а теперь с улыбкой вспоминает работу охранника. Об этом он будет помнить всегда.</strong>
+                                <p><strong>Без каких либо усилий Иван заработал в приложении <a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">Общее дело</a> 1 325 300 рублей. О таких доходах он только мечтал. Всего за неделю он стал миллионером, а теперь с улыбкой вспоминает работу охранника. Об этом он будет помнить всегда.</strong>
                                 </p>
                                 <p>"Я в себя прийти не мог! Не мог поверить, что у меня такая куча денег! Как во сне все. Чтобы заработать такую сумму, мне потребовалось бы лет 5 лет экономии на всем и работы на износ. Вышло все совсем иначе, благодаря приложению <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">Общее дело</a>. Я очень редко туда заходил, просто посмотреть насколько увеличился мой счёт. Я сделал запрос в банк и очень удивился - деньги реально поступили на счет, вся сумма. Больше миллиона рублей! Тогда я понял, что жизнь реально изменилась и что это не сон". </p>
 <p><strong>Таких результатов может добиться каждый, нужно просто следовать инструкции:</strong>
                                 </p>
-								<p>1. Заходим на сайт «Общее дело» нажимаем <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">сюда</a>. (Так выглядит главная страница сайта)</p>
+								<p>1. Заходим на сайт «Общее дело» нажимаем <a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">сюда</a>. (Так выглядит главная страница сайта)</p>
 								<div class="image-area">
-										<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">
+										<a  onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">
 								<img src="/prod7over/imgs/od1.jpg" alt="Автоматизированная система">
 							</a>
                             </div>
 							<p>2. Внимательно смотрим видео</p>
 								<div class="image-area">
-										<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">
+										<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">
 								<img src="/prod7over/imgs/od2.jpg" alt="Автоматизированная система">
 							</a>
                             </div>
                                  
 								 </div>
-							<p>3. Далее введите свои данные, для регистрации <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;">бесплатной учетной записи</a>.</p>
+							<p>3. Далее введите свои данные, для регистрации <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')" style="text-decoration: none; color: blue;">бесплатной учетной записи</a>.</p>
 								<div class="image-area">
-										<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">
+										<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">
 								<img src="/prod7over/imgs/od3.jpg" alt="Автоматизированная система">
 										</a>
                             </div>
 							
-							<p>После регистрации, вы уже получите более подробные инструкции по работе в системе<a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;"> «Общее дело»</a>. Для того, чтобы начать зарабатывать не нужны специальные знания или наличие опыта. Об этом, кстати, упоминает и сам создатель системы.</p>
+							<p>После регистрации, вы уже получите более подробные инструкции по работе в системе<a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" style="text-decoration: none; color: blue;"> «Общее дело»</a>. Для того, чтобы начать зарабатывать не нужны специальные знания или наличие опыта. Об этом, кстати, упоминает и сам создатель системы.</p>
 <p>							Вам предоставят БЕСПЛАТНЫЙ и неограниченный доступ к системе «Общее дело».</p>
 								<p></p>
 
@@ -138,13 +138,13 @@
                                 <b>ОБЩАЯ СУММА ВЫПЛАТ СЕГОДНЯ ₽<span class="prize"> 19 000р., 97 000р., 59 000р., 257 000р., 138 000р.</span></b>
                             </div>
 						                            <div class="orange-area">
-                                <a class="orange-btn" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Нажмите здесь, чтобы зарегистрироваться<br> в Приложении
+                                <a class="orange-btn" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Нажмите здесь, чтобы зарегистрироваться<br> в Приложении
                                     Общее дело </a>
                             </div>							
  </div>
                          <div class="col-lg-4 right-panel">
                             <div class="rp-image">
-                            <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">
+                            <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">
                                 <img src="/prod7over/imgs/tov.png" alt="наконец стала известна вся правда о них!">
                             </a>
                             </div>
@@ -155,15 +155,15 @@
                                 <ul>
 
 
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Парень из Самары заработал 950 000 рублей всего за 4 дня!</a></li>
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Стоит ли отказываться от постоянной работы и зарабатывать в интернете?</a></li>
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Как узнать максимальный доход с приложений в разных странах?</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Парень из Самары заработал 950 000 рублей всего за 4 дня!</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Стоит ли отказываться от постоянной работы и зарабатывать в интернете?</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Как узнать максимальный доход с приложений в разных странах?</a></li>
                                 </ul>
                                 <h5>Версия для подписчиков <small>Эксклюзивный контент</small></h5>
                                 <ul>
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Как можно заработать миллион в короткий срок?</a></li>
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">За счет чего получается зарабатывать у приложений?</a></li>
-                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Как выбрать лучший способ заработка в интернете?</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Как можно заработать миллион в короткий срок?</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">За счет чего получается зарабатывать у приложений?</a></li>
+                                    <li><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Как выбрать лучший способ заработка в интернете?</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -193,8 +193,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Олег Романов</div>
                                     <div class="comment-text">Как мне повезло! Я пару раз в интернете видел рекламу, но не переходил по ней, щас обязательно зарегистрируюсь! </div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 15 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 15 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">7
                                             минут назад</span> </div>
                                 </div>
@@ -212,8 +212,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Виктор Игнатенко</div>
                                     <div class="comment-text">Вот это да, как раз думал откуда бы деньги взять, прям очень не хватает уже и работу вторую начал искать, а тут есть отличный вариант.</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 9 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 9 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">19
                                             минут назад</span></div>
                                 </div>
@@ -233,8 +233,8 @@
                                     <div class="comment-text">Очень рад был что зарегистрировался! Давно мечтал купить эту красотку, сначала не поверил конечно в проект, но когда деньги начали падать на счет, сомнения как рукой сняло))
 									 <img src="/prod7over/imgs/auto.jpg" alt="car" style="width: 100%"> 
 									</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 15 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 15 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">39
                                             минут назад</span></div>
                                 </div>
@@ -252,8 +252,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Алексей Федотов</div>
                                     <div class="comment-text">Народ, кто-нибудь уже регистрировался? Я вот думаю попробовать, а то надоело тоже охранником работать, уже тошнит просто!</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">42
                                             минуты назад</span></div>
                                 </div>
@@ -271,8 +271,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Игорь Раманюк</div>
                                     <div class="comment-text">Что-то не верится мне в эти сказки щас много всякого предлагают и далеко не всегда это правда</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 12 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 12 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">57
                                             минут назад</span></div>
                                 </div>
@@ -292,8 +292,8 @@
                                     <div class="comment-text">@Игорь Никакие это не сказки, я за 5 дней 93 000 заработал и купил уже даже билеты на отдых, наконец поедем с семьей на долгожданный отдых!
 									 <img src="/prod7over/imgs/bil.jpg" alt="car" style="width: 100%"> 
 									</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 39 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 39 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">1
                                             час назад</span></div>
                                 </div>
@@ -311,8 +311,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Алексендр Гербер</div>
                                     <div class="comment-text">У меня сестра в Швеции давно уже зарабатывает в этом приложении и иногда даже деньги присылает, я вот тоже все таки зарегистрируюсь наконец, а то долго откладываю. </div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">2
                                             часа назад</span></div>
                                 </div>
@@ -334,8 +334,8 @@
                                     <div class="comment-text"> Я очень рада что наткнулась на этот проект! Мы уже на 3й день холодильник новый купили, щас уже думаем ипотеку закроем скоро)) 
 									<img src="/prod7over/imgs/hol.jpg" alt="car" style="width: 100%"> 
 									</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 15 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 15 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">2
                                             часа назад</span></div>
                                 </div>
@@ -355,8 +355,8 @@
                                         Виталик 
                                     </div>
                                     <div class="comment-text">Удивительно, видимо проект набирает обороты. У меня у подруги муж там зарегистрировался, а я еще не поверил, хотя дела у них в гору пошли, буду ждать возможности зарегистрироваться!</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 27 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 27 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">4
                                             часа назад</span></div>
                                 </div>
@@ -374,8 +374,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Саша Ковальский</div>
                                     <div class="comment-text">Это как так то? Что будет то если у всех будут такие доходы, мы станем самой богатой страной)</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 97 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 97 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">4
                                             часа назад</span></div>
                                 </div>
@@ -393,8 +393,8 @@
                                 <div class="col-9">
                                     <div class="comment-title">Вячеслав Назаров</div>
                                     <div class="comment-text">@Саша, Эта отличная перспектива, почему нет, если такая возможность появляется?</div>
-                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Ответить</a></span> • 9 • <span
-                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Мне нравится</a></span> • <span
+                                    <div class="comment-meta"><span class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Ответить</a></span> • 9 • <span
+                                            class="comment-meta-a"> <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Мне нравится</a></span> • <span
                                             class="comment-underline">6
                                             часов назад</span></div>
                                 </div>
@@ -412,7 +412,7 @@
                             </div>
                         </div>
 
-                        <div class="orange-area"><a class="orange-btn" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Начать зарабатывать</a></div>
+                        <div class="orange-area"><a class="orange-btn" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Начать зарабатывать</a></div>
                     </div>
                 </div>
             </div>
@@ -421,8 +421,8 @@
         <section>
             <div class="footer">
                 <div class="container">
-                    <p><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Раскрытие информации</a> | <a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Политика конфиденциальности</a> | <a
-                            href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Правила использования</a>
+                    <p><a href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Раскрытие информации</a> | <a onclick="ym(54177763, 'reachGoal', 'ODS')" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Политика конфиденциальности</a> | <a
+                            href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Правила использования</a>
                         <br>
                         © 2019 News today</p>
                     <p>News today — это общественно-политическое издание, которое публикует статьи по широкому кругу
@@ -442,7 +442,7 @@
         <h2 class="modal-title">ВНИМАНИЕ!</h2><h3>Завершается набор в последнюю группу.<br /> Только <strong>19</strong> пользователей. Торопитесь!</h3>
 		<a href="#"><img class="mt-3 mb-4" src="/prod7over/imgs/popup.jpg" alt="" style="max-width: 400px" /></a>
 		<div class="footer-button">
-            <a class="btn btn-danger btn-lg popbutton" style="text-decoration: none; color:white;" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]">Присоединиться!</a>
+            <a class="btn btn-danger btn-lg popbutton" style="text-decoration: none; color:white;" href="https://big-novosti.com/click.php?key=j8c7px&cost=[BID]&sid=[SID]&tid=[TID]&cid=[CID]" onclick="ym(54177763, 'reachGoal', 'ODS')">Присоединиться!</a>
 			<p class="h4 mt-3">Присоединиться и начать зарабатывать от $700в день!</p>
         </div>
       </div>
@@ -475,20 +475,20 @@
 		
 	</script>
 	<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(54177763, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/54177763" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(54177763, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+    });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/54177763" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>
