@@ -76,7 +76,7 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $query->where('created_at', '<=', $datesecond ); 
             }
 
-            $sdata = $datefirst;
+            $sdata = $datesecond;
 
             
 
