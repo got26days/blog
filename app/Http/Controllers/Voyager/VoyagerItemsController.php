@@ -100,6 +100,13 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $query->where('area2', '=', $ns); 
             }
 
+            $position = $request->get('key', null);
+            
+            if($position == 'position'){
+                $ns = $request->get('s', null);
+                $query->where('position', '=', $ns); 
+            }
+
             
 
             
