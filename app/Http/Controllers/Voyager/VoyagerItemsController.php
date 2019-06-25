@@ -67,7 +67,7 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $datefirst = Carbon::parse($request->get('fdate', null));
                 // return $datefirst->toDateString();
                 if($datefirst) {
-                    $query->where('created_at', '>=', $datefirst->endOfDay());
+                    $query->where('created_at', '>=', $datefirst->startOfDay());
                   
                 }
                 $fdata = $request->get('fdate', null);
