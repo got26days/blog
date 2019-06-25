@@ -10,7 +10,7 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-use Carbon;
+use Carbon\Carbon;
 
 class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
