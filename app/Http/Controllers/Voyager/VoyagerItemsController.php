@@ -10,6 +10,7 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+use Carbon;
 
 class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
@@ -61,21 +62,23 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $query->where($search->key, $search_filter, $search_value);
             }
 
-            $datefirst = $request->get('fdate', null);
+            // $datefirst = $request->get('fdate', null);
+            $datefirst = Carbon::parse(request()->input('fdate'));
 
             if($datefirst) {
-                $query->where('created_at', '>=', $datefirst);
+                $query->where('created_at', '>=', $datefirst->toDateTimeString());
                 
             }
             $fdata = $datefirst;
 
+            // $fdata = Carbon::parse(request()->input('fdate'));
 
-            $datesecond = $request->get('sdate', null);
+
+            $datesecond = Carbon::parse(request()->input('sdate'));
 
             if($datesecond) {
-                $query->where('created_at', '<=', $datesecond); 
+                $query->where('created_at', '<=', $datesecond->toDateTimeString()); 
             }
-
             $sdata = $datesecond;
 
             $area2 = $request->get('key', null);
@@ -84,6 +87,8 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $ns = $request->get('s', null);
                 $query->where('area2', '=', $ns); 
             }
+
+            
 
             
 
