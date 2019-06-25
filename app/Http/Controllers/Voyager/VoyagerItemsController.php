@@ -73,10 +73,17 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             $datesecond = $request->get('sdate', null);
 
             if($datesecond) {
-                $query->where('created_at', '<=', $datesecond ); 
+                $query->where('created_at', '<=', $datesecond); 
             }
 
             $sdata = $datesecond;
+
+            $area2 = $request->get('key', null);
+            
+            if($area2 == 'area2'){
+                $ns = $request->get('s', null);
+                $query->where('area2', '=', $ns); 
+            }
 
             
 
