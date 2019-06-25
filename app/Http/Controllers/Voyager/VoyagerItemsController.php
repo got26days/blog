@@ -74,7 +74,7 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             }
 
             if($request->get('sdate', null)){
-                $datesecond = Carbon::parse($request->get('fdate', null););
+                $datesecond = Carbon::parse($request->get('sdate', null););
 
                 if($datesecond) {
                     $query->where('created_at', '<=', $datesecond->toDateTimeString()); 
