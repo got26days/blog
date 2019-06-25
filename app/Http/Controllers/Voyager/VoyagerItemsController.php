@@ -65,12 +65,12 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             // $datefirst = $request->get('fdate', null);
             if($request->get('fdate', null)){
                 $datefirst = Carbon::parse($request->get('fdate', null));
-
+                // return $datefirst->toDateString();
                 if($datefirst) {
-                    $query->where('created_at', '>=', $datefirst->toDateTimeString());
-                    
+                    $query->whereDate('created_at', '>=', $datefirst);
+                  
                 }
-                $fdata = $datefirst;
+                $fdata = $request->get('fdate', null);
             } else {
                 $fdata = null;
             }
@@ -79,9 +79,12 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $datesecond = Carbon::parse($request->get('sdate', null));
 
                 if($datesecond) {
-                    $query->where('created_at', '<=', $datesecond->toDateTimeString()); 
+                    
+                    $query->whereDate('created_at', '<=', $datesecond); 
                 }
-                $sdata = $datesecond;
+                $sdata = $request->get('sdate', null);
+
+                // return $sdata;
             } else {
                 $sdata = null;
             }
@@ -123,6 +126,9 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
         if (($isModelTranslatable = is_bread_translatable($model))) {
             $dataTypeContent->load('translations');
         }
+
+        // return $dataTypeContent;
+
         // Check if server side pagination is enabled
         $isServerSide = isset($dataType->server_side) && $dataType->server_side;
         // Check if a default search key is set

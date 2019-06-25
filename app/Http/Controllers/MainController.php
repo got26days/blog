@@ -13,12 +13,16 @@ use Session;
 use Illuminate\Support\Str;
 use App\Key;
 use App\Utm;
+use Carbon\Carbon;
 
 class MainController extends Controller
 {
 
-    public function prod7()
+    public function prod7(Request $request)
     {
+        
+        $items = Item::whereDate('created_at', '<=', Carbon::now())->get();
+        return $items;
         return view('prod9.index');
     }
 
