@@ -63,23 +63,28 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             }
 
             // $datefirst = $request->get('fdate', null);
-            $datefirst = Carbon::parse(request()->input('fdate'));
+            if($request->get('fdate', null)){
+                $datefirst = Carbon::parse($request->get('fdate', null));
 
-            if($datefirst) {
-                $query->where('created_at', '>=', $datefirst->toDateTimeString());
-                
+                if($datefirst) {
+                    $query->where('created_at', '>=', $datefirst->toDateTimeString());
+                    
+                }
+                $fdata = $datefirst;
             }
-            $fdata = $datefirst;
 
+            if($request->get('sdate', null)){
+                $datesecond = Carbon::parse($request->get('fdate', null););
+
+                if($datesecond) {
+                    $query->where('created_at', '<=', $datesecond->toDateTimeString()); 
+                }
+                $sdata = $datesecond;
+            }
             // $fdata = Carbon::parse(request()->input('fdate'));
 
 
-            $datesecond = Carbon::parse(request()->input('sdate'));
 
-            if($datesecond) {
-                $query->where('created_at', '<=', $datesecond->toDateTimeString()); 
-            }
-            $sdata = $datesecond;
 
             $area2 = $request->get('key', null);
             
