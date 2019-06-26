@@ -287,6 +287,10 @@
                                     'key' => $search->key,
                                     'order_by' => $orderBy,
                                     'sort_order' => $sortOrder,
+                                    'sdate' => $sdata,
+                                    'fdate' => $fdata,
+                                    'superfdate' => $superfdata,
+                                    'supersdate' => $supersdata, 
                                 ])->links() }}
                             </div>
                         @endif
