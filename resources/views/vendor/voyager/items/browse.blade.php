@@ -55,6 +55,18 @@
                                     </select>
                                     <div class="input-group col-md-12">
                                         <input type="text" class="form-control" placeholder="{{ __('voyager::generic.search') }}" name="s" value="{{ $search->value }}">
+                                        
+                                        <div class="input-group col-md-2">
+                                            <input type="date" name="superfdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $superfdata }}">
+                                        </div>
+                                        <div class="input-group col-md-2">
+                                            <input type="date" name="supersdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $supersdata }}">
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        
                                         <div class="input-group col-md-2">
                                             <input type="date" name="fdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $fdata }}">
                                         </div>

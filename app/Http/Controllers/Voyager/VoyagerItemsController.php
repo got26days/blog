@@ -11,6 +11,8 @@ use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 use Carbon\Carbon;
+use App\Links;
+use App\Click;
 
 class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
@@ -92,6 +94,36 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
 
 
 
+            if($request->get('superfdate', null)){
+                $superdatefirst = Carbon::parse($request->get('superfdate', null));
+                if($superdatefirst) {
+                    
+                    $clicks = Click::where('created_at', '>=', $superdatefirst->startOfDay())->pluck('item_id')->toArray();
+
+                    $query->whereIn('id', $clicks);
+                  
+                }
+                $superfdata = $request->get('superfdate', null);
+            } else {
+                $superfdata = null;
+            }
+
+            if($request->get('supersdate', null)){
+                $superdatesecond = Carbon::parse($request->get('supersdate', null));
+
+                if($superdatesecond) {
+                    
+                    $clicks = Click::where('created_at', '<=', $superdatesecond->endOfDay())->pluck('item_id')->toArray();
+
+                    $query->whereIn('id', $clicks);
+                }
+                $supersdata = $request->get('supersdate', null);
+
+                // return $sdata;
+            } else {
+                $supersdata = null;
+            }
+
 
             $area2 = $request->get('key', null);
             
@@ -134,7 +166,42 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             $dataTypeContent->load('translations');
         }
 
-        // return $dataTypeContent;
+        foreach($dataTypeContent as $data){
+
+            $clicks = Click::where('item_id', '=', $data['id']);
+
+            if($request->get('superfdate', null)){
+                $zona_fdate = Carbon::parse($request->get('superfdate', null));
+                $clicks->where('created_at', '>=', $zona_fdate->startOfDay()); 
+            }
+            
+            if($request->get('supersdate', null)){
+                $zona_sdate = Carbon::parse($request->get('supersdate', null));
+                
+                $clicks->where('created_at', '<=', $zona_sdate->endOfDay()); 
+            }
+
+            $views = $clicks->pluck('view')->toArray();
+            $clicks = $clicks->pluck('click')->toArray();
+
+            $views = array_sum($views);
+            $clicks = array_sum($clicks);
+            
+            $data->view = $views;
+            $data->click = $clicks;
+
+            if($data->view == 0){
+                $nns = 1;
+            } else {
+                $nns = $data->view;
+            }
+
+            $str = $data->click/$nns;
+            $data->result = round((float)$str * 100 );
+        }
+
+        
+
 
         // Check if server side pagination is enabled
         $isServerSide = isset($dataType->server_side) && $dataType->server_side;
@@ -156,7 +223,9 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'isServerSide',
             'defaultSearchKey',
             'fdata',
-            'sdata'
+            'sdata',
+            'superfdata',
+            'supersdata'
         ));
     }
     //***************************************

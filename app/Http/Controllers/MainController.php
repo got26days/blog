@@ -13,6 +13,7 @@ use Session;
 use Illuminate\Support\Str;
 use App\Key;
 use App\Utm;
+use App\Click;
 use Carbon\Carbon;
 
 class MainController extends Controller
@@ -139,6 +140,15 @@ class MainController extends Controller
         $solo = Item::find($id);
 
         foreach($posts as $key=>$post){
+
+
+            $click = new Click;
+            $click->item_id = $post->id;
+            $click->click = 0;
+            $click->view = 1;
+            $click->result = 0;
+            $click->save(); 
+
 
             if($key % 2 === 0){{
                 $post->cols = true;
@@ -433,20 +443,28 @@ class MainController extends Controller
 
         $solo = Item::find($id);
 
-        if($solo->click == null){
-            $solo->click = 0;
-        }
+        // if($solo->click == null){
+        //     $solo->click = 0;
+        // }
 
-        if($solo->view == null){
-            $solo->view = 0;
-        }
+        // if($solo->view == null){
+        //     $solo->view = 0;
+        // }
+
+        $click = new Click;
+        $click->item_id = $solo->id;
+        $click->click = 1;
+        $click->view = 1;
+        $click->result = 1;
+        $click->save(); 
 
 
-        $solo->click = ++$solo->click;
-        $solo->view = ++$solo->view;
-        $str = $solo->click/$solo->view;
-        $solo->result = round((float)$str * 100 );
-        $solo->save();
+        // $solo->click = ++$solo->click;
+        // $solo->view = ++$solo->view;
+
+        // $str = $solo->click/$solo->view;
+        // $solo->result = round((float)$str * 100 );
+        // $solo->save();
 
 
         
@@ -474,12 +492,19 @@ class MainController extends Controller
 
         foreach($massarea  as $key=>$post){
 
-            if($post->view == null){
-                $post->view = 0;
-            }
+            // if($post->view == null){
+            //     $post->view = 0;
+            // }
 
-            $post->view = ++$post->view;
-            $post->save();
+            // $post->view = ++$post->view;
+            // $post->save();
+
+            $click = new Click;
+            $click->item_id = $post->id;
+            $click->click = 0;
+            $click->view = 1;
+            $click->result = 0;
+            $click->save(); 
 
             // colors
             if($key % 2 === 0){
