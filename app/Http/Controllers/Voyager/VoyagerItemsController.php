@@ -214,6 +214,7 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             
             $data->view = $views;
             $data->click = $clicks;
+            // $data->result = 
 
             if($data->view == 0){
                 $nns = 1;
@@ -221,8 +222,12 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $nns = $data->view;
             }
 
-            $str = $data->click/$nns;
-            $data->result = round((float)$str * 100 );
+            
+            $str = floatval($data->click)/floatval($nns);
+            // if($data->title == 'Это невозможно! Школьница из Твери купила квартиру для своей мамы!'){
+            //     return $str;
+            // }
+            $data->result = number_format((float)$str * 100, 4, '.', '');
         }
 
         // $dataTypeContent = $dataTypeContent->where('id', '<', 554);
