@@ -108,6 +108,34 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $superfdata = null;
             }
 
+
+            if($request->get('pos', null)){
+                $zmain = $request['pos'];
+             
+                if($zmain == 'Финансы'){
+                    $zmain = '0';
+                }
+                if($zmain == 'Политика'){
+                    $zmain = '1';
+                }
+                if($zmain == 'Шоу бизнес'){
+                    $zmain = '2';
+                }
+                if($zmain == 'Здовроье'){
+                    $zmain = '3';
+                }
+                if($zmain == 'Астрология'){
+                    $zmain = '4';
+                }
+                
+            
+                $query->where('position', '=', $zmain); 
+                
+                $zmain = $request['pos'];
+            } else {
+                $zmain = null;
+            }
+
             if($request->get('supersdate', null)){
                 $superdatesecond = Carbon::parse($request->get('supersdate', null));
 
@@ -264,7 +292,8 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'fdata',
             'sdata',
             'superfdata',
-            'supersdata'
+            'supersdata',
+            'zmain'
         ));
     }
 

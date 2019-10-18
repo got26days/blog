@@ -62,10 +62,7 @@
                                         <div class="input-group col-md-2">
                                             <input type="date" name="supersdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $supersdata }}">
                                         </div>
-                                        
-                                        
-                                        
-                                        
+                                    
                                         
                                         <div class="input-group col-md-2">
                                             <input type="date" name="fdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $fdata }}">
@@ -81,6 +78,27 @@
                                         </span>
                                     </div>
                                 </div>
+
+                                <div style="margin-top: 15px; margin-bottom: 15px;" id="search-input">
+                                        
+                                        <span style="display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        padding: 0px 10px 0px 10px;">Категория</span>
+                                   
+                                        <select name="pos" style="width: 100%;">
+                                                <option value="">Все категории</option>
+                                                <option value="Финансы" @if($zmain == 'Финансы'){{ 'selected' }}@endif>Финансы</option>
+                                                <option value="Политика" @if($zmain == 'Политика'){{ 'selected' }}@endif>Политика</option>
+                                                <option value="Шоу бизнес" @if($zmain == 'Шоу бизнес'){{ 'selected' }}@endif>Шоу бизнес</option>
+                                                <option value="Здовроье" @if($zmain == 'Здовроье'){{ 'selected' }}@endif>Здовроье</option>
+                                                <option value="Астрология" @if($zmain == 'Астрология'){{ 'selected' }}@endif>Астрология</option>
+                                        </select>
+                                        <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
+                                                <i class="voyager-search"></i>
+                                        </button>
+                                </div>
+
                                 @if (Request::has('sort_order') && Request::has('order_by'))
                                     <input type="hidden" name="sort_order" value="{{ Request::get('sort_order') }}">
                                     <input type="hidden" name="order_by" value="{{ Request::get('order_by') }}">
