@@ -528,7 +528,7 @@ class MainController extends Controller
 
                     $ovgid5 = '&gid5=' . $link['option'];
 
-                    $domain = env("SECOND_DOMAIN", "http://blog.test");
+                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
 
                     $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'];
                 } else {
