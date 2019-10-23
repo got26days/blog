@@ -15,11 +15,11 @@ class DomainController extends Controller
         if($request['gid3']){
 
     
-            $solo_id = $request['gid_3'];
-            
-            $solo = Item::where('id', '=', $solo_id)->first();
+            $soloid = $request['gid_3'];
+     
+            $solo = Item::where('id', '=', $soloid)->first();
 
-            dd($solo);
+            
         
             if($solo->click == null){
                 $solo->click = 0;
