@@ -11,10 +11,10 @@ class DomainController extends Controller
 {
     public function prod1($slug, Request $request)
     {
-        return $request;
+        
         if($request['gid3']){
 
-            
+            return $request;
             $solo_id = $request['gid_3'];
             
             $solo = Item::where('id', '=', $request['gid_3'])->first();
