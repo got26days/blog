@@ -108,9 +108,24 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $superfdata = null;
             }
 
+            if($request->get('supersdate', null)){
+                $superdatesecond = Carbon::parse($request->get('supersdate', null));
+
+                if($superdatesecond) {
+                    
+                    $clicks = Click::where('created_at', '<=', $superdatesecond->endOfDay())->pluck('item_id')->toArray();
+
+                    $query->whereIn('id', $clicks);
+                }
+                $supersdata = $request->get('supersdate', null);
+
+                // return $sdata;
+            } else {
+                $supersdata = null;
+            }
+
             if($request->get('cat2', null)){
                 $cat2main = $request['cat2'];
-
 
                 $query->where('link', '=', $cat2main); 
 
@@ -146,63 +161,11 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $zmain = null;
             }
 
-            if($request->get('supersdate', null)){
-                $superdatesecond = Carbon::parse($request->get('supersdate', null));
-
-                if($superdatesecond) {
-                    
-                    $clicks = Click::where('created_at', '<=', $superdatesecond->endOfDay())->pluck('item_id')->toArray();
-
-                    $query->whereIn('id', $clicks);
-                }
-                $supersdata = $request->get('supersdate', null);
-
-                // return $sdata;
-            } else {
-                $supersdata = null;
-            }
 
 
-            $area2 = $request->get('key', null);
-            
-            if($area2 == 'area2'){
-                $ns = $request->get('s', null);
-                $query->where('area2', '=', $ns); 
-            }
-
-            $position = $request->get('key', null);
-            
-            if($position == 'position'){
-                $ns = $request->get('s', null);
-                $query->where('position', '=', $ns); 
-            }
-
-            // $neworder = $request->get('order_by', null);
-
-            // if($neworder == 'view'){
-            //     if($request->get('sort_order', null) == 'asc'){
-            //         $query->sortBy('view');
-            //     }
-
-            //     if($request->get('sort_order', null) == 'desc'){
-            //         $query->sortByDesc('view');
-            //     }
-            // }
-
-            // $neworder_sec = $request->get('order_by', null);
-
-            // if($neworder_sec == 'click'){
-            //     if($request->get('sort_order', null) == 'asc'){
-            //         $query->sortBy('view');
-            //     }
-
-            //     if($request->get('sort_order', null) == 'desc'){
-            //         $query->sortByDesc('view');
-            //     }
-            // }
 
 
-    
+
 
             if ($orderBy && in_array($orderBy, $dataType->fields())) {
                 $querySortOrder = (!empty($sortOrder)) ? $sortOrder : 'desc';
