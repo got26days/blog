@@ -11,15 +11,9 @@ class DomainController extends Controller
 {
     public function prod1($slug, Request $request)
     {
-
+        return $request;
         if($request['gid3']){
 
-            $click = new Click;
-            $click->item_id = $request['gid3'];
-            $click->click = 1;
-            $click->view = 0;
-            $click->result = 0;
-            $click->save(); 
             
             $solo_id = $request['gid_3'];
             
@@ -49,7 +43,12 @@ class DomainController extends Controller
     
             $solo->save();
 
-            return $solo;
+            $click = new Click;
+            $click->item_id = $request['gid3'];
+            $click->click = 1;
+            $click->view = 0;
+            $click->result = 0;
+            $click->save(); 
         } 
 
         $link = Link::where('slug', '=', $slug)->first();
