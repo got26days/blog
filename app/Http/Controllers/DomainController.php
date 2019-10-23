@@ -12,7 +12,7 @@ class DomainController extends Controller
     public function prod1($slug, Request $request)
     {
 
-        if(isset($request['gid3'])){
+        if($request['gid3']){
 
             $click = new Click;
             $click->item_id = $request['gid3'];
@@ -20,24 +20,36 @@ class DomainController extends Controller
             $click->view = 0;
             $click->result = 0;
             $click->save(); 
+            
+            $solo_id = $request['gid_3'];
+            
+            $solo = Item::find($request['gid_3']);
 
-            // $solo_id = $request['gid_4'];
-            // $solo = Item::find($request['gid_4']);
+            return $solo;
+        
+            if($solo->click == null){
+                $solo->click = 0;
+            }
+    
+            if($solo->view == null){
+                $post->view = 0;
+            }
+    
+    
+            $solo->click = ++$solo->click;
+            $solo->view = ++$solo->view;
+    
+            if($solo->view == 0){
+                $nns = 1;
+            } else {
+                $nns = $solo->view;
+            }
+            $str = floatval($solo->click)/floatval($nns);
+            $solo->result = number_format((float)$str * 100, 4, '.', '');
+    
+            $solo->save();
 
-            // if($solo->click == null){
-            //     $solo->click = 0;
-            // }
-    
-            // if($solo->view == null){
-            //     $post->view = 0;
-            // }
-    
-    
-            // $solo->click = ++$solo->click;
-            // $solo->view = ++$solo->view;
-            // $str = $solo->click/$solo->view;
-            // $solo->result = round((float)$str * 100 );
-            // $solo->save();
+            return $solo;
         } 
 
         $link = Link::where('slug', '=', $slug)->first();

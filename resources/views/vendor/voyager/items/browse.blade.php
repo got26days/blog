@@ -91,13 +91,41 @@
                                                 <option value="Финансы" @if($zmain == 'Финансы'){{ 'selected' }}@endif>Финансы</option>
                                                 <option value="Политика" @if($zmain == 'Политика'){{ 'selected' }}@endif>Политика</option>
                                                 <option value="Шоу бизнес" @if($zmain == 'Шоу бизнес'){{ 'selected' }}@endif>Шоу бизнес</option>
-                                                <option value="Здовроье" @if($zmain == 'Здовроье'){{ 'selected' }}@endif>Здовроье</option>
+                                                <option value="Здовроье" @if($zmain == 'Здовроье'){{ 'selected' }}@endif>Здоровье</option>
                                                 <option value="Астрология" @if($zmain == 'Астрология'){{ 'selected' }}@endif>Астрология</option>
                                         </select>
                                         <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
                                                 <i class="voyager-search"></i>
                                         </button>
                                 </div>
+
+                                <div style="margin-top: 15px; margin-bottom: 15px;" id="search-input">
+                                        
+                                    <span style="display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 0px 10px 0px 10px;">Тип</span>
+                               
+                                    <select name="cat2" style="width: 100%;">
+                                            <option value="">Все типы</option>
+                                            <option value="0" @if($cat2main == '0'){{ 'selected' }}@endif>На новость</option>
+                                            <option value="1" @if($cat2main == '1'){{ 'selected' }}@endif>На страницу 1</option>
+                                            <option value="2" @if($cat2main == '2'){{ 'selected' }}@endif>На страницу 2</option>
+                                            <option value="3" @if($cat2main == '3'){{ 'selected' }}@endif>На страницу 3</option>
+                                            <option value="4" @if($cat2main == '4'){{ 'selected' }}@endif>На страницу 4</option>
+                                            <option value="5" @if($cat2main == '5'){{ 'selected' }}@endif>На страницу 5</option>
+                                            <option value="6" @if($cat2main == '6'){{ 'selected' }}@endif>На страницу 6</option>
+                                            <option value="7" @if($cat2main == '7'){{ 'selected' }}@endif>На страницу 7</option>
+                                            <option value="8" @if($cat2main == '8'){{ 'selected' }}@endif>На страницу 8</option>
+                                            <option value="9" @if($cat2main == '9'){{ 'selected' }}@endif>На страницу 9</option>
+                                            <option value="10" @if($cat2main == '10'){{ 'selected' }}@endif>На страницу 10</option>
+                                            <option value="11" @if($cat2main == '11'){{ 'selected' }}@endif>На страницу 11</option>
+                                            <option value="12" @if($cat2main == '12'){{ 'selected' }}@endif>На страницу 12</option>
+                                    </select>
+                                    <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
+                                            <i class="voyager-search"></i>
+                                    </button>
+                            </div>
 
                                 @if (Request::has('sort_order') && Request::has('order_by'))
                                     <input type="hidden" name="sort_order" value="{{ Request::get('sort_order') }}">

@@ -108,6 +108,16 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $superfdata = null;
             }
 
+            if($request->get('cat2', null)){
+                $cat2main = $request['cat2'];
+
+
+                $query->where('link', '=', $cat2main); 
+
+            } else {
+                $cat2main = null;
+            }
+
 
             if($request->get('pos', null)){
                 $zmain = $request['pos'];
@@ -219,44 +229,44 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             $dataTypeContent->load('translations');
         }
 
-        foreach($dataTypeContent as $data){
+        // foreach($dataTypeContent as $data){
 
-            $clicks = Click::where('item_id', '=', $data['id']);
+        //     $clicks = Click::where('item_id', '=', $data['id']);
 
-            if($request->get('superfdate', null)){
-                $zona_fdate = Carbon::parse($request->get('superfdate', null));
-                $clicks->where('created_at', '>=', $zona_fdate->startOfDay()); 
-            }
+        //     if($request->get('superfdate', null)){
+        //         $zona_fdate = Carbon::parse($request->get('superfdate', null));
+        //         $clicks->where('created_at', '>=', $zona_fdate->startOfDay()); 
+        //     }
             
-            if($request->get('supersdate', null)){
-                $zona_sdate = Carbon::parse($request->get('supersdate', null));
+        //     if($request->get('supersdate', null)){
+        //         $zona_sdate = Carbon::parse($request->get('supersdate', null));
                 
-                $clicks->where('created_at', '<=', $zona_sdate->endOfDay()); 
-            }
+        //         $clicks->where('created_at', '<=', $zona_sdate->endOfDay()); 
+        //     }
 
-            $views = $clicks->pluck('view')->toArray();
-            $clicks = $clicks->pluck('click')->toArray();
+        //     $views = $clicks->pluck('view')->toArray();
+        //     $clicks = $clicks->pluck('click')->toArray();
 
-            $views = array_sum($views);
-            $clicks = array_sum($clicks);
+        //     $views = array_sum($views);
+        //     $clicks = array_sum($clicks);
             
-            $data->view = $views;
-            $data->click = $clicks;
-            // $data->result = 
+        //     $data->view = $views;
+        //     $data->click = $clicks;
+        //     // $data->result = 
 
-            if($data->view == 0){
-                $nns = 1;
-            } else {
-                $nns = $data->view;
-            }
+        //     if($data->view == 0){
+        //         $nns = 1;
+        //     } else {
+        //         $nns = $data->view;
+        //     }
 
             
-            $str = floatval($data->click)/floatval($nns);
-            // if($data->title == 'Это невозможно! Школьница из Твери купила квартиру для своей мамы!'){
-            //     return $str;
-            // }
-            $data->result = number_format((float)$str * 100, 4, '.', '');
-        }
+        //     $str = floatval($data->click)/floatval($nns);
+        //     // if($data->title == 'Это невозможно! Школьница из Твери купила квартиру для своей мамы!'){
+        //     //     return $str;
+        //     // }
+        //     $data->result = number_format((float)$str * 100, 4, '.', '');
+        // }
 
         // $dataTypeContent = $dataTypeContent->where('id', '<', 554);
 
@@ -293,7 +303,8 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'sdata',
             'superfdata',
             'supersdata',
-            'zmain'
+            'zmain',
+            'cat2main'
         ));
     }
 
