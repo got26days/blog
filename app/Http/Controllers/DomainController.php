@@ -14,10 +14,10 @@ class DomainController extends Controller
         
         if($request['gid3']){
 
-            return $request;
+    
             $solo_id = $request['gid_3'];
             
-            $solo = Item::where('id', '=', $request['gid_3'])->first();
+            $solo = Item::where('id', '=', $solo_id)->first();
 
             return $solo;
         
