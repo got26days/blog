@@ -15,7 +15,7 @@ class DomainController extends Controller
         if($request['gid3']){
 
     
-            $soloid = $request['gid_3'];
+            $soloid = $request['gid3'];
      
             $solo = Item::where('id', '=', $soloid)->first();
 
