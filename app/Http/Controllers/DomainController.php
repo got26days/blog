@@ -23,7 +23,7 @@ class DomainController extends Controller
             
             $solo_id = $request['gid_3'];
             
-            $solo = Item::find($request['gid_3']);
+            $solo = Item::where('id', '=', $request['gid_3'])->first();
 
             return $solo;
         
