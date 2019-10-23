@@ -19,7 +19,7 @@ class DomainController extends Controller
             
             $solo = Item::where('id', '=', $solo_id)->first();
 
-            return $solo;
+            dd($solo);
         
             if($solo->click == null){
                 $solo->click = 0;
