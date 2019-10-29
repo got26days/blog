@@ -40,9 +40,13 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
 
  });
 
+
+
  Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get('/destpos', 'MainController@destpos');
+    Route::get('/viewer', 'ViewerController@index');
+    Route::get('/viewer/getdata', 'ViewerController@getdata');
 });
 
 

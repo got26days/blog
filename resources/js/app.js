@@ -25,6 +25,7 @@ Vue.component('loaditem', require('./components/Loaditem.vue').default);
 
 Vue.component('overload', require('./components/Overload.vue').default);
 Vue.component('newcomp', require('./components/Newcomp.vue').default);
+Vue.component('viewer', require('./components/Viewer.vue').default);
 
 // import BackToTop from 'vue-backtotop'
 // Vue.use(BackToTop)
