@@ -153,8 +153,7 @@ class MainController extends Controller
             $super_click->save();
         } else {
             $super_click->item_id = $post->id;
-            $super_click->click = $super_click->click;
-            $super_click->view = ++$super_click->view;
+            $super_click->view = $super_click->view + 1;
             $super_click->result = 1;
             $super_click->save();
         }
@@ -171,8 +170,8 @@ class MainController extends Controller
             $post->view = 0;
         }
 
-        $post->click = ++$post->click;
-        $post->view = ++$post->view;
+        $post->click = $post->click + 1;
+        $post->view = $post->view + 1;
 
         if($post->view == 0){
             $nns = 1;
@@ -194,8 +193,8 @@ class MainController extends Controller
             $super_click->save();
         } else {
             $super_click->item_id = $post->id;
-            $super_click->click = ++$super_click->click;
-            $super_click->view = ++$super_click->view;
+            $super_click->click = $super_click->click + 1;
+            $super_click->view = $super_click->view + 1;
             $super_click->result = 1;
             $super_click->save();
         }
