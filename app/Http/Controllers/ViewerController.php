@@ -17,6 +17,7 @@ class ViewerController extends Controller
     public function getdata(Request $request)
     {
         $items = Item::with('clicks')->get();
+        
 
         if($request['firstdate']){
             $firstdate = Carbon::parse($request['firstdate'])->startOfDay();
@@ -52,11 +53,17 @@ class ViewerController extends Controller
             
             $item->ctr = $result;
 
+            if($item->market == null){
+                $item->market = 0;
+            }
+
         }
 
         $items = collect($items);
 
-        $items = $items->sortByDesc('ctr')->values();
+        $items = $items->sortByDesc(function($item) {
+            return sprintf('%-12s%s', $item->market, $item->ctr);
+        })->values()->all();
 
         return $items;
     }
