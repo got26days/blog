@@ -19,36 +19,8 @@ class DomainController extends Controller
      
             $solo = Item::where('id', '=', $soloid)->first();
 
-            
-        
-            if($solo->click == null){
-                $solo->click = 0;
-            }
+            $this->newclick($solo);
     
-            if($solo->view == null){
-                $post->view = 0;
-            }
-    
-    
-            $solo->click = ++$solo->click;
-            $solo->view = ++$solo->view;
-    
-            if($solo->view == 0){
-                $nns = 1;
-            } else {
-                $nns = $solo->view;
-            }
-            $str = floatval($solo->click)/floatval($nns);
-            $solo->result = number_format((float)$str * 100, 4, '.', '');
-    
-            $solo->save();
-
-            $click = new Click;
-            $click->item_id = $request['gid3'];
-            $click->click = 1;
-            $click->view = 0;
-            $click->result = 0;
-            $click->save(); 
         } 
 
         $link = Link::where('slug', '=', $slug)->first();
@@ -64,27 +36,45 @@ class DomainController extends Controller
         return view('prod1.index');
     }
 
-    // public function prod2()
-    // {
-    //     return view('prod2.index');
-    // }
+    public function newclick($post)
+    {
+        if($post->click == null){
+            $post->click = 0;
+        }
 
-    // public function prod3()
-    // {
-    //     return view('prod3.index');
-    // }
+        if($post->view == null){
+            $post->view = 0;
+        }
 
-    // public function prod4()
-    // {
-    //     return view('prod4.index');
-    // }
+        $post->click = $post->click + 1;
+        $post->view = $post->view + 1;
 
-    // public function prod5()
-    // {
-    //     return view('prod5.index');
-    // }
-    // public function prod6()
-    // {
-    //     return view('prod6.index');
-    // }
+        if($post->view == 0){
+            $nns = 1;
+        } else {
+            $nns = $post->view;
+        }
+        
+        $str = floatval($post->click)/floatval($nns);
+        $post->result = number_format((float)$str * 100, 4, '.', '');
+        $post->save();
+
+        $super_click = Click::whereDate('created_at', Carbon::today())->where('item_id', '=', $post->id)->first();
+        if(!$super_click){
+            $super_click = new Click;
+            $super_click->item_id = $post->id;
+            $super_click->click = 1;
+            $super_click->view = 1;
+            $super_click->result = 88;
+            $super_click->save();
+        } else {
+            $super_click->item_id = $post->id;
+            $super_click->click = $super_click->click + 1;
+            $super_click->view = $super_click->view + 1;
+            $super_click->result = 999;
+            $super_click->save();
+        }
+
+    }
+
 }
