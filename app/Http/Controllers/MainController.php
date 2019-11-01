@@ -462,6 +462,7 @@ class MainController extends Controller
 
         if($solo['market'] > 0){
             $solo->market = --$solo->market;
+            $solo->save();
         }
 
 
@@ -486,6 +487,7 @@ class MainController extends Controller
 
             if($post['market'] > 0){
                 $post->market = --$post->market;
+                $post->save();
             }
 
             // colors
