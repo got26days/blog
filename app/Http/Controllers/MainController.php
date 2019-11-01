@@ -49,7 +49,7 @@ class MainController extends Controller
         $items = Click::truncate();
           
         $updatedData = [
-            'result' => 0, 'click' => 0, 'view' => 0
+            'result' => 0.0000, 'click' => 0, 'view' => 0
         ];
         $affected = DB::table('items')->update($updatedData);
 
@@ -460,6 +460,7 @@ class MainController extends Controller
 
         $this->newclick($solo);
 
+
         if($solo->position){
             $ops = $solo['position'];
         } else {
@@ -624,6 +625,7 @@ class MainController extends Controller
         $area6 = $this->slic($area6);
         $area5 = $this->slic($area5);
     
+        // return $solo;
 
         return view('pages.solo', compact('solo', 
         'teaser1', 'teaser2', 'teaser3', 
