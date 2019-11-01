@@ -716,7 +716,8 @@ class MainController extends Controller
         $newstring = $this->getUtmFor($checkers);
 
         $posts =  Item::where('area2', '=', 0)
-        ->orderBy(DB::raw('RAND()'))
+        ->orderBy('market', 'desc')
+        ->orderBy('result', 'desc')
         ->limit(16)->get();
 
         $solo = Item::find($id);
