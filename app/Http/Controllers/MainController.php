@@ -466,8 +466,6 @@ class MainController extends Controller
         ->orderBy('market', 'desc')
         ->orderBy('result', 'desc')
         ->get();
-
-        return $massarea;
         
 
         foreach($massarea  as $key=>$post){
