@@ -149,11 +149,12 @@ class MainController extends Controller
             $super_click->item_id = $post->id;
             $super_click->click = 0;
             $super_click->view = 1;
-            $super_click->result = 1;
+            $super_click->result = 77;
             $super_click->save();
         } else {
             $super_click->item_id = $post->id;
             $super_click->view = $super_click->view + 1;
+            $super_click->click = $super_click->click;
             $super_click->result = 1;
             $super_click->save();
         }
@@ -189,7 +190,7 @@ class MainController extends Controller
             $super_click->item_id = $post->id;
             $super_click->click = 1;
             $super_click->view = 1;
-            $super_click->result = 1;
+            $super_click->result = 88;
             $super_click->save();
         } else {
             $super_click->item_id = $post->id;
