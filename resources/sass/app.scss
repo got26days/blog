@@ -18,6 +18,10 @@ $newcolor: #ecf3ff;
 
 $maingrey: #f4f4f4;
 
+a:hover{
+  text-decoration: none;
+}
+
 body{
   background-color: #fff;
   // color: #6a6a6a;
@@ -473,6 +477,7 @@ body{
     margin-left: 14px;
     display: flex;
     flex-direction: column;
+    width: 100%;
     a{
       text-decoration: none;
       font-size: 15px;
@@ -669,13 +674,17 @@ body{
 
 .sidebar{
   @include media-breakpoint-up(md) {
-    position: -webkit-sticky;
-    position: sticky;
-  }
+    // position: fixed;   
+    // position: -webkit-sticky;
+    // position: sticky;
 
-  bottom: 1rem;
-  align-self: flex-end;
+    
+  }
+  // bottom: 1rem;
+  // align-self: flex-end;
 }
+
+
 
 .yllow-area{
   // border-bottom: 1px solid #f5ffed;
@@ -780,11 +789,58 @@ body{
 
 .nav-link:hover{
   color: #ffdf85 !important;
-  // border-bottom: 1px solid #ffdf85;
-  // text-decoration: underline;
+
 }
 
 
 .prod-element{
   min-height: 102px !important;
+}
+
+.right-pos-cart{
+  min-height: 158px;
+}
+
+.iconwatch{
+  width: 105px;
+  margin-top: 16px;
+  i{
+    font-size: 10px;
+    color:  #959595;
+  }
+  span{
+    font-size: 10px;
+    color:  #959595;
+  }
+}
+
+.area-watch{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconwatch2{
+  // margin-top: 16px;
+  i{
+    font-size: 10px;
+    color:  #959595;
+  }
+  span{
+    font-size: 10px;
+    color:  #959595;
+  }
+}
+
+.iconwatch3{
+  width: 105px;
+  margin-top: 74px;
+  i{
+    font-size: 10px;
+    color:  #959595;
+  }
+  span{
+    font-size: 10px;
+    color:  #959595;
+  }
 }

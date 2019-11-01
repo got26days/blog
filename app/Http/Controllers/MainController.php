@@ -40,15 +40,8 @@ class MainController extends Controller
         }
         $this->utms = $arrut;
 
-        // $strkey = Key::latest()->first();
-
-        // if(!$strkey['var']){
-        //     $strkey['var'] = 'keykeykey'; 
-        // }
-
-        // session(["utm_data.key" => $strkey['var']]);
-
     }
+
 
     public function destpos()
     {
@@ -107,6 +100,7 @@ class MainController extends Controller
 
     }
 
+    // Запрос с главной страницы
     public function getdata($position, $last)
     {
         $checkers = $this->checkUtm();
@@ -119,86 +113,128 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/short' . $post->id . $newstring;
         }
 
         return  response()->json($mainnews);
     }
 
-    public function getposts($ops, $id)
+    public function newview($post)
     {
-        if($ops == null){
-            $ops = 0;
+
+        if($post->click == null){
+            $post->click = 0;
         }
 
-        $checkers = $this->checkUtm();
-        $newstring = $this->getUtmFor($checkers);
-
-        $posts =  Item::where('area2', '=', 0)
-        ->orderBy(DB::raw('RAND()'))
-        // ->where('position', '=', $ops)
-        ->limit(11)->get();
-
-        $solo = Item::find($id);
-
-        foreach($posts as $key=>$post){
-
-
-            $click = new Click;
-            $click->item_id = $post->id;
-            $click->click = 0;
-            $click->view = 1;
-            $click->result = 0;
-            $click->save(); 
-
-
-            if($key % 2 === 0){{
-                $post->cols = true;
-            }}
-
-            $post->image = Voyager::image($post->thumbnail('cropped','image'));
-
-            if($post->link != '0') {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-
-                    $ovgid5 = '&gid5=' . $link['option'];
-
-                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
-
-                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
-                }
-            } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
-            }
-            if($post->another_site != null) {
-                $post->link = $post->another_site;
-            }
+        if($post->view == null){
+            $post->view = 0;
         }
 
-        return  response()->json($posts);
+        // $post->click = ++$post->click;
+        $post->view = ++$post->view;
+
+        if($post->view == 0){
+            $nns = 1;
+        } else {
+            $nns = $post->view;
+        }
+        
+        $str = floatval($post->click)/floatval($nns);
+        $post->result = number_format((float)$str * 100, 4, '.', '');
+        $post->save();
+
+        $super_click = Click::whereDate('created_at', Carbon::today())->where('item_id', '=', $post->id)->first();
+        if(!$super_click){
+            $super_click = new Click;
+            $super_click->item_id = $post->id;
+            $super_click->click = 0;
+            $super_click->view = 1;
+            $super_click->result = 1;
+            $super_click->save();
+        } else {
+            $super_click->item_id = $post->id;
+            $super_click->click = $super_click->click;
+            $super_click->view = ++$super_click->view;
+            $super_click->result = 1;
+            $super_click->save();
+        }
+
+    }
+
+    public function newclick($post)
+    {
+        if($post->click == null){
+            $post->click = 0;
+        }
+
+        if($post->view == null){
+            $post->view = 0;
+        }
+
+        $post->click = ++$post->click;
+        $post->view = ++$post->view;
+
+        if($post->view == 0){
+            $nns = 1;
+        } else {
+            $nns = $post->view;
+        }
+        
+        $str = floatval($post->click)/floatval($nns);
+        $post->result = number_format((float)$str * 100, 4, '.', '');
+        $post->save();
+
+        $super_click = Click::whereDate('created_at', Carbon::today())->where('item_id', '=', $post->id)->first();
+        if(!$super_click){
+            $super_click = new Click;
+            $super_click->item_id = $post->id;
+            $super_click->click = 1;
+            $super_click->view = 1;
+            $super_click->result = 1;
+            $super_click->save();
+        } else {
+            $super_click->item_id = $post->id;
+            $super_click->click = ++$super_click->click;
+            $super_click->view = ++$super_click->view;
+            $super_click->result = 1;
+            $super_click->save();
+        }
+
     }
 
 
+
     public function getRight($newstring)
-    {
-        
-        for($i = 0; $i <= 5; $i++){
+    { 
 
-            ${'pos' . $i} = Item::latest()->where('position', '=', $i)
-            ->where('area2', '=', 1)
-            ->orderBy(DB::raw('RAND()'))->limit(3)->get();
+        $pos0 = Item::latest()->where('position', '=', '1')
+        ->where('area2', '=', 1)
+        ->orderBy(DB::raw('RAND()'))->limit(3)->get();
 
-            foreach(${'pos' . $i} as $post){
-                $post->image = $post->thumbnail('small', 'image');
-                $post->link = '/post' . $post->id . $newstring ;
-            }
-
+        foreach($pos0 as $post){
+            $post->image = $post->thumbnail('small', 'image');
+            $post->link = '/post' . $post->id . $newstring ;
         }
 
-        return array($pos0, $pos1, $pos2, $pos3, $pos4);
+        $pos1 = Item::latest()->where('position', '=', '2')
+        ->where('area2', '=', 1)
+        ->orderBy(DB::raw('RAND()'))->limit(3)->get();
+
+        foreach($pos1 as $post){
+            $post->image = $post->thumbnail('small', 'image');
+            $post->link = '/post' . $post->id . $newstring ;
+        }
+
+        $pos2 = Item::latest()->where('position', '=', '5')
+        ->where('area2', '=', 1)
+        ->orderBy(DB::raw('RAND()'))->limit(3)->get();
+
+        foreach($pos2 as $post){
+            $post->image = $post->thumbnail('small', 'image');
+            $post->link = '/post' . $post->id . $newstring ;
+        }
+
+        return array($pos0, $pos1, $pos2);
     }
 
     public function backpage(Request $request)
@@ -251,13 +287,6 @@ class MainController extends Controller
             "adg",
         ];
 
-        // foreach($arrays as $row){
-        //     $new = new Utm;
-        //     $new->utm = $row;
-        //     $new->save();
-        // }
-
-
     }
 
 
@@ -287,8 +316,6 @@ class MainController extends Controller
 
     public function checkUtm()
     {
-
-
         $arrayUtm = [];
         foreach($this->utms as $utm){
             if(Session::get("utm_data.{$utm}")){
@@ -325,6 +352,7 @@ class MainController extends Controller
 
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
+        
         $newstring = $this->getUtmFor($checkers);
         
         $lastop = 0;
@@ -334,7 +362,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/short' . $post->id . $newstring;
             $lastop =  $post->id;
         }
         
@@ -369,6 +397,7 @@ class MainController extends Controller
 
         $free = $this->setUtm($request);
         $checkers = $this->checkUtm();
+        
         $newstring = $this->getUtmFor($checkers);
 
         $lastop = 0;
@@ -385,8 +414,8 @@ class MainController extends Controller
         return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop', 'checkers'));
     }
 
-    
-    public function zdorove(Request $request)
+
+    public function proisshestviya(Request $request)
     {
         $this->forget();
 
@@ -395,29 +424,7 @@ class MainController extends Controller
         $newstring = $this->getUtmFor($checkers);
 
         $lastop = 0;
-        $position = 3;
-
-        $pos = $this->getRight($newstring);
-        $mainnews = $this->getMainNews($position);
-
-        foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
-            $lastop =  $post->id;
-        }
-        
-        return view('pages.index', compact('pos', 'mainnews', 'position', 'lastop', 'checkers'));
-    }
-
-    public function astrologiya(Request $request)
-    {
-        $this->forget();
-
-        $free = $this->setUtm($request);
-        $checkers = $this->checkUtm();
-        $newstring = $this->getUtmFor($checkers);
-
-        $lastop = 0;
-        $position = 4;
+        $position = 5;
 
         $pos = $this->getRight($newstring);
         $mainnews = $this->getMainNews($position);
@@ -442,55 +449,25 @@ class MainController extends Controller
     public function shou($id, Request $request)
     {
 
+        $free = $this->setUtm($request);
+        $checkers = $this->checkUtm();
+        $newstring = $this->getUtmFor($checkers);
 
         $solo = Item::find($id);
-
-        if($solo->click == null){
-            $solo->click = 0;
-        }
-
-        if($solo->view == null){
-            $solo->view = 0;
-        }
-
-        $click = new Click;
-        $click->item_id = $solo->id;
-        $click->click = 1;
-        $click->view = 1;
-        $click->result = 1;
-        $click->save(); 
-
-        $solo->click = ++$solo->click;
-        $solo->view = ++$solo->view;
-
-        if($solo->view == 0){
-            $nns = 1;
-        } else {
-            $nns = $solo->view;
-        }
-        $str = floatval($solo->click)/floatval($nns);
-        $solo->result = number_format((float)$str * 100, 4, '.', '');
-
-        $solo->save();
-
-        // return $solo;
-
-        
-
         if(!$solo){
             abort(404);
         }
+
+        $this->newclick($solo);
 
         if($solo->position){
             $ops = $solo['position'];
         } else {
             $ops = 0;
         }
-
     
 
         $massarea = Item::where('area2', '=', 0)
-        // where('position', '=', $ops)
         // ->where('area2', '=', 0)
         ->orderBy('market', 'desc')
         ->orderBy('result', 'desc')
@@ -500,19 +477,7 @@ class MainController extends Controller
 
         foreach($massarea  as $key=>$post){
 
-            if($post->view == null){
-                $post->view = 0;
-            }
-
-            $post->view = ++$post->view;
-            $post->save();
-
-            $click = new Click;
-            $click->item_id = $post->id;
-            $click->click = 0;
-            $click->view = 1;
-            $click->result = 0;
-            $click->save(); 
+            $this->newview($post);
 
             // colors
             if($key % 2 === 0){
@@ -541,8 +506,6 @@ class MainController extends Controller
             if($post->another_site != null) {
                 $post->link = $post->another_site;
             }
-
-
 
         }
 
@@ -660,12 +623,11 @@ class MainController extends Controller
         $area7 = $this->slic($area7);
         $area6 = $this->slic($area6);
         $area5 = $this->slic($area5);
-        
-
+    
 
         return view('pages.solo', compact('solo', 
         'teaser1', 'teaser2', 'teaser3', 
-        'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4', 'area9', 'ops',
+        'area2', 'area3', 'area4', 'area5', 'area6', 'area7', 'area8', 'area4', 'area9',
         'checkers'));
     }
 
@@ -678,6 +640,118 @@ class MainController extends Controller
 
         return $array;
 
+    }
+
+    public function article($id, Request $request)
+    {
+
+        $free = $this->setUtm($request);
+        $checkers = $this->checkUtm();
+        $newstring = $this->getUtmFor($checkers);
+
+        $solo = Item::find($id);
+        $solo->link = '/post' . $solo->id . $newstring . '&gid3=' . $solo['id'] .'&gid4=' . $solo['position'];
+   
+        $this->newclick($solo);
+
+        return view('pages.article', compact('solo', 'checkers'));
+    }
+
+    // запрос лоудера с самой новости
+    public function getposts($id)
+    {
+        $checkers = $this->checkUtm();
+        $newstring = $this->getUtmFor($checkers);
+
+        $posts =  Item::where('area2', '=', 0)
+        ->orderBy(DB::raw('RAND()'))
+        ->limit(11)->get();
+
+        $solo = Item::find($id);
+
+        foreach($posts as $key=>$post){
+
+            $this->newview($post);
+
+            if($key % 2 === 0){{
+                $post->cols = true;
+            }}
+
+            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+
+            if($post->link != '0') {
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+
+                    $ovgid5 = '&gid5=' . $link['option'];
+
+                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                } else {
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                }
+            } else {
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+            }
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
+            }
+        }
+
+        foreach($posts as $key => $post){
+            $post->link = $post->link . '&bid1=9';
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
+            }
+        }
+
+        return  response()->json($posts);
+    }
+    
+    public function shortgetposts($id)
+    {
+
+        $checkers = $this->checkUtm();
+        $newstring = $this->getUtmFor($checkers);
+
+        $posts =  Item::where('area2', '=', 0)
+        ->orderBy(DB::raw('RAND()'))
+        ->limit(16)->get();
+
+        $solo = Item::find($id);
+
+        foreach($posts as $key=>$post){
+
+            $this->newview($post);
+
+            if($key % 2 === 0){{
+                $post->cols = true;
+            }}
+
+            $post->image = Voyager::image($post->thumbnail('cropped','image'));
+
+            if($post->link != '0') {
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+
+                    $ovgid5 = '&gid5=' . $link['option'];
+
+                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                } else {
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                }
+            } else {
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+            }
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
+            }
+        }
+
+        return  response()->json($posts);
     }
 
 }

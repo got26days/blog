@@ -17,9 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// Запрос с главной страницы
 Route::get('/posts{option}/last{last}', 'MainController@getdata');
 
-
-Route::get('/getposts{ops}/post{id}', 'MainController@getposts');
 

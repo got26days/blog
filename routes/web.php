@@ -32,11 +32,16 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
     Route::get('/backpage', 'MainController@backpage');
     Route::get('/politika', 'MainController@politika')->name('politika');
     Route::get('/shou-biznes', 'MainController@shoubiznes')->name('shou-biznes');
-    Route::get('/zdorove', 'MainController@zdorove')->name('zdorove');
-    Route::get('/astrologiya', 'MainController@astrologiya')->name('astrologiya');
+    Route::get('/proisshestviya', 'MainController@proisshestviya')->name('proisshestviya');
+
     Route::get('/post{id}', 'MainController@shou')->name('post');
-    Route::get('/article', 'MainController@article');
-    
+    Route::get('/short{id}', 'MainController@article');
+
+    // догрузка на соло
+    Route::get('/getposts/post{id}', 'MainController@getposts');
+
+    // short догрузка
+    Route::get('/short/getposts{id}', 'MainController@shortgetposts');
 
  });
 

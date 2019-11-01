@@ -33,11 +33,27 @@ class ViewerController extends Controller
 
         foreach($items as $item){
 
-            $item->click = $item->scopeGetClickAttribute($firstdate, $seconddate);
-            $item->view =  $item->scopeGetViewAttribute($firstdate, $seconddate);
-            $item->ctr = $item->scopeGetCtrAttribute($firstdate, $seconddate);
+            $clicks = Click::where('item_id', '=', $item->id)->where('created_at', '>=', $firstdate)
+            ->where('created_at', '<=', $seconddate)->get();
+            
+            $collect = collect($clicks);
+
+            $item->super_click = $collect->sum('click');
+            $item->super_view =  $collect->sum('view');
+            
+            $click  = $item->super_click;
+            $view =  $item->super_view;
+  
+            if($view == 0){
+                 $view = 1;
+            }
+            $result = floatval($click)/floatval($view);
+            $result = number_format((float)$result * 100, 4, '.', '');
+            
+            $item->ctr = $result;
 
         }
+
         $items = collect($items);
 
         $items = $items->sortByDesc('ctr')->values();

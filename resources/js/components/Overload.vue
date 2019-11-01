@@ -9,16 +9,15 @@
 <script>
     import lazyload from '../directives/lazyload';
 
+    // страница соло
 
     export default {
         props: {
-            ops: Number,
             postid: Number,
         },
         data() {
             return {
                 posts: [],
-                lastPost: '',
             }
         },
         directives: {
@@ -27,7 +26,7 @@
         methods: {
             getInitialPosts() {
 
-                axios.get(`/api/getposts0/post${this.postid}`)
+                axios.get(`/getposts/post${this.postid}`)
                     .then(response => {
                         this.posts.push(response.data);
                     });
@@ -39,7 +38,7 @@
                         .offsetHeight;
 
                     if (bottomOfWindow) {
-                        axios.get(`/api/getposts0/post${this.postid}`)
+                        axios.get(`/getposts/post${this.postid}`)
                             .then(response => {
                                 if (response.data.length > 0) {
                                     this.posts.push(response.data);
@@ -50,7 +49,6 @@
             },
         },
         mounted() {
-            this.getInitialPosts();
             this.getInitialPosts();
             this.scroll(1);
         },

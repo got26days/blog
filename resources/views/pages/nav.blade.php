@@ -24,9 +24,7 @@
       
         <div class="collapse navbar-collapse new-flex-m" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto new-flex-m">
-            <li class="nav-item {{ Request::is('manepage') ? 'active' : '' }}">
-              <a class="nav-link" href="{{ route('manepage', $checkers) }}">Финансы <span class="sr-only">(current)</span></a>
-            </li>
+
    
             <li class="nav-item {{ Request::is('politika') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('politika', $checkers) }}">Политика</a>
@@ -36,13 +34,10 @@
               <a class="nav-link" href="{{ route('shou-biznes', $checkers) }}">Шоу бизнес</a>
             </li>
         
-            <li class="nav-item {{ Request::is('zdorove') ? 'active' : '' }}">
-              <a class="nav-link" href="{{ route('zdorove', $checkers) }}">Здоровье</a>
+            <li class="nav-item {{ Request::is('proisshestviya') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('proisshestviya', $checkers) }}">Происшествия</a>
             </li>
-   
-            <li class="nav-item {{ Request::is('astrologiya') ? 'active' : '' }}">
-              <a class="nav-link" href="{{ route('astrologiya', $checkers) }}">Астрология</a>
-            </li>
+
           </ul>
 
         </div>

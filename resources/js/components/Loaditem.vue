@@ -8,7 +8,12 @@
                         <img  class="lazyload-done" :data-src="`/storage/${post.image}`" v-lazyload>
                     </div>
                     <div class="lk_text-yellow-area">{{  post.title }}</div>
+                    <div class="area-watch">
                     <a class="btn " role="button" :href="post.link" target="_blank">Подробнее</a>
+                    <div class="iconwatch2">
+                                    <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                                </div>
+                            </div>
                 </a>
             </div>
         </div>
@@ -19,6 +24,7 @@
 <script>
      import lazyload  from '../directives/lazyload';
      
+    //  Главная страница
 
     export default {
         props: {
@@ -65,7 +71,7 @@
         mounted() {
             this.getInitialPosts();
             
-            //  this.scroll(1);
+             this.scroll(1);
         },
         computed: {
             postLastCount() {

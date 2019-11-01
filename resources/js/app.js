@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -26,6 +25,8 @@ Vue.component('loaditem', require('./components/Loaditem.vue').default);
 Vue.component('overload', require('./components/Overload.vue').default);
 Vue.component('newcomp', require('./components/Newcomp.vue').default);
 Vue.component('viewer', require('./components/Viewer.vue').default);
+Vue.component('short', require('./components/Short.vue').default);
+Vue.component('shortcomp', require('./components/Shortcomp.vue').default);
 
 // import BackToTop from 'vue-backtotop'
 // Vue.use(BackToTop)
@@ -35,21 +36,17 @@ Vue.component('viewer', require('./components/Viewer.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import 'es6-promise/auto'
-
- import lazyload  from './directives/lazyload';
+import lazyload from './directives/lazyload';
 
 const app = new Vue({
     el: '#app',
     // components: { BackToTop },
     directives: {
         lazyload
-      },
-    created(){
-    //   var sidebar = new StickySidebar('#sidebar', {
-    //     containerSelector: '#main-content',
-    //     innerWrapperSelector: '.sidebar__inner',
-    //     topSpacing: 20,
-    //     bottomSpacing: 20
-    // });
+    },
+    created() {
+       
     }
 });
+
+

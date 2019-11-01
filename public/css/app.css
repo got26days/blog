@@ -13708,6 +13708,10 @@ a.text-dark:focus {
   clip: auto;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 body {
   background-color: #fff;
 }
@@ -14184,6 +14188,7 @@ body {
   margin-left: 14px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .more-read .more-read__solo-area a {
@@ -14377,18 +14382,6 @@ body {
   height: 0;
 }
 
-.sidebar {
-  bottom: 1rem;
-  align-self: flex-end;
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
-
 .yllow-area {
   background-color: #f5ffed;
   padding: 10px 0px 10px 0px;
@@ -14490,5 +14483,55 @@ body {
 
 .prod-element {
   min-height: 102px !important;
+}
+
+.right-pos-cart {
+  min-height: 158px;
+}
+
+.iconwatch {
+  width: 105px;
+  margin-top: 16px;
+}
+
+.iconwatch i {
+  font-size: 10px;
+  color: #959595;
+}
+
+.iconwatch span {
+  font-size: 10px;
+  color: #959595;
+}
+
+.area-watch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconwatch2 i {
+  font-size: 10px;
+  color: #959595;
+}
+
+.iconwatch2 span {
+  font-size: 10px;
+  color: #959595;
+}
+
+.iconwatch3 {
+  width: 105px;
+  margin-top: 74px;
+}
+
+.iconwatch3 i {
+  font-size: 10px;
+  color: #959595;
+}
+
+.iconwatch3 span {
+  font-size: 10px;
+  color: #959595;
 }
 

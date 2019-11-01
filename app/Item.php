@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Resizable;
 use Carbon\Carbon;
+use App\Click;
 
 class Item extends Model
 {
@@ -13,6 +14,7 @@ class Item extends Model
      protected $fillable = [
           'firstdate',
           'seconddate',
+          'id'
       ];
 
 
@@ -23,8 +25,8 @@ class Item extends Model
 
      function scopeGetClickAttribute($firstdate, $seconddate)
      {
-           $clicks = $this->clicks->where('created_at', '>=', $firstdate)
-          ->where('created_at', '<=', $seconddate);
+          $clicks = Clicks::chank(200)->where('item_id', '=', $this->id)->where('created_at', '>=', $firstdate)
+          ->where('created_at', '<=', $seconddate)->get();
           $collect = collect($clicks);
           $click  = $collect->sum('click');
 
@@ -33,8 +35,8 @@ class Item extends Model
 
      public function scopeGetViewAttribute($firstdate, $seconddate)
      {
-          $clicks = $this->clicks->where('created_at', '>=', $firstdate)
-          ->where('created_at', '<=', $seconddate);
+          $clicks = Clicks::chank(200)->where('item_id', '=', $this->id)->where('created_at', '>=', $firstdate)
+          ->where('created_at', '<=', $seconddate)->get();
           $collect = collect($clicks);
           $click  = $collect->sum('view');
 
@@ -43,7 +45,7 @@ class Item extends Model
 
      function scopeGetCtrAttribute($firstdate, $seconddate)
      {
-          $clicks = $this->clicks->where('created_at', '>=', $firstdate)
+          $clicks = $this->clicks->chunk(200)->where('created_at', '>=', $firstdate)
           ->where('created_at', '<=', $seconddate);
 
           $collect = collect($clicks);
