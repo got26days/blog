@@ -132,14 +132,8 @@ class MainController extends Controller
 
         // $post->click = ++$post->click;
         $post->view = $post->view + 1;
-
-        if($post->view == 0){
-            $nns = 1;
-        } else {
-            $nns = $post->view;
-        }
         
-        $str = floatval($post->click)/floatval($nns);
+        $str = floatval($post->click)/floatval($post->view);
         $post->result = number_format((float)$str * 100, 4, '.', '');
         $post->save();
 
@@ -173,14 +167,8 @@ class MainController extends Controller
 
         $post->click = $post->click + 1;
         $post->view = $post->view + 1;
-
-        if($post->view == 0){
-            $nns = 1;
-        } else {
-            $nns = $post->view;
-        }
         
-        $str = floatval($post->click)/floatval($nns);
+        $str = floatval($post->click)/floatval($post->view);
         $post->result = number_format((float)$str * 100, 4, '.', '');
         $post->save();
 
@@ -479,6 +467,7 @@ class MainController extends Controller
         ->orderBy('result', 'desc')
         ->get();
 
+        return $massarea;
         
 
         foreach($massarea  as $key=>$post){
