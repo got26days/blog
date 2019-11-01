@@ -2435,12 +2435,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -39855,13 +39849,7 @@ var render = function() {
                 }
               }
             })
-          ]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Показы")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Клики")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("CTR (%)")])
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -39889,13 +39877,7 @@ var render = function() {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(data.super_click))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(data.ctr) + " ")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(data.view))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(data.click))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(data.result) + " ")])
+            _c("td", [_vm._v(_vm._s(data.ctr) + " ")])
           ])
         }),
         0

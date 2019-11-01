@@ -31,9 +31,6 @@
 					<th scope="col">Показы</th>
 					<th scope="col">Клики</th>
 					<th scope="col">CTR (%) <i class="fas fa-sort" @click="sortkey = 'ctr'"></i></th>
-					<th scope="col">Показы</th>
-					<th scope="col">Клики</th>
-					<th scope="col">CTR (%)</th>
 					
                 </tr>
             </thead>
@@ -48,9 +45,6 @@
 					<td>{{ data.super_view }}</td>
 					<td>{{ data.super_click }}</td>
 					<td>{{ data.ctr }} </td>
-					<td>{{ data.view }}</td>
-					<td>{{ data.click }}</td>
-					<td>{{ data.result }} </td>
                 </tr>
             </tbody>
         </table>
