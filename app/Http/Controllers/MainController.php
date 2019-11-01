@@ -460,6 +460,10 @@ class MainController extends Controller
 
         $this->newclick($solo);
 
+        if($solo['market'] > 0){
+            $solo->market = --$solo->market;
+        }
+
 
         if($solo->position){
             $ops = $solo['position'];
@@ -479,6 +483,10 @@ class MainController extends Controller
         foreach($massarea  as $key=>$post){
 
             $this->newview($post);
+
+            if($post['market'] > 0){
+                $post->market = --$post->market;
+            }
 
             // colors
             if($key % 2 === 0){
