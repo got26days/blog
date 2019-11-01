@@ -131,7 +131,7 @@ class MainController extends Controller
         }
 
         // $post->click = ++$post->click;
-        $post->view = ++$post->view;
+        $post->view = $post->view + 1;
 
         if($post->view == 0){
             $nns = 1;
