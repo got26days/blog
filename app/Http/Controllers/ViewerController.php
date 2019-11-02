@@ -89,6 +89,8 @@ class ViewerController extends Controller
                 $items = $items->sortBy($request['sortkey'])->values()->all();
             }
             
+        } else{
+            $items = $items->all();
         }
         
 
