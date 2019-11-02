@@ -66,19 +66,19 @@ class ViewerController extends Controller
         $items = collect($items);
 
         if($request['area2'] != null){
-            $items = $items->where('area2', $request['area2'])->all();
+            $items = $items->where('area2', $request['area2']);
         }
         if($request['position'] != null){
-            $items = $items->where('position', $request['position'])->all();
+            $items = $items->where('position', $request['position']);
         }
         if($request['link'] != null){
 
             if($request['link'] == 0){
-                $items = $items->where('link', '0')->all();
+                $items = $items->where('link', '0');
             } 
 
             if($request['link'] != 0){
-                $items = $items->where('link', '!=', '0')->all();
+                $items = $items->where('link', '!=', '0');
             } 
 
             // $items = $items->where('position', $request['position'])->all();
