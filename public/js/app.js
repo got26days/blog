@@ -2463,6 +2463,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2472,7 +2479,8 @@ __webpack_require__.r(__webpack_exports__);
       sortkey: '',
       area2: '',
       position: '',
-      link: ''
+      link: '',
+      sort: 2
     };
   },
   watch: {
@@ -2484,7 +2492,7 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link)).then(function (response) {
+      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link, "$sort=").concat(this.sort)).then(function (response) {
         _this.datas = response.data;
       });
     }
@@ -7037,7 +7045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fa-sort[data-v-2a0f873d] {\n    cursor: pointer;\n}\n.table[data-v-2a0f873d] {\n    font-size: 12px;\n}\n.titlecol[data-v-2a0f873d] {\n    width: 250px;\n}\n\n", ""]);
+exports.push([module.i, "\n.fa-sort[data-v-2a0f873d] {\n        cursor: pointer;\n}\n.table[data-v-2a0f873d] {\n        font-size: 12px;\n}\n.titlecol[data-v-2a0f873d] {\n        width: 250px;\n}\n.activv[data-v-2a0f873d]{\n\t\tcolor: red !important;\n}\n\n", ""]);
 
 // exports
 
@@ -40480,6 +40488,47 @@ var render = function() {
               }
             }
           })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 mb-3" }, [
+          _c("label", [_vm._v("Сортировка")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.sort,
+                  expression: "sort"
+                }
+              ],
+              staticClass: "custom-select",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.sort = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "1" } }, [_vm._v("По убыванию")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "2", selected: "" } }, [
+                _vm._v("По возрастанию")
+              ])
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
@@ -40641,113 +40690,174 @@ var render = function() {
     _c("table", { staticClass: "table" }, [
       _c("thead", { staticClass: "thead-dark" }, [
         _c("tr", [
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("id "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "id"
+          _c(
+            "th",
+            { class: { activv: _vm.sortkey == "id" }, attrs: { scope: "col" } },
+            [
+              _vm._v("id "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "id"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { staticClass: "titlecol", attrs: { scope: "col" } }, [
-            _vm._v("Наименование "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "title"
+          _c(
+            "th",
+            {
+              staticClass: "titlecol",
+              class: { activv: _vm.sortkey == "title" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Наименование "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "title"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("На главную "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "area2"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "area2" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("На главную "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "area2"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("Ссылка "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "link"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "link" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Ссылка "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "link"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("Тема "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "position"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "position" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Тема "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "position"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("Показать "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "market"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "market" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Показать "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "market"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("Показы "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "super_view"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "super_view" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Показы "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "super_view"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("Клики "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "super_click"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "super_click" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("Клики "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "super_click"
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [
-            _vm._v("CTR (%) "),
-            _c("i", {
-              staticClass: "fas fa-sort",
-              on: {
-                click: function($event) {
-                  _vm.sortkey = "ctr"
+          _c(
+            "th",
+            {
+              class: { activv: _vm.sortkey == "ctr" },
+              attrs: { scope: "col" }
+            },
+            [
+              _vm._v("CTR (%) "),
+              _c("i", {
+                staticClass: "fas fa-sort",
+                on: {
+                  click: function($event) {
+                    _vm.sortkey = "ctr"
+                  }
                 }
-              }
-            })
-          ])
+              })
+            ]
+          )
         ])
       ]),
       _vm._v(" "),

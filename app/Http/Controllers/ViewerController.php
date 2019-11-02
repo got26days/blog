@@ -80,12 +80,15 @@ class ViewerController extends Controller
             if($request['link'] != 0){
                 $items = $items->where('link', '!=', '0');
             } 
-
-            // $items = $items->where('position', $request['position'])->all();
         }
 
         if($request['sortkey']){
-            $items = $items->sortByDesc($request['sortkey'])->values()->all();
+            if($request['sort'] == '1'){
+                $items = $items->sortByDesc($request['sortkey'])->values()->all();
+            } else {
+                $items = $items->sortBy($request['sortkey'])->values()->all();
+            }
+            
         }
         
 

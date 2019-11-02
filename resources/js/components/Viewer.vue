@@ -12,6 +12,13 @@
                     <label for="validationCustom01">Дата Окончания</label>
                     <input type="date" class="form-control" placeholder="Второе имя" value="Mark" v-model="seconddate">
                 </div>
+				<div class="col-md-4 mb-3">
+                    <label>Сортировка</label>
+                    <select class="custom-select" v-model="sort">
+                        <option value="1">По убыванию</option>
+                        <option value="2" selected>По возрастанию</option>
+                    </select>
+                </div>
             </div>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
@@ -49,16 +56,16 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">id <i class="fas fa-sort" @click="sortkey = 'id'"></i></th>
-                    <th scope="col" class="titlecol">Наименование <i class="fas fa-sort" @click="sortkey = 'title'"></i>
+                    <th :class="{ 'activv': sortkey == 'id' }" scope="col">id <i class="fas fa-sort" @click="sortkey = 'id'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'title' }" scope="col" class="titlecol">Наименование <i class="fas fa-sort" @click="sortkey = 'title'"></i>
                     </th>
-                    <th scope="col">На главную <i class="fas fa-sort" @click="sortkey = 'area2'"></i></th>
-                    <th scope="col">Ссылка <i class="fas fa-sort" @click="sortkey = 'link'"></i></th>
-                    <th scope="col">Тема <i class="fas fa-sort" @click="sortkey = 'position'"></i></th>
-                    <th scope="col">Показать <i class="fas fa-sort" @click="sortkey = 'market'"></i></th>
-                    <th scope="col">Показы <i class="fas fa-sort" @click="sortkey = 'super_view'"></i></th>
-                    <th scope="col">Клики <i class="fas fa-sort" @click="sortkey = 'super_click'"></i></th>
-                    <th scope="col">CTR (%) <i class="fas fa-sort" @click="sortkey = 'ctr'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'area2' }" scope="col">На главную <i class="fas fa-sort" @click="sortkey = 'area2'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'link' }" scope="col">Ссылка <i class="fas fa-sort" @click="sortkey = 'link'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'position' }" scope="col">Тема <i class="fas fa-sort" @click="sortkey = 'position'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'market' }" scope="col">Показать <i class="fas fa-sort" @click="sortkey = 'market'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'super_view' }" scope="col">Показы <i class="fas fa-sort" @click="sortkey = 'super_view'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'super_click' }" scope="col">Клики <i class="fas fa-sort" @click="sortkey = 'super_click'"></i></th>
+                    <th :class="{ 'activv': sortkey == 'ctr' }" scope="col">CTR (%) <i class="fas fa-sort" @click="sortkey = 'ctr'"></i></th>
 
                 </tr>
             </thead>
@@ -92,6 +99,7 @@
 				area2: '',
 				position: '',
 				link: '',
+				sort: 2,
             }
         },
         watch: {
@@ -102,7 +110,7 @@
         methods: {
             getData() {
                 axios.get(
-                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}`
+                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}$sort=${this.sort}`
                     )
                     .then(response => {
                         this.datas = response.data;
@@ -197,5 +205,9 @@
     .titlecol {
         width: 250px;
     }
+
+	.activv{
+		color: red !important;
+	}
 
 </style>
