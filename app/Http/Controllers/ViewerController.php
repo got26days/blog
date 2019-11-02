@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Click;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ViewerController extends Controller
 {
@@ -17,7 +18,10 @@ class ViewerController extends Controller
     public function getdata(Request $request)
     {
         $items = Item::with('clicks')->get();
-        
+
+        // $items = DB::table('items');
+
+
 
         if($request['firstdate']){
             $firstdate = Carbon::parse($request['firstdate'])->startOfDay();
@@ -61,9 +65,29 @@ class ViewerController extends Controller
 
         $items = collect($items);
 
-        $items = $items->sortByDesc(function($item) {
-            return sprintf('%-12s%s', $item->market, $item->ctr);
-        })->values()->all();
+        if($request['area2'] != null){
+            $items = $items->where('area2', $request['area2'])->all();
+        }
+        if($request['position'] != null){
+            $items = $items->where('position', $request['position'])->all();
+        }
+        if($request['link'] != null){
+
+            if($request['link'] == 0){
+                $items = $items->where('link', '0')->all();
+            } 
+
+            if($request['link'] != 0){
+                $items = $items->where('link', '!=', '0')->all();
+            } 
+
+            // $items = $items->where('position', $request['position'])->all();
+        }
+
+        if($request['sortkey']){
+            $items = $items->sortByDesc($request['sortkey'])->values()->all();
+        }
+        
 
         return $items;
     }
