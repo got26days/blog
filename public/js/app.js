@@ -2492,7 +2492,7 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link, "$sort=").concat(this.sort)).then(function (response) {
+      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link, "&sort=").concat(this.sort)).then(function (response) {
         _this.datas = response.data;
       });
     }

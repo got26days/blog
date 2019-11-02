@@ -110,7 +110,7 @@
         methods: {
             getData() {
                 axios.get(
-                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}$sort=${this.sort}`
+                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}&sort=${this.sort}`
                     )
                     .then(response => {
                         this.datas = response.data;
