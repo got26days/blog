@@ -56,47 +56,16 @@ class MainController extends Controller
         return back();
     }
 
-    public function test($id)
+    public function test()
     {
 
-  
-        $ops = 2;
-     
+        $updatedData = [
+            'teaser1' => 20000,
+        ];
 
-        $checkers = $this->checkUtm();
-        $newstring = $this->getUtmFor($checkers);
+        $affected = DB::table('items')->update($updatedData);
 
-        $posts =  Item::orderBy('result', 'desc')
-        // ->where('position', '=', $ops)
-        ->get();
-
-        $solo = Item::find($id);
-
-        foreach($posts as $key=>$post){
-
-            if($key % 2 === 0){{
-                $post->cols = true;
-            }}
-
-            $post->image = Voyager::image($post->thumbnail('cropped','image'));
-
-            if($post->link != '0') {
-                $link = Link::where('option', '=', $post->link)->latest()->first();
-                if($link){
-
-                    $ovgid5 = '&gid5=' . $link['option'];
-
-                    $post->link = '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
-                } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
-                }
-            } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
-            }
-        }
-
-        return  response()->json($posts);
-
+        return 'ok';
 
     }
 
@@ -113,7 +82,8 @@ class MainController extends Controller
 
         foreach($mainnews as $post){
             $post->image = $post->thumbnail('cropped', 'image');
-            $post->link = '/short' . $post->id . $newstring  . '&pg1=0';;
+            $post->link = '/short' . $post->id . $newstring;
+            $post->teaser1 = number_format(floatval((int)$post['teaser1']), 0, '', ' ');
         }
 
         return  response()->json($mainnews);
@@ -201,7 +171,7 @@ class MainController extends Controller
 
         foreach($pos0 as $post){
             $post->image = $post->thumbnail('small', 'image');
-            $post->link = '/post' . $post->id . $newstring ;
+            $post->link = '/short' . $post->id . $newstring ;
         }
 
         $pos1 = Item::latest()->where('position', '=', '2')
@@ -210,7 +180,7 @@ class MainController extends Controller
 
         foreach($pos1 as $post){
             $post->image = $post->thumbnail('small', 'image');
-            $post->link = '/post' . $post->id . $newstring ;
+            $post->link = '/short' . $post->id . $newstring ;
         }
 
         $pos2 = Item::latest()->where('position', '=', '5')
@@ -219,7 +189,7 @@ class MainController extends Controller
 
         foreach($pos2 as $post){
             $post->image = $post->thumbnail('small', 'image');
-            $post->link = '/post' . $post->id . $newstring ;
+            $post->link = '/short' . $post->id . $newstring ;
         }
 
         return array($pos0, $pos1, $pos2);
@@ -372,7 +342,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/short' . $post->id . $newstring;
             $lastop =  $post->id;
         }
         
@@ -395,7 +365,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/short' . $post->id . $newstring;
             $lastop =  $post->id;
         }
         
@@ -418,7 +388,7 @@ class MainController extends Controller
         $mainnews = $this->getMainNews($position);
 
         foreach($mainnews as $post){
-            $post->link = '/post' . $post->id . $newstring;
+            $post->link = '/short' . $post->id . $newstring;
             $lastop =  $post->id;
         }
         
@@ -445,6 +415,7 @@ class MainController extends Controller
         if(!$solo){
             abort(404);
         }
+       
 
         $this->newclick($solo);
 
@@ -452,6 +423,8 @@ class MainController extends Controller
             $solo->market = --$solo->market;
             $solo->save();
         }
+
+        $solo->teaser1 = number_format(((int)$solo['teaser1']), 0, '', ' ');
 
 
         if($solo->position){
@@ -469,7 +442,7 @@ class MainController extends Controller
         
 
         foreach($massarea  as $key=>$post){
-
+            
             $this->newview($post);
 
             if($post['market'] > 0){
@@ -481,6 +454,8 @@ class MainController extends Controller
             if($key % 2 === 0){
                 $post->color = "backeven";
             }
+
+            $post->teaser1 = number_format(((int)$post['teaser1']), 0, '', ' ');
 
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
@@ -652,13 +627,17 @@ class MainController extends Controller
         if(!$solo){
             abort(404);
         }
+        
+        // return $solo['teaser1'];
 
-        $this->newclick($solo);
+        // $this->newclick($solo);
 
         if($solo['market'] > 0){
             $solo->market = --$solo->market;
             $solo->save();
         }
+
+        $solo->teaser1 = number_format((floatval($solo['teaser1'])), 0, '', ' ');
 
 
         if($solo->position){
@@ -677,8 +656,8 @@ class MainController extends Controller
         
 
         foreach($massarea  as $key => $post){
-
-            $this->newview($post);
+            
+            // $this->newview($post);
 
             if($post['market'] > 0){
                 $post->market = --$post->market;
@@ -689,6 +668,7 @@ class MainController extends Controller
             if($key % 2 === 0){
                 $post->color = "backeven";
             }
+            $post->teaser1 = number_format(((int)$post['teaser1']), 0, '', ' ');
 
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
@@ -834,6 +814,8 @@ class MainController extends Controller
 
         foreach($posts as $key=>$post){
 
+            
+
             $this->newview($post);
 
             if($key % 2 === 0){{
@@ -844,7 +826,7 @@ class MainController extends Controller
 
 
             $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';  
-            
+            $post->teaser1 = number_format(floatval($post['teaser1']), 0, '', ' ');
         }
 
         foreach($posts as $key => $post){
@@ -867,7 +849,7 @@ class MainController extends Controller
         $solo = Item::find($id);
 
         foreach($posts as $key=>$post){
-
+            
             $this->newview($post);
 
             if($key % 2 === 0){{
@@ -898,6 +880,7 @@ class MainController extends Controller
 
         foreach($posts as $key => $post){
             $post->link = $post->link . '&bid1=9';
+            $post->teaser1 = number_format(((int)$post['teaser1']), 0, '', ' ');
             if($post->another_site != null) {
                 $post->link = $post->another_site;
             }
