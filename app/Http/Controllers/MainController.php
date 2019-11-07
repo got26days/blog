@@ -657,7 +657,7 @@ class MainController extends Controller
 
         foreach($massarea  as $key => $post){
             
-            // $this->newview($post);
+            $this->newview($post);
 
             if($post['market'] > 0){
                 $post->market = --$post->market;
@@ -673,7 +673,23 @@ class MainController extends Controller
             $checkers = $this->checkUtm();
             $newstring = $this->getUtmFor($checkers);
 
-            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';     
+            if($post->link != '0') {
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+
+                    $ovgid5 = '&gid5=' . $link['option'];
+
+                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'] . '&pg1=0';
+                } else {
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';
+                }
+            } else {
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';
+            }
+
+   
 
         }
 
@@ -816,7 +832,7 @@ class MainController extends Controller
 
             
 
-            $this->newview($post);
+            // $this->newview($post);
 
             if($key % 2 === 0){{
                 $post->cols = true;
@@ -825,12 +841,29 @@ class MainController extends Controller
             $post->image = Voyager::image($post->thumbnail('cropped','image'));
 
 
-            $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';  
+            if($post->link != '0') {
+                $link = Link::where('option', '=', $post->link)->latest()->first();
+                if($link){
+
+                    $ovgid5 = '&gid5=' . $link['option'];
+
+                    $domain = env("SECOND_DOMAIN", "http://news24hours.org");
+
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                } else {
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                }
+            } else {
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+            }
+            if($post->another_site != null) {
+                $post->link = $post->another_site;
+            }
             
         }
 
         foreach($posts as $key => $post){
-            $post->link = $post->link . '&bid1=9';
+            $post->link = $post->link . '&bid1=9' . '&pg1=0';
             $post->teaser1 = number_format(floatval((int)$post['teaser1']), 0, '', ' ');
         }
 
@@ -880,7 +913,7 @@ class MainController extends Controller
         }
 
         foreach($posts as $key => $post){
-            $post->link = $post->link . '&bid1=9';
+            $post->link = $post->link . '&bid1=9' . '&pg1=1';
             $post->teaser1 = number_format(((int)$post['teaser1']), 0, '', ' ');
             if($post->another_site != null) {
                 $post->link = $post->another_site;
