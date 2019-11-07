@@ -52,6 +52,7 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
     Route::get('/viewer', 'ViewerController@index');
     Voyager::routes();
     Route::get('/destpos', 'MainController@destpos');
+    Route::get('/destr', 'MainController@destr');
     
     Route::get('/viewer/getdata', 'ViewerController@getdata');
 });

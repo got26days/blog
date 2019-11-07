@@ -79,6 +79,7 @@
             <div class="analytics-container">
            
                     <a href="/admin/destpos" class="btn btn-primary">Очистить историю просмотов</a>
+                    <a href="/admin/destr" class="btn btn-primary">Очистить просмотры старше двух недель</a>
             </div>
         </div>
     </div>

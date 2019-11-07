@@ -75,6 +75,23 @@ class MainController extends Controller
 
     }
 
+    public function destr()
+    {
+
+        if (Auth::check()) {
+            // return view('pages.viewer');
+        } else {
+            abort(404);
+        }
+
+        $date = \Carbon\Carbon::today()->subDays(14);
+
+        $users = Items::where('created_at', '>=', $date)->get();
+
+        return back();
+
+    }
+
     // Запрос с главной страницы
     public function getdata($position, $last)
     {
