@@ -86,7 +86,7 @@ class MainController extends Controller
 
         $date = \Carbon\Carbon::today()->subDays(14);
 
-        $users = Items::where('created_at', '>=', $date)->get();
+        $users = Click::where('created_at', '>=', $date)->get();
 
         return back();
 
