@@ -826,11 +826,12 @@ class MainController extends Controller
 
 
             $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';  
-            $post->teaser1 = number_format(floatval($post['teaser1']), 0, '', ' ');
+            
         }
 
         foreach($posts as $key => $post){
             $post->link = $post->link . '&bid1=9';
+            $post->teaser1 = number_format(floatval((int)$post['teaser1']), 0, '', ' ');
         }
 
         return  response()->json($posts);
