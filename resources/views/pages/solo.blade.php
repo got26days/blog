@@ -243,8 +243,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <a href="{{ $link['link'] }}" target="_blank" target="_blank"
-                            onclick="ym(54175381, 'reachGoal', 'LAND')">
+                  
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -261,7 +260,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                       
                     </div>
                     @endforeach
                 </div>
@@ -270,7 +269,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                       
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -287,7 +286,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     @endforeach
                 </div>
