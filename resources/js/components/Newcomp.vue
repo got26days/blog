@@ -15,7 +15,7 @@
                                 <div class="area-watch">
                                     <a :href="post.link" role="button" class="btn ">Подробнее</a>
                                     <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                 <div class="area-watch">
                                     <a :href="post.link" role="button" class="btn ">Подробнее</a>
                                     <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 {{ post.title }}
                             </a>
                                     <div class="iconwatch3">
-                                        <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                         </div>
@@ -88,7 +88,7 @@
                                 <a :href="post.link" role="button" class="btn" target="_blank"
                                     onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                                     <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
