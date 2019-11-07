@@ -39657,7 +39657,7 @@ var render = function() {
                           [_vm._v("Подробнее")]
                         ),
                         _vm._v(" "),
-                        post.teaser1 > 0
+                        post.teaser1 != "0"
                           ? _c("div", { staticClass: "iconwatch2" }, [
                               _c("i", { staticClass: "fas fa-eye" }),
                               _vm._v(" "),
@@ -39717,7 +39717,7 @@ var render = function() {
                           [_vm._v("Подробнее")]
                         ),
                         _vm._v(" "),
-                        post.teaser1 > 0
+                        post.teaser1 != "0"
                           ? _c("div", { staticClass: "iconwatch2" }, [
                               _c("i", { staticClass: "fas fa-eye" }),
                               _vm._v(" "),
@@ -39776,7 +39776,7 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    post.teaser1 > 0
+                    post.teaser1 != "0"
                       ? _c("div", { staticClass: "iconwatch3" }, [
                           _c("i", { staticClass: "fas fa-eye" }),
                           _vm._v(" "),
@@ -39842,7 +39842,7 @@ var render = function() {
                           [_vm._v("Подробнее")]
                         ),
                         _vm._v(" "),
-                        post.teaser1 > 0
+                        post.teaser1 != "0"
                           ? _c("div", { staticClass: "iconwatch2" }, [
                               _c("i", { staticClass: "fas fa-eye" }),
                               _vm._v(" "),
