@@ -12,11 +12,23 @@ class ViewerController extends Controller
 {
     public function index()
     {
-        return view('pages.viewer');
+        if (Auth::check()) {
+            return view('pages.viewer');
+        } else {
+            abort(404);
+        }
+        
     }
 
     public function getdata(Request $request)
     {
+
+        if (Auth::check()) {
+            // return view('pages.viewer');
+        } else {
+            abort(404);
+        }
+
         $items = Item::with('clicks')->get();
 
         // $items = DB::table('items');
