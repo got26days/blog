@@ -341,8 +341,8 @@
                                     {{ $link->title }}
                                 </p>
                                 <div class="area-watch">
-                                    <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
-                                        onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
+                                    <button href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
+                                        onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</button>
                                     <div class="iconwatch2">
                                         @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
