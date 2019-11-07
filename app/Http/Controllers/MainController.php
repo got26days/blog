@@ -15,6 +15,7 @@ use App\Key;
 use App\Utm;
 use App\Click;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
