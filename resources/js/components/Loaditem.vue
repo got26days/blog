@@ -10,8 +10,8 @@
                     <div class="lk_text-yellow-area">{{  post.title }}</div>
                     <div class="area-watch">
                     <a class="btn " role="button" :href="post.link" target="_blank">Подробнее</a>
-                    <div class="iconwatch2">
-                                    <i class="fas fa-eye" v-if="post.teaser1"></i> <span>{{ post.teaser1 }}</span>
+                    <div class="iconwatch2 " v-if="post.teaser1 != '0'">
+                                    <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                 </div>
                             </div>
                 </a>

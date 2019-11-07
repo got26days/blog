@@ -39575,13 +39575,13 @@ var render = function() {
                   [_vm._v("Подробнее")]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "iconwatch2" }, [
-                  post.teaser1
-                    ? _c("i", { staticClass: "fas fa-eye" })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(post.teaser1))])
-                ])
+                post.teaser1 != "0"
+                  ? _c("div", { staticClass: "iconwatch2 " }, [
+                      _c("i", { staticClass: "fas fa-eye" }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(post.teaser1))])
+                    ])
+                  : _vm._e()
               ])
             ]
           )
