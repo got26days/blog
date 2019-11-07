@@ -197,7 +197,8 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(0, 2) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-6">
-         
+                        <a href="{{ $link['link'] }}" target="_blank" target="_blank"
+                            onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -205,8 +206,8 @@
                                     {{ $link->title }}
                                 </p>
                                 <div class="area-watch">
-                                    <a href="{{ $link['link'] }}" role="button" class="btn"
-                                        target="_blank">Подробнее</a>
+                                    <button href="{{ $link['link'] }}" role="button" class="btn"
+                                        target="_blank">Подробнее</button>
                                     <div class="iconwatch2">
                                             @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
@@ -214,7 +215,7 @@
                                     </div>
                                 </div>
                             </div>
-                     
+                        </a>
                     </div>
                     @endforeach
                 </div>
@@ -223,7 +224,7 @@
                 <div class="row newsupx">
                     @foreach($area6->slice(2, 5) as $link)
                     <div class="col-sm-12 col-md-12 col-lg-4">
-                  
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
                             <div class="lefar-card {{ $link->color }}">
                                 <img src="/storage/{{ $link->image }}">
 
@@ -231,8 +232,8 @@
                                     {{ $link->title }}
                                 </p>
                                 <div class="area-watch">
-                                    <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
-                                        onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
+                                    <button href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
+                                        onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</button>
                                     <div class="iconwatch2">
                                     @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
@@ -240,7 +241,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+                        </a>
                     </div>
                     @endforeach
                 </div>
