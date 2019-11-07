@@ -333,10 +333,9 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="{{ $link['link'] }}">
                             <div class="lefar-card {{ $link->color }}">
-                                <a href="{{ $link['link'] }}" target="_blank"
-                                    onclick="ym(54175381, 'reachGoal', 'LAND')">
+                           
                                     <img src="/storage/{{ $link->image }}">
-                                </a>
+                              
                                 <p>
                                     {{ $link->title }}
                                 </p>
