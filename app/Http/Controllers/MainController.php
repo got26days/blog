@@ -45,7 +45,12 @@ class MainController extends Controller
 
     public function destpos()
     {
-      
+        if (Auth::check()) {
+            // return view('pages.viewer');
+        } else {
+            abort(404);
+        }
+        
         $items = Click::truncate();
           
         $updatedData = [
