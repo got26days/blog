@@ -851,7 +851,7 @@ class MainController extends Controller
 
         foreach($posts as $key=>$post){
             
-            $this->newview($post);
+            // $this->newview($post);
 
             if($key % 2 === 0){{
                 $post->cols = true;
