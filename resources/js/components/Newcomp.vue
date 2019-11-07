@@ -14,8 +14,8 @@
                                 </p>
                                 <div class="area-watch">
                                     <a :href="post.link" role="button" class="btn ">Подробнее</a>
-                                    <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
+                                    <div class="iconwatch2" v-if="post.teaser1 > 0">
+                                        <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -37,8 +37,8 @@
                                 </p>
                                 <div class="area-watch">
                                     <a :href="post.link" role="button" class="btn ">Подробнее</a>
-                                    <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
+                                    <div class="iconwatch2" v-if="post.teaser1 > 0">
+                                        <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +62,8 @@
                             <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 {{ post.title }}
                             </a>
-                                    <div class="iconwatch3">
-                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
+                                    <div class="iconwatch3" v-if="post.teaser1 > 0">
+                                        <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                         </div>
@@ -87,8 +87,8 @@
                                 <div class="area-watch">
                                 <a :href="post.link" role="button" class="btn" target="_blank"
                                     onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
-                                    <div class="iconwatch2">
-                                        <i class="fas fa-eye" v-if="post.teaser1 > 0"></i> <span>{{ post.teaser1 }}</span>
+                                    <div class="iconwatch2" v-if="post.teaser1 > 0">
+                                        <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                             </div>
