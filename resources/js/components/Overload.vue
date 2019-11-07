@@ -14,10 +14,12 @@
     export default {
         props: {
             postid: Number,
+            short: Boolean
         },
         data() {
             return {
                 posts: [],
+                url: ''
             }
         },
         directives: {
@@ -26,7 +28,7 @@
         methods: {
             getInitialPosts() {
 
-                axios.get(`/getposts/post${this.postid}`)
+                axios.get(`${this.url}${this.postid}`)
                     .then(response => {
                         this.posts.push(response.data);
                     });
@@ -38,7 +40,7 @@
                         .offsetHeight;
 
                     if (bottomOfWindow) {
-                        axios.get(`/getposts/post${this.postid}`)
+                        axios.get(`${this.url}${this.postid}`)
                             .then(response => {
                                 if (response.data.length > 0) {
                                     this.posts.push(response.data);
@@ -51,6 +53,11 @@
         mounted() {
             this.getInitialPosts();
             this.scroll(1);
+            if(this.short == true){
+                this.url = '/short/getposts';
+            } else {
+                this.url = '/getposts/post';
+            }
         },
     }
 

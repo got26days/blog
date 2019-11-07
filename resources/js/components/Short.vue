@@ -141,11 +141,11 @@
     import lazyload from '../directives/lazyload';
 
     export default {
-        props: ['solo'],
+        props: ['solo', 'short'],
         data() {
             return {
                 firstposts: [],
-                posts: []
+                posts: [],
             }
         },
         directives: {
@@ -154,10 +154,11 @@
         mounted() {
             this.getInitialPosts();
             this.scroll(1);
+
         },
         methods: {
             getInitialPosts() {
-
+                
                 axios.get(`/short/getposts${this.solo.id}`)
                     .then(response => {
                         this.firstposts = response.data;

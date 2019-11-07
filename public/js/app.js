@@ -2026,11 +2026,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    postid: Number
+    postid: Number,
+    short: Boolean
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      url: ''
     };
   },
   directives: {
@@ -2040,7 +2042,7 @@ __webpack_require__.r(__webpack_exports__);
     getInitialPosts: function getInitialPosts() {
       var _this = this;
 
-      axios.get("/getposts/post".concat(this.postid)).then(function (response) {
+      axios.get("".concat(this.url).concat(this.postid)).then(function (response) {
         _this.posts.push(response.data);
       });
     },
@@ -2051,7 +2053,7 @@ __webpack_require__.r(__webpack_exports__);
         var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
         if (bottomOfWindow) {
-          axios.get("/getposts/post".concat(_this2.postid)).then(function (response) {
+          axios.get("".concat(_this2.url).concat(_this2.postid)).then(function (response) {
             if (response.data.length > 0) {
               _this2.posts.push(response.data);
             }
@@ -2063,6 +2065,12 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getInitialPosts();
     this.scroll(1);
+
+    if (this.short == true) {
+      this.url = '/short/getposts';
+    } else {
+      this.url = '/getposts/post';
+    }
   }
 });
 
@@ -2219,7 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['solo'],
+  props: ['solo', 'short'],
   data: function data() {
     return {
       firstposts: [],

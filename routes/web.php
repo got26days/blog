@@ -40,8 +40,9 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
     // догрузка на соло
     Route::get('/getposts/post{id}', 'MainController@getposts');
 
+
     // short догрузка
-    Route::get('/short/getposts{id}', 'MainController@shortgetposts');
+    Route::get('/short/getposts{id}', 'MainController@getshortposts');
 
  });
 
