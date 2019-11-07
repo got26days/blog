@@ -8,7 +8,7 @@
             <div class="news-solo target">
                 
                     <div class="prenews">
-                    <img src="/storage/{{ $solo['image']}}" alt="">
+                    <img src="{{Voyager::image($solo->thumbnail('medium','image'))}}" alt="">
                         <div class="titletoppreviewmain">
                             {{ $solo['title'] }}
                             <div class="area-watch">
