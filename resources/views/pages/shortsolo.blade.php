@@ -29,7 +29,28 @@
                     @if (count($area2) > 0)
                     <div class="more-read">
                         <h5>ЧИТАЙТЕ ТАКЖЕ:</h5>
-
+                        @foreach($area9 as $link)
+                        <div class="more-read__solo">
+                            <div class="container">
+                                <a href="{{ $link['link'] }}" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                                    <img src="{{Voyager::image($link->thumbnail('cropped','image'))}}">
+                                </a>
+                                <div class="more-read__solo-area">
+                                    <a href="{{ $link['link'] }}"
+                                        onclick="ym(54175381, 'reachGoal', 'LAND')">{{ $link->title }}</a>
+                                    <div class="area-watch">
+                                        <a class="btn " href="{{ $link['link'] }}" role="button"
+                                            onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
+                                        <div class="iconwatch2">
+                                                @if($link['teaser1'])
+                                            <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                         @foreach($area2 as $link)
                         <div class="more-read__solo">
                             <div class="container">
