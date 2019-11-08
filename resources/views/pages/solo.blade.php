@@ -106,10 +106,10 @@
                                 <div class="more-read__solo-area">
                                     <a href="{{ $link['link'] }}"
                                         onclick="ym(54175381, 'reachGoal', 'LAND')">{{ $link->title }}</a>
-                                    <div class="area-watch">
+                                    <div class="area-watch2">
                                         <a class="btn " href="{{ $link['link'] }}" role="button"
                                             onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
-                                        <div class="iconwatch2">
+                                        <div class="iconwatch5">
                                                 @if($link['teaser1'])
                                             <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                             @endif
@@ -217,8 +217,8 @@
                                     {{ $link->title }}
                                 </div>
                                 <div class="area-watch">
-                                    <a class="btn " href="{{ $link['link'] }}" role="button"
-                                        target="_blank">Подробнее</a>
+                                    <button class="btn " href="{{ $link['link'] }}" role="button"
+                                        target="_blank">Подробнее</button>
                                     <div class="iconwatch2">
                                             @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
