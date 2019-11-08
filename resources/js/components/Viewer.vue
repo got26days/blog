@@ -163,6 +163,10 @@
                 this.datas = [];
                 this.page = 1;
             },
+            sort:    function () {
+                this.datas = [];
+                this.page = 1;
+            },
         },
         methods: {
             loadData(){

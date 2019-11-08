@@ -2551,6 +2551,10 @@ __webpack_require__.r(__webpack_exports__);
     link: function link() {
       this.datas = [];
       this.page = 1;
+    },
+    sort: function sort() {
+      this.datas = [];
+      this.page = 1;
     }
   },
   methods: {
