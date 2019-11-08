@@ -47,6 +47,21 @@
                     </select>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">Поиск по id</label>
+                    <input type="number" class="form-control" placeholder="1" v-model="idsearch" min='0'>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Количество записей на странице</label>
+                    <select class="custom-select" v-model="pagval">
+                        <option>10</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>200</option>
+                    </select>
+                </div>
+            </div>
             <div style="margin-bottom: 40px; margin-top: 10px;">
                 <button class="btn btn-primary" @click.stop.prevent="getData()">Поиск</button>
             </div>
@@ -84,6 +99,9 @@
             </tbody>
         </table>
 
+            <div style="margin-bottom: 40px; margin-top: 10px;">
+                <button class="btn btn-primary" @click.stop.prevent="loadData()">Загрузить еще</button>
+            </div>
 
     </div>
 </template>
@@ -92,6 +110,8 @@
     export default {
         data() {
             return {
+                pagval: 10,
+                idsearch: '',
                 datas: [],
                 firstdate: '',
                 seconddate: '',
@@ -99,21 +119,64 @@
 				area2: '',
 				position: '',
 				link: '',
-				sort: 2,
+                sort: 2,
+                page: 1,
+                disbtn: true,
             }
         },
         watch: {
             sortkey: function () {
+                this.datas = [];
+                this.page = 1;
                 this.getData();
+            },
+            pagval:  function () {
+                this.datas = [];
+                this.page = 1;
+                this.getData();
+            },
+            idsearch:  function () {
+                this.datas = [];
+                this.page = 1;
+            },
+            firstdate:   function () {
+                this.datas = [];
+                this.page = 1;
+            },
+            seconddate:   function () {
+                this.datas = [];
+                this.page = 1;
+            },
+            area2:   function () {
+                this.datas = [];
+                this.page = 1;
+            },
+            position:   function () {
+                this.datas = [];
+                this.page = 1;
+            },
+            link:   function () {
+                this.datas = [];
+                this.page = 1;
             },
         },
         methods: {
+            loadData(){
+                this.getData();
+            },
             getData() {
                 axios.get(
-                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}&sort=${this.sort}`
+                    	`/admin/viewer/getdata?firstdate=${this.firstdate}&seconddate=${this.seconddate}&sortkey=${this.sortkey}&area2=${this.area2}&position=${this.position}&link=${this.link}&sort=${this.sort}
+                        &pagval=${this.pagval}&idsearch=${this.idsearch}&page=${this.page}`
                     )
                     .then(response => {
-                        this.datas = response.data;
+                         console.log(response.data)
+                        var step;
+                        for (step = 0; step < response.data.length; step++) {
+                            this.datas.push(response.data[step]);
+						}
+                        this.page = ++this.page;
+
                     });
             }
         },

@@ -66,10 +66,24 @@ class MainController extends Controller
     {
 
         $updatedData = [
-            'teaser1' => 20000,
+            'link' => '0',
         ];
 
-        $affected = DB::table('items')->update($updatedData);
+
+
+        $affected = DB::table('items')->where('link', '!=', '1')
+        ->where('link', '!=', '2')
+        ->where('link', '!=', '3')
+        ->where('link', '!=', '4')
+        ->where('link', '!=', '5')
+        ->where('link', '!=', '6')
+        ->where('link', '!=', '7')
+        ->where('link', '!=', '8')
+        ->where('link', '!=', '9')
+        ->where('link', '!=', '10')
+        ->where('link', '!=', '11')
+        ->where('link', '!=', '12')
+        ->update($updatedData);
 
         return 'ok';
 

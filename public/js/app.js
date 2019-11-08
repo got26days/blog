@@ -2478,9 +2478,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      pagval: 10,
+      idsearch: '',
       datas: [],
       firstdate: '',
       seconddate: '',
@@ -2488,20 +2508,63 @@ __webpack_require__.r(__webpack_exports__);
       area2: '',
       position: '',
       link: '',
-      sort: 2
+      sort: 2,
+      page: 1,
+      disbtn: true
     };
   },
   watch: {
     sortkey: function sortkey() {
+      this.datas = [];
+      this.page = 1;
       this.getData();
+    },
+    pagval: function pagval() {
+      this.datas = [];
+      this.page = 1;
+      this.getData();
+    },
+    idsearch: function idsearch() {
+      this.datas = [];
+      this.page = 1;
+    },
+    firstdate: function firstdate() {
+      this.datas = [];
+      this.page = 1;
+    },
+    seconddate: function seconddate() {
+      this.datas = [];
+      this.page = 1;
+    },
+    area2: function area2() {
+      this.datas = [];
+      this.page = 1;
+    },
+    position: function position() {
+      this.datas = [];
+      this.page = 1;
+    },
+    link: function link() {
+      this.datas = [];
+      this.page = 1;
     }
   },
   methods: {
+    loadData: function loadData() {
+      this.getData();
+    },
     getData: function getData() {
       var _this = this;
 
-      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link, "&sort=").concat(this.sort)).then(function (response) {
-        _this.datas = response.data;
+      axios.get("/admin/viewer/getdata?firstdate=".concat(this.firstdate, "&seconddate=").concat(this.seconddate, "&sortkey=").concat(this.sortkey, "&area2=").concat(this.area2, "&position=").concat(this.position, "&link=").concat(this.link, "&sort=").concat(this.sort, "\n                        &pagval=").concat(this.pagval, "&idsearch=").concat(this.idsearch, "&page=").concat(this.page)).then(function (response) {
+        console.log(response.data);
+        var step;
+
+        for (step = 0; step < response.data.length; step++) {
+          _this.datas.push(response.data[step]);
+        }
+
+        _this.page = ++_this.page;
       });
     }
   },
@@ -40673,6 +40736,79 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _c("div", { staticClass: "form-row" }, [
+        _c("div", { staticClass: "col-md-4 mb-3" }, [
+          _c("label", { attrs: { for: "validationCustom01" } }, [
+            _vm._v("Поиск по id")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.idsearch,
+                expression: "idsearch"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "number", placeholder: "1", min: "0" },
+            domProps: { value: _vm.idsearch },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.idsearch = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 mb-3" }, [
+          _c("label", [_vm._v("Количество записей на странице")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.pagval,
+                  expression: "pagval"
+                }
+              ],
+              staticClass: "custom-select",
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.pagval = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", [_vm._v("10")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("50")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("100")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("200")])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticStyle: { "margin-bottom": "40px", "margin-top": "10px" } },
@@ -40898,7 +41034,28 @@ var render = function() {
         }),
         0
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticStyle: { "margin-bottom": "40px", "margin-top": "10px" } },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function($event) {
+                $event.stopPropagation()
+                $event.preventDefault()
+                return _vm.loadData()
+              }
+            }
+          },
+          [_vm._v("Загрузить еще")]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []

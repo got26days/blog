@@ -78,6 +78,11 @@ class ViewerController extends Controller
 
         $items = collect($items);
 
+        if($request['idsearch'] != null){
+            $items = $items->where('id', $request['idsearch']);
+        }
+        
+
         if($request['area2'] != null){
             $items = $items->where('area2', $request['area2']);
         }
@@ -91,20 +96,23 @@ class ViewerController extends Controller
             } 
 
             if($request['link'] != 0){
-                $items = $items->where('link', '!=', '0');
+                $items = $items->where('link', '!=', '0')->where('link', '!=', null)->where('another_site', '=', null);
             } 
         }
 
         if($request['sortkey']){
             if($request['sort'] == '1'){
-                $items = $items->sortByDesc($request['sortkey'])->values()->all();
+                $items = $items->sortByDesc($request['sortkey']);
             } else {
-                $items = $items->sortBy($request['sortkey'])->values()->all();
+                $items = $items->sortBy($request['sortkey']);
             }
             
         } else{
-            $items = $items->all();
+            $items = $items;
         }
+
+
+        $items = $items->forPage($request['page'], $request['pagval'])->values()->all();
         
 
         return $items;
