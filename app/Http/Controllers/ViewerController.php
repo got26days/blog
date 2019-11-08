@@ -8,6 +8,7 @@ use App\Click;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use TCG\Voyager\Facades\Voyager;
 
 class ViewerController extends Controller
 {
@@ -50,6 +51,8 @@ class ViewerController extends Controller
 
 
         foreach($items as $item){
+
+            $item->image = Voyager::image($item->thumbnail('cropped','image'));
 
             $clicks = Click::where('item_id', '=', $item->id)->where('created_at', '>=', $firstdate)
             ->where('created_at', '<=', $seconddate)->get();

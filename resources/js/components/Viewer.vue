@@ -74,6 +74,7 @@
                     <th :class="{ 'activv': sortkey == 'id' }" scope="col">id <i class="fas fa-sort" @click="sortkey = 'id'"></i></th>
                     <th :class="{ 'activv': sortkey == 'title' }" scope="col" class="titlecol">Наименование <i class="fas fa-sort" @click="sortkey = 'title'"></i>
                     </th>
+                    <th>Избражение</th>
                     <th :class="{ 'activv': sortkey == 'area2' }" scope="col">На главную <i class="fas fa-sort" @click="sortkey = 'area2'"></i></th>
                     <th :class="{ 'activv': sortkey == 'link' }" scope="col">Ссылка <i class="fas fa-sort" @click="sortkey = 'link'"></i></th>
                     <th :class="{ 'activv': sortkey == 'position' }" scope="col">Тема <i class="fas fa-sort" @click="sortkey = 'position'"></i></th>
@@ -88,6 +89,9 @@
                 <tr v-for="data in datas">
                     <th scope="row">{{ data.id }}</th>
                     <td><a :href="'/post' + data.id">{{ data.title }}</a></td>
+                    <td>
+                        <img :src="data.image" alt="image" width="190">
+                    </td>
                     <td>{{ data.area2 | inpage }}</td>
                     <td>{{ data.link | inlink }}</td>
                     <td>{{ data.position | inposition }}</td>

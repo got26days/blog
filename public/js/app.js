@@ -2496,6 +2496,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40870,6 +40874,8 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
+          _c("th", [_vm._v("Избражение")]),
+          _vm._v(" "),
           _c(
             "th",
             {
@@ -41015,6 +41021,12 @@ var render = function() {
               _c("a", { attrs: { href: "/post" + data.id } }, [
                 _vm._v(_vm._s(data.title))
               ])
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c("img", {
+                attrs: { src: data.image, alt: "image", width: "190" }
+              })
             ]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(_vm._f("inpage")(data.area2)))]),
