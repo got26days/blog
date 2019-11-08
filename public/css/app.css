@@ -13861,6 +13861,7 @@ body {
 
 .over-card-new {
   transition: 0.3s;
+  background-color: #f4f4f4;
   border-width: 0px;
   border-color: #f0f0f0;
   border-style: solid;
@@ -13874,7 +13875,7 @@ body {
 .over-card-new .lk_text-yellow-area {
   color: #252525;
   outline: none !important;
-  height: 70px;
+  height: 46px;
   font-size: 1.1em;
 }
 
@@ -14189,6 +14190,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: #3b5998;
 }
 
 .more-read .more-read__solo-area a {
@@ -14309,6 +14311,7 @@ body {
   transition: background-color 0.2s ease-in-out;
   display: flex;
   align-items: center;
+  color: #3b5998;
   z-index: 10;
 }
 
@@ -14402,6 +14405,7 @@ body {
 
 .yllow-area .yllow-card img {
   width: 108px !important;
+  margin-right: 15px;
 }
 
 .yllow-area a {
@@ -14515,6 +14519,7 @@ body {
 
 .area-watch2 {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 

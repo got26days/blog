@@ -180,7 +180,7 @@ body{
 
 .over-card-new{
   transition: 0.3s;
-
+  background-color: #f4f4f4;
   border-width: 0px;
   border-color: rgb(240, 240, 240);
   border-style: solid;
@@ -190,7 +190,7 @@ body{
   .lk_text-yellow-area{
     color: #252525;
     outline: none !important;
-    height: 70px;
+    height: 46px;
     font-size: 1.1em;
     
   }
@@ -478,6 +478,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: #3b5998;
     a{
       text-decoration: none;
       font-size: 15px;
@@ -601,6 +602,7 @@ body{
   transition: background-color 0.2s ease-in-out;
   display: flex;
   align-items: center;
+  color: #3b5998;
   z-index: 10;
   img{
     // width: 137px;
@@ -701,6 +703,7 @@ body{
     width: 100%;
     img{
       width: 108px !important;
+      margin-right: 15px;
     }
     display: flex;
     flex-direction: row;
@@ -826,7 +829,7 @@ body{
 
 .area-watch2{
   display: flex;
-  // justify-content:;
+  justify-content: space-between;
   align-items: center;
 }
 

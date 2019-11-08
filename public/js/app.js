@@ -1987,12 +1987,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     posts: Array
@@ -39815,45 +39809,31 @@ var render = function() {
             { staticClass: "row" },
             _vm._l(_vm.posts.slice(5, 8), function(post) {
               return _c(
-                "div",
-                { staticClass: "yllow-card", class: post.color },
+                "a",
+                {
+                  attrs: {
+                    href: post.link,
+                    onclick: "ym(54175381, 'reachGoal', 'LAND')"
+                  }
+                },
                 [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: post.link,
-                        onclick: "ym(54175381, 'reachGoal', 'LAND')"
-                      }
-                    },
-                    [_c("img", { attrs: { src: "" + post.image } })]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "area-watch" }, [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: post.link,
-                          onclick: "ym(54175381, 'reachGoal', 'LAND')"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(post.title) +
-                            "\n                        "
-                        )
-                      ]
-                    ),
+                  _c("div", { staticClass: "yllow-card", class: post.color }, [
+                    _c("img", { attrs: { src: "" + post.image } }),
                     _vm._v(" "),
-                    post.teaser1 != "0"
-                      ? _c("div", { staticClass: "iconwatch3" }, [
-                          _c("i", { staticClass: "fas fa-eye" }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(_vm._s(post.teaser1))])
-                        ])
-                      : _vm._e()
+                    _c("div", { staticClass: "area-watch" }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(post.title) +
+                          "\n                                "
+                      ),
+                      post.teaser1 != "0"
+                        ? _c("div", { staticClass: "iconwatch3" }, [
+                            _c("i", { staticClass: "fas fa-eye" }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(_vm._s(post.teaser1))])
+                          ])
+                        : _vm._e()
+                    ])
                   ])
                 ]
               )

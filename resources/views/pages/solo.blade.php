@@ -24,7 +24,7 @@
                                         {{ $area9[3]['title'] }}
                                     </div>
                                     <div class="iconwatch">
-                                            @if($area9[3]['teaser1'])
+                                        @if($area9[3]['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $area9[3]['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -49,7 +49,7 @@
                                         {{ $area9[4]['title'] }}
                                     </div>
                                     <div class="iconwatch">
-                                            @if($area9[4]['teaser1'])
+                                        @if($area9[4]['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $area9[4]['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -76,7 +76,7 @@
                                         {{ $area9[5]['title'] }}
                                     </div>
                                     <div class="iconwatch">
-                                            @if($area9[5]['teaser1'])
+                                        @if($area9[5]['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $area9[5]['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -110,7 +110,7 @@
                                         <a class="btn " href="{{ $link['link'] }}" role="button"
                                             onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                                         <div class="iconwatch5">
-                                                @if($link['teaser1'])
+                                            @if($link['teaser1'])
                                             <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                             @endif
                                         </div>
@@ -143,7 +143,7 @@
                                     <a href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
                                         onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</a>
                                     <div class="iconwatch2">
-                                            @if($link['teaser1'])
+                                        @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -165,7 +165,7 @@
                                     <button href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
                                         onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</button>
                                     <div class="iconwatch2">
-                                            @if($link['teaser1'])
+                                        @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -181,26 +181,28 @@
                     <div class="col-sm-12 col-md-12 col-lg-8">
                         @if (count($area4) > 0)
                         @foreach($area4 as $link)
-                        <div class="width-card">
-                            <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                            <div class="width-card" style="display: flex;">
+
                                 <img src="{{Voyager::image($link->thumbnail('small','image'))}}" style="height: 90px;">
-                            </a>
-                            <div class=wc-content>
-                                <a href="{{ $link['link'] }}" target="_blank"
-                                    onclick="ym(54175381, 'reachGoal', 'LAND')">
+
+                                <div class=wc-content>
+
                                     {{ $link->title }}
-                                </a>
-                                <div class="area-watch">
-                                    <a class="btn " href="{{ $link['link'] }}" role="button"
-                                        target="_blank">Подробнее</a>
-                                    <div class="iconwatch2">
+
+                                    <div class="area-watch">
+                                        <button class="btn " href="{{ $link['link'] }}" role="button"
+                                            target="_blank">Подробнее</button>
+                                        <div class="iconwatch2">
                                             @if($link['teaser1'])
-                                        <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
-                                        @endif
+                                            <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         @endif
 
@@ -220,7 +222,7 @@
                                     <button class="btn " href="{{ $link['link'] }}" role="button"
                                         target="_blank">Подробнее</button>
                                     <div class="iconwatch2">
-                                            @if($link['teaser1'])
+                                        @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -255,7 +257,7 @@
                                     <button href="{{ $link['link'] }}" role="button" class="btn"
                                         target="_blank">Подробнее</button>
                                     <div class="iconwatch2">
-                                            @if($link['teaser1'])
+                                        @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -281,7 +283,7 @@
                                     <button href="{{ $link['link'] }}" role="button" class="btn" target="_blank"
                                         onclick="ym(54175381, 'reachGoal', 'LAND')">Подробнее</button>
                                     <div class="iconwatch2">
-                                            @if($link['teaser1'])
+                                        @if($link['teaser1'])
                                         <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
                                         @endif
                                     </div>
@@ -303,21 +305,24 @@
 
                         @if (count($area7) > 0)
                         @foreach($area7 as $link)
-                        <div class="yllow-card">
-                            <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                        <a href="{{ $link['link'] }}" target="_blank" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                            <div class="yllow-card">
+
                                 <img src="/storage/{{ $link->image }}">
-                            </a>
-                            <div class="area-watch">
-                                <a href="{{ $link['link'] }}" target="_blank">
+
+                                <div class="area-watch">
+
                                     {{ $link->title }}
-                                </a>
-                                <div class="iconwatch3">
-                                    @if($link['teaser1'])
-                                    <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
-                                    @endif
+
+                                    <div class="iconwatch3">
+                                        @if($link['teaser1'])
+                                        <i class="fas fa-eye"></i> <span>{{ $link['teaser1'] }}</span>
+                                        @endif
+                                    </div>
                                 </div>
+
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         @endif
 
@@ -333,9 +338,9 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="{{ $link['link'] }}">
                             <div class="lefar-card {{ $link->color }}">
-                           
-                                    <img src="/storage/{{ $link->image }}">
-                              
+
+                                <img src="/storage/{{ $link->image }}">
+
                                 <p>
                                     {{ $link->title }}
                                 </p>

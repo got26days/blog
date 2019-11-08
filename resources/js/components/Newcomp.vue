@@ -53,23 +53,17 @@
             <div class="col-sm-12 col-md-12 col-lg-5">
                 <div class="yllow-area">
                     <div class="row">
-
-                        <div class="yllow-card" v-for="post in posts.slice(5, 8)" :class="post.color">
-                            <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
+                        <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')" v-for="post in posts.slice(5, 8)">
+                        <div class="yllow-card" :class="post.color">
                                 <img :src="`${post.image}`">
-                            </a>
                             <div class="area-watch">
-                            <a :href="post.link" onclick="ym(54175381, 'reachGoal', 'LAND')">
                                 {{ post.title }}
-                            </a>
                                     <div class="iconwatch3" v-if="post.teaser1 != '0'">
                                         <i class="fas fa-eye"></i> <span>{{ post.teaser1 }}</span>
                                     </div>
                                 </div>
                         </div>
-
-
-
+                        </a>
                     </div>
                 </div>
             </div>
