@@ -505,12 +505,12 @@ class MainController extends Controller
 
                     $domain = env("SECOND_DOMAIN", "http://news24hours.org");
 
-                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'] . '&pg1=1';
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . $ovgid5 . "&key=" . $link['utm'] . '&pg1=1';
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=1';
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . '&pg1=1';
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=1';
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . '&pg1=1';
             }
 
             if($post->another_site != null) {
@@ -718,12 +718,12 @@ class MainController extends Controller
 
                     $domain = env("SECOND_DOMAIN", "http://news24hours.org");
 
-                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5 . "&key=" . $link['utm'] . '&pg1=0';
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . $ovgid5 . "&key=" . $link['utm'] . '&pg1=0';
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . '&pg1=0';
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . '&pg1=0';
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . '&pg1=0';
             }
 
    
@@ -886,12 +886,12 @@ class MainController extends Controller
 
                     $domain = env("SECOND_DOMAIN", "http://news24hours.org");
 
-                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . $ovgid5. "&key=" . $link['utm'];
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'];
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'];
             }
             if($post->another_site != null) {
                 $post->link = $post->another_site;
@@ -937,12 +937,12 @@ class MainController extends Controller
 
                     $domain = env("SECOND_DOMAIN", "http://news24hours.org");
 
-                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'] . $ovgid5. "&key=" . $link['utm'];
+                    $post->link = $domain . '/' .  $link->slug  . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'] . $ovgid5. "&key=" . $link['utm'];
                 } else {
-                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                    $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'];
                 }
             } else {
-                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $post['position'];
+                $post->link = '/post' . $post->id . $newstring . 'gid2=' . $solo['id'] . '&gid3=' . $post['id'] .'&gid4=' . $solo['position'];
             }
             if($post->another_site != null) {
                 $post->link = $post->another_site;
