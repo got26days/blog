@@ -56,20 +56,7 @@
                                     <div class="input-group col-md-12">
                                         <input type="text" class="form-control" placeholder="{{ __('voyager::generic.search') }}" name="s" value="{{ $search->value }}">
                                         
-                                        <div class="input-group col-md-2">
-                                            <input type="date" name="superfdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $superfdata }}">
-                                        </div>
-                                        <div class="input-group col-md-2">
-                                            <input type="date" name="supersdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $supersdata }}">
-                                        </div>
-                                    
-                                        
-                                        <div class="input-group col-md-2">
-                                            <input type="date" name="fdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $fdata }}">
-                                        </div>
-                                        <div class="input-group col-md-2">
-                                            <input type="date" name="sdate" id="" class="form-control" style="border: 1px solid #f1f1f1" value="{{ $sdata }}">
-                                        </div>
+        
                                         <span class="input-group-btn" style="width: 40px;">
                                             
                                             <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
@@ -93,6 +80,7 @@
                                                 <option value="Шоу бизнес" @if($zmain == 'Шоу бизнес'){{ 'selected' }}@endif>Шоу бизнес</option>
                                                 <option value="Здовроье" @if($zmain == 'Здовроье'){{ 'selected' }}@endif>Здоровье</option>
                                                 <option value="Астрология" @if($zmain == 'Астрология'){{ 'selected' }}@endif>Астрология</option>
+                                                <option value="Происшествия" @if($zmain == 'Происшествия'){{ 'selected' }}@endif>Происшествия</option>
                                         </select>
                                         <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
                                                 <i class="voyager-search"></i>
@@ -105,7 +93,7 @@
                                     justify-content: center;
                                     align-items: center;
                                     padding: 0px 10px 0px 10px;">Тип</span>
-                               
+                                
                                     <select name="cat2" style="width: 100%;">
                                             <option value="">Все типы</option>
                                             <option value="0" @if($cat2main == '0'){{ 'selected' }}@endif>На новость</option>
@@ -121,6 +109,17 @@
                                             <option value="10" @if($cat2main == '10'){{ 'selected' }}@endif>На страницу 10</option>
                                             <option value="11" @if($cat2main == '11'){{ 'selected' }}@endif>На страницу 11</option>
                                             <option value="12" @if($cat2main == '12'){{ 'selected' }}@endif>На страницу 12</option>
+                                    </select>
+                                    <span style="display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 0px 10px 0px 10px;
+                                    width: 211px;">На главную</span>
+                                
+                                    <select name="area2" style="width: 100%;">
+                                            <option value="">Все</option>
+                                            <option value="0" @if($area2 == '0'){{ 'selected' }}@endif>Нет</option>
+                                            <option value="1" @if($area2 == '1'){{ 'selected' }}@endif>Да</option>
                                     </select>
                                     <button class="btn btn-info btn-lg" type="submit" style="border-left: 0px solid #eee; right: 0px; width: 40px;">
                                             <i class="voyager-search"></i>

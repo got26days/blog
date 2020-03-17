@@ -124,13 +124,22 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 $supersdata = null;
             }
 
-            if($request->get('cat2', null)){
+            if($request->get('cat2') != ''){
                 $cat2main = $request['cat2'];
 
                 $query->where('link', '=', $cat2main); 
 
             } else {
                 $cat2main = null;
+            }
+
+            if($request->get('area2') != ''){
+                $area2 = $request['area2'];
+
+                $query->where('area2', '=', $area2); 
+
+            } else {
+                $area2 = null;
             }
 
 
@@ -151,6 +160,9 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
                 }
                 if($zmain == 'Астрология'){
                     $zmain = '4';
+                }
+                if($zmain == 'Происшествия'){
+                    $zmain = '5';
                 }
                 
             
@@ -267,7 +279,8 @@ class VoyagerItemsController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'superfdata',
             'supersdata',
             'zmain',
-            'cat2main'
+            'cat2main',
+            'area2'
         ));
     }
 
