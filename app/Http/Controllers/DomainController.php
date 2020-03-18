@@ -12,7 +12,7 @@ class DomainController extends Controller
 {
     public function prod1($slug, Request $request)
     {
-        
+        dd(23);
         if($request['gid3']){
 
     
@@ -32,7 +32,7 @@ class DomainController extends Controller
         {
             return view('prod' .  $link->option . '.index');
         }
-        dd(23);
+        
 
         return view('prod1.index');
     }
