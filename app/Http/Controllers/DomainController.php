@@ -32,7 +32,7 @@ class DomainController extends Controller
         {
             return view('prod' .  $link->option . '.index');
         }
-
+        dd(23);
 
         return view('prod1.index');
     }
