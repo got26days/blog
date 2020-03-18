@@ -12,7 +12,7 @@ class DomainController extends Controller
 {
     public function prod1($slug, Request $request)
     {
-        dd(23);
+        
         if($request['gid3']){
 
     

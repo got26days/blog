@@ -23,6 +23,10 @@
 $domain = env('FIRST_DOMAIN');
 $subdomain = env('SECOND_DOMAIN');
 
+Route::domain(((env('APP_ENV') == 'production') ? 'news24hours.org' : 'blog.test'))->group(function () {
+    Route::get('/{slug}', 'DomainController@prod1');
+});
+
 // Route::get('/prod7', 'MainController@prod7');
 
 Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.test'))->group(function () {
@@ -58,9 +62,7 @@ Route::domain(((env('APP_ENV') == 'production') ? 'newsinfotoday.org' : 'blog.te
 });
 
 
-Route::domain(((env('APP_ENV') == 'production') ? 'news24hours.org' : 'blog.test'))->group(function () {
-    Route::get('/{slug}', 'DomainController@prod1');
-});
+
 
 // news24hours.org
 // ch43944.tmweb.ru
